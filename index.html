@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie Client - Vente en ligne de livres</title>
+    <meta name="description" content="Découvrez les œuvres de nos auteurs en vente en ligne. Livraison rapide et paiement sécurisé par Bankily, Masrvi ou à la livraison.">
+    
+    <!-- Police et icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Bandeau de livraison gratuite -->
+    <div class="shipping-banner">
+        <i class="fas fa-truck"></i>
+        <span><b>LIVRAISON GRATUITE</b> à partir de 50 000 MRU ou 35 € en France</span>
+    </div>
+
+    <!-- Header principal -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="/">
+                        <img src="images/logo-librairie.svg" alt="Logo Librairie" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Librairie'">
+                        <span class="logo-text">LIBRAIRIE</span>
+                    </a>
+                </div>
+
+                <!-- Barre de recherche -->
+                <div class="search-bar">
+                    <form id="searchForm" onsubmit="event.preventDefault(); searchBooks();">
+                        <select class="search-category" id="searchCategory">
+                            <option value="all">Tous les livres</option>
+                            <option value="roman">Romans</option>
+                            <option value="poesie">Poésie</option>
+                            <option value="essai">Essais</option>
+                            <option value="jeunesse">Jeunesse</option>
+                        </select>
+                        <input type="text" id="searchInput" placeholder="Rechercher un livre, un titre..." class="search-input">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Navigation utilisateur -->
+                <div class="user-nav">
+                    <a href="#" class="user-nav-item" onclick="showFavorites()">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoris</span>
+                        <span class="favorite-count" id="favoriteCount">0</span>
+                    </a>
+                    <a href="#" class="user-nav-item" onclick="toggleLogin()">
+                        <i class="fas fa-user"></i>
+                        <span>Compte</span>
+                    </a>
+                    <a href="#" class="user-nav-item" onclick="showCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Panier</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Menu catégories -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" onclick="toggleDropdown()">Toutes catégories <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu" id="categoryDropdown">
+                            <a href="#" onclick="filterCategory('all')">Tous les livres</a>
+                            <a href="#" onclick="filterCategory('roman')">Romans</a>
+                            <a href="#" onclick="filterCategory('poesie')">Poésie</a>
+                            <a href="#" onclick="filterCategory('essai')">Essais</a>
+                            <a href="#" onclick="filterCategory('jeunesse')">Jeunesse</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showNewReleases()">Nouveautés</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showBestsellers()">Meilleures ventes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showAuthor()">L'auteur</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showEvents()">Événements</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showContact()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section héros -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Découvrez nos œuvres<br>littéraires</h1>
+                    <p>Plongez dans un univers unique. Commandez en ligne et recevez chez vous.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" onclick="showBooks()">Voir les livres</a>
+                        <a href="#" class="btn btn-secondary" onclick="showAuthor()">L'auteur</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catégories populaires -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Parcourir par catégorie</h2>
+                <div class="categories-grid">
+                    <a href="#" class="category-card" onclick="filterCategory('roman')">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Romans</h3>
+                        <span>4 titres</span>
+                    </a>
+                    <a href="#" class="category-card" onclick="filterCategory('poesie')">
+                        <i class="fas fa-feather-alt"></i>
+                        <h3>Poésie</h3>
+                        <span>2 recueils</span>
+                    </a>
+                    <a href="#" class="category-card" onclick="filterCategory('essai')">
+                        <i class="fas fa-scroll"></i>
+                        <h3>Essais</h3>
+                        <span>3 essais</span>
+                    </a>
+                    <a href="#" class="category-card" onclick="filterCategory('jeunesse')">
+                        <i class="fas fa-child"></i>
+                        <h3>Jeunesse</h3>
+                        <span>2 livres</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Livres en vedette -->
+        <section class="books-section">
+            <div class="container">
+                <h2 class="section-title">Nos livres</h2>
+                <div class="books-grid" id="booksContainer">
+                    <!-- Les livres seront chargés ici par JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section auteur (cachée par défaut) -->
+        <section class="author-section" id="authorSection" style="display: none;">
+            <div class="container">
+                <div class="author-content">
+                    <div class="author-image">
+                        <img src="images/auteur.jpg" alt="Photo de l'auteur" onerror="this.src='https://via.placeholder.com/400x400?text=Auteur'">
+                    </div>
+                    <div class="author-bio">
+                        <h2>À propos de l'auteur</h2>
+                        <p>Biographie de l'auteur à remplir avec les informations du client...</p>
+                        <p>Passionné d'écriture depuis son plus jeune âge, il a publié plusieurs ouvrages salués par la critique.</p>
+                        <div class="author-contact">
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:contact@librairie.com">contact@librairie.com</a></p>
+                            <p><i class="fas fa-phone"></i> +222 12 34 56 78</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Nouakchott, Mauritanie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section newsletter -->
+        <section class="newsletter-section" style="background: var(--light-blue); padding: 60px 0;">
+            <div class="container">
+                <div class="newsletter-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: 28px; margin-bottom: 15px;">Restez informé</h2>
+                    <p style="margin-bottom: 30px;">Recevez nos dernières actualités et offres exclusives</p>
+                    <form class="newsletter-form" style="display: flex; gap: 10px;" onsubmit="event.preventDefault(); showMessage('Inscription réussie !', 'success')">
+                        <input type="email" placeholder="Votre adresse email" style="flex: 1; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px;" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +222 12 34 56 78</p>
+                    <p><i class="fas fa-envelope"></i> contact@librairie.com</p>
+                    <p><i class="fas fa-map-marker"></i> Nouakchott, Mauritanie</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="#" onclick="showAuthor()">L'auteur</a></li>
+                        <li><a href="#" onclick="showEvents()">Événements</a></li>
+                        <li><a href="#" onclick="showContact()">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Paiement sécurisé</h3>
+                    <div class="payment-methods">
+                        <img src="images/payment/bankily.png" alt="Bankily" onerror="this.src='https://via.placeholder.com/50x30?text=Bankily'">
+                        <img src="images/payment/masrvi.png" alt="Masrvi" onerror="this.src='https://via.placeholder.com/50x30?text=Masrvi'">
+                        <span>Paiement à la livraison</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Librairie Client. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
