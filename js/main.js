@@ -1,5 +1,179 @@
-// SUITE DU CODE main.js
+// main.js - Fonctions principales de la librairie
 
+// Données des livres (à remplacer par les vrais livres du client)
+const booksData = [
+    {
+        id: 1,
+        title: "Le Voyage Immobile",
+        author: "Jean Dupont",
+        price: 15.99,
+        category: "roman",
+        image: "https://placehold.co/200x250/002CC8/white?text=Livre+1",
+        description: "Un roman captivant sur le voyage intérieur",
+        isNew: true,
+        isBestseller: true
+    },
+    {
+        id: 2,
+        title: "Poèmes du Soir",
+        author: "Jean Dupont",
+        price: 12.50,
+        category: "poesie",
+        image: "https://placehold.co/200x250/4169E1/white?text=Livre+2",
+        description: "Recueil de poèmes inspirants",
+        isNew: true,
+        isBestseller: false
+    },
+    {
+        id: 3,
+        title: "L'Art d'Écrire",
+        author: "Jean Dupont",
+        price: 18.00,
+        category: "essai",
+        image: "https://placehold.co/200x250/1a1a1a/white?text=Livre+3",
+        description: "Essai sur le processus créatif",
+        isNew: false,
+        isBestseller: true
+    },
+    {
+        id: 4,
+        title: "Contes pour Enfants",
+        author: "Jean Dupont",
+        price: 14.99,
+        category: "jeunesse",
+        image: "https://placehold.co/200x250/28a745/white?text=Livre+4",
+        description: "Histoires merveilleuses pour les petits",
+        isNew: true,
+        isBestseller: false
+    }
+];
+
+// État de l'application
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+let currentUser = null;
+
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    displayBooks(booksData);
+    updateCartCount();
+    updateFavoriteCount();
+    setupEventListeners();
+});
+
+// Afficher les livres
+function displayBooks(books) {
+    const container = document.getElementById('booksContainer');
+    if (!container) return;
+
+    container.innerHTML = books.map(book => `
+        <div class="book-card" data-id="${book.id}">
+            <div class="book-image">
+                <img src="${book.image}" alt="${book.title}">
+                ${book.isNew ? '<span class="book-badge">Nouveau</span>' : ''}
+            </div>
+            <div class="book-info">
+                <h3 class="book-title">${book.title}</h3>
+                <p class="book-author">${book.author}</p>
+                <p class="book-price">${book.price.toFixed(2)} €</p>
+                <div class="book-actions">
+                    <button class="btn-add-cart" onclick="addToCart(${book.id})">
+                        <i class="fas fa-shopping-cart"></i> Ajouter
+                    </button>
+                    <button class="btn-favorite ${isFavorite(book.id) ? 'active' : ''}" onclick="toggleFavorite(${book.id})">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Vérifier si un livre est en favori
+function isFavorite(bookId) {
+    return favorites.some(fav => fav.id === bookId);
+}
+
+// Ajouter/Retirer des favoris
+function toggleFavorite(bookId) {
+    const book = booksData.find(b => b.id === bookId);
+    if (!book) return;
+
+    const index = favorites.findIndex(f => f.id === bookId);
+    if (index === -1) {
+        favorites.push(book);
+        showMessage('Livre ajouté aux favoris', 'success');
+    } else {
+        favorites.splice(index, 1);
+        showMessage('Livre retiré des favoris', 'success');
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    updateFavoriteCount();
+    displayBooks(booksData); // Rafraîchir l'affichage
+}
+
+// Mettre à jour le compteur de favoris
+function updateFavoriteCount() {
+    const countEl = document.getElementById('favoriteCount');
+    if (countEl) {
+        countEl.textContent = favorites.length;
+    }
+}
+
+// Ajouter au panier
+function addToCart(bookId) {
+    const book = booksData.find(b => b.id === bookId);
+    if (!book) return;
+
+    const existingItem = cart.find(item => item.id === bookId);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...book,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showMessage('Livre ajouté au panier', 'success');
+}
+
+// Mettre à jour le compteur du panier
+function updateCartCount() {
+    const countEl = document.getElementById('cartCount');
+    if (countEl) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        countEl.textContent = totalItems;
+    }
+}
+
+// Afficher le panier
+function showCart() {
+    const modal = document.createElement('div');
+    modal.className = 'modal show';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="modal-close" onclick="this.closest('.modal').remove()">&times;</span>
+            <h2 class="modal-title">Votre Panier</h2>
+            <div id="cartItems">
+                ${cart.length === 0 ? '<p>Votre panier est vide</p>' : ''}
+                ${cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.title}" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-price">${item.price.toFixed(2)} €</div>
+                            <div class="cart-item-quantity">
+                                <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                                <button onclick="removeFromCart(${item.id})" style="margin-left:10px;color:red;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `).join('')}
@@ -29,7 +203,9 @@ function updateQuantity(bookId, newQuantity) {
         item.quantity = newQuantity;
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
-        showCart(); // Rafraîchir l'affichage du panier
+        // Fermer l'ancien modal et rouvrir
+        document.querySelector('.modal')?.remove();
+        showCart();
     }
 }
 
@@ -38,12 +214,15 @@ function removeFromCart(bookId) {
     cart = cart.filter(item => item.id !== bookId);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    showCart(); // Rafraîchir l'affichage du panier
+    document.querySelector('.modal')?.remove();
+    showCart();
     showMessage('Livre retiré du panier', 'success');
 }
 
 // Afficher la page de paiement
 function showCheckout() {
+    document.querySelector('.modal')?.remove();
+    
     const modal = document.createElement('div');
     modal.className = 'modal show';
     modal.innerHTML = `
@@ -163,16 +342,16 @@ function showFavorites() {
         <div class="modal-content">
             <span class="modal-close" onclick="this.closest('.modal').remove()">&times;</span>
             <h2 class="modal-title">Mes Favoris</h2>
-            <div class="books-grid" style="grid-template-columns:repeat(auto-fill, minmax(180px,1fr));">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 20px;">
                 ${favorites.length === 0 ? '<p>Aucun favori</p>' : favorites.map(book => `
                     <div class="book-card">
                         <div class="book-image">
-                            <img src="${book.image}" alt="${book.title}" onerror="this.src='https://via.placeholder.com/200x250?text=Livre'">
+                            <img src="${book.image}" alt="${book.title}" style="height: 150px;">
                         </div>
                         <div class="book-info">
-                            <h3 class="book-title">${book.title}</h3>
-                            <p class="book-price">${book.price.toFixed(2)} €</p>
-                            <button class="btn-add-cart" onclick="addToCart(${book.id})">
+                            <h3 class="book-title" style="font-size: 14px;">${book.title}</h3>
+                            <p class="book-price" style="font-size: 16px;">${book.price.toFixed(2)} €</p>
+                            <button class="btn-add-cart" style="width:100%;" onclick="addToCart(${book.id}); this.closest('.modal').remove();">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -186,8 +365,11 @@ function showFavorites() {
 
 // Afficher la section auteur
 function showAuthor() {
-    document.getElementById('authorSection').style.display = 'block';
-    document.getElementById('authorSection').scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById('authorSection');
+    if (section) {
+        section.style.display = 'block';
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 // Afficher les livres
@@ -230,12 +412,14 @@ function searchBooks() {
 function showNewReleases() {
     const newBooks = booksData.filter(book => book.isNew);
     displayBooks(newBooks);
+    document.querySelector('.books-section').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Afficher les meilleures ventes
 function showBestsellers() {
     const bestsellers = booksData.filter(book => book.isBestseller);
     displayBooks(bestsellers);
+    document.querySelector('.books-section').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Afficher le formulaire de connexion
@@ -453,3 +637,5 @@ window.updateQuantity = updateQuantity;
 window.removeFromCart = removeFromCart;
 window.showCheckout = showCheckout;
 window.processOrder = processOrder;
+window.showMessage = showMessage;
+window.showRegister = showRegister;
