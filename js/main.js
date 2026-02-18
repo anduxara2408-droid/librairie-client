@@ -320,12 +320,12 @@ function showPaymentInstructions(method, amount) {
             <h2 class="modal-title">Paiement par ${method === 'bankily' ? 'Bankily' : 'Masrvi'}</h2>
             <div style="text-align:center;">
                 <p>Montant à payer: <strong>${amount.toFixed(2)} €</strong></p>
-                <p>Numéro de téléphone: <strong>+222 12 34 56 78</strong></p>
+                <p>Numéro de téléphone: <strong>+222 49 03 76 97</strong></p>
                 <p>Nom: <strong>Librairie Client</strong></p>
                 <p style="margin:20px 0;">1. Ouvrez votre application ${method === 'bankily' ? 'Bankily' : 'Masrvi'}</p>
                 <p>2. Effectuez le transfert vers ce numéro</p>
                 <p>3. Envoyez la confirmation par WhatsApp</p>
-                <button class="btn btn-primary" onclick="window.open('https://wa.me/22212345678?text=Je%20viens%20de%20payer%20ma%20commande', '_blank')">
+                <button class="btn btn-primary" onclick="window.open('https://wa.me/22249037697?text=Je%20viens%20de%20payer%20ma%20commande', '_blank')">
                     Confirmer sur WhatsApp
                 </button>
             </div>
@@ -547,7 +547,7 @@ function showContact() {
                 </button>
             </form>
             <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border-color);">
-                <p><i class="fas fa-phone"></i> +222 12 34 56 78</p>
+                <p><i class="fas fa-phone"></i> +222 49 03 76 97</p>
                 <p><i class="fas fa-envelope"></i> contact@librairie.com</p>
                 <p><i class="fas fa-map-marker"></i> Nouakchott, Mauritanie</p>
             </div>
