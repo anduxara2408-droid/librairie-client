@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Librairie Client - Vente en ligne de livres</title>
-    <meta name="description" content="Découvrez les œuvres de nos auteurs en vente en ligne. Livraison rapide et paiement sécurisé par Bankily, Masrvi ou à la livraison.">
+    <title>RIMBOOK - CARAVANE DES MOTS | Librairie en ligne</title>
+    <meta name="description" content="Découvrez notre sélection de livres. Livraison rapide et paiement sécurisé par Bankily, Masrvi ou à la livraison.">
     
     <!-- Police et icônes -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon (optionnel) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
 </head>
 <body>
     <!-- Bandeau de livraison gratuite -->
     <div class="shipping-banner">
         <i class="fas fa-truck"></i>
-        <span><b>LIVRAISON GRATUITE</b> à partir de 1000 MRU ou 35 € en France</span>
+        <span><b>LIVRAISON GRATUITE</b> à partir de 50 000 MRU ou 35 € en France</span>
     </div>
 
     <!-- Header principal -->
@@ -24,8 +27,8 @@
             <div class="header-top">
                 <div class="logo">
                     <a href="/">
-                        <img src="https://placehold.co/150x50/002CC8/white?text=LIBRAIRIE" alt="Logo Librairie" class="logo-img">
-                        <span class="logo-text">LIBRAIRIE</span>
+                        <img src="https://placehold.co/150x50/002CC8/white?text=RIMBOOK" alt="Logo RIMBOOK" class="logo-img">
+                        <span class="logo-text">RIMBOOK</span>
                     </a>
                 </div>
 
@@ -37,7 +40,6 @@
                             <option value="roman">Romans</option>
                             <option value="poesie">Poésie</option>
                             <option value="essai">Essais</option>
-                            <option value="jeunesse">Jeunesse</option>
                         </select>
                         <input type="text" id="searchInput" placeholder="Rechercher un livre, un titre..." class="search-input">
                         <button type="submit" class="search-btn">
@@ -75,7 +77,6 @@
                             <a href="#" onclick="filterCategory('roman')">Romans</a>
                             <a href="#" onclick="filterCategory('poesie')">Poésie</a>
                             <a href="#" onclick="filterCategory('essai')">Essais</a>
-                            <a href="#" onclick="filterCategory('jeunesse')">Jeunesse</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="showNewReleases()">Nouveautés</a></li>
@@ -94,8 +95,8 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Découvrez nos œuvres<br>littéraires</h1>
-                    <p>Plongez dans un univers unique. Commandez en ligne et recevez chez vous.</p>
+                    <h1>RIMBOOK<br>CARAVANE DES MOTS</h1>
+                    <p>Découvrez notre sélection de livres. Commandez en ligne et recevez chez vous.</p>
                     <div class="hero-buttons">
                         <a href="#" class="btn btn-primary" onclick="showBooks()">Voir les livres</a>
                         <a href="#" class="btn btn-secondary" onclick="showAuthor()">L'auteur</a>
@@ -112,7 +113,7 @@
                     <a href="#" class="category-card" onclick="filterCategory('roman')">
                         <i class="fas fa-book-open"></i>
                         <h3>Romans</h3>
-                        <span>4 titres</span>
+                        <span>5 titres</span>
                     </a>
                     <a href="#" class="category-card" onclick="filterCategory('poesie')">
                         <i class="fas fa-feather-alt"></i>
@@ -122,12 +123,7 @@
                     <a href="#" class="category-card" onclick="filterCategory('essai')">
                         <i class="fas fa-scroll"></i>
                         <h3>Essais</h3>
-                        <span>3 essais</span>
-                    </a>
-                    <a href="#" class="category-card" onclick="filterCategory('jeunesse')">
-                        <i class="fas fa-child"></i>
-                        <h3>Jeunesse</h3>
-                        <span>2 livres</span>
+                        <span>2 essais</span>
                     </a>
                 </div>
             </div>
@@ -155,7 +151,7 @@
                         <p>Biographie de l'auteur à remplir avec les informations du client...</p>
                         <p>Passionné d'écriture depuis son plus jeune âge, il a publié plusieurs ouvrages salués par la critique.</p>
                         <div class="author-contact">
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:contact@librairie.com">contact@librairie.com</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:contact@rimbook.com">contact@rimbook.com</a></p>
                             <p><i class="fas fa-phone"></i> +222 31 03 76 97</p>
                             <p><i class="fas fa-map-marker-alt"></i> Nouakchott, Mauritanie</p>
                         </div>
@@ -184,9 +180,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-phone"></i> +222 49 03 76 97</p>
-                    <p><i class="fas fa-envelope"></i> contact@librairie.com</p>
+                    <h3>RIMBOOK</h3>
+                    <p><i class="fas fa-phone"></i> +222 31 03 76 97</p>
+                    <p><i class="fas fa-envelope"></i> contact@rimbook.com</p>
                     <p><i class="fas fa-map-marker"></i> Nouakchott, Mauritanie</p>
                 </div>
 
@@ -221,7 +217,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Librairie. Tous droits réservés.</p>
+                <p>&copy; 2026 RIMBOOK - CARAVANE DES MOTS. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
