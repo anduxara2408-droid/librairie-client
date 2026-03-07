@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIMBOOK - CARAVANE DES MOTS | Librairie en ligne</title>
-    <meta name="description" content="Découvrez notre sélection de livres. Livraison rapide et paiement sécurisé par Bankily, Masrvi ou à la livraison.">
+    <meta name="description" content="Fondée par le poète mauritanien Salihina Moussa Konaté. Découvrez notre sélection de livres. Livraison partout en Mauritanie sous 72h. Bankily: 32202460 | WhatsApp: 41291914">
     
     <!-- Police et icônes -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Favicon (optionnel) -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
 </head>
 <body>
-    <!-- Bandeau de livraison gratuite -->
+    <!-- Bandeau de livraison -->
     <div class="shipping-banner">
         <i class="fas fa-truck"></i>
-        <span><b>LIVRAISON GRATUITE</b> à partir de 50 000 MRU ou 35 € en France</span>
+        <span><b>LIVRAISON PARTOUT EN MAURITANIE</b> sous 72h - Prix selon la localité</span>
     </div>
 
     <!-- Header principal -->
@@ -81,7 +81,7 @@
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="showNewReleases()">Nouveautés</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="showBestsellers()">Meilleures ventes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link" onclick="showAuthor()">L'auteur</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="showAuthor()">Le fondateur</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="showEvents()">Événements</a></li>
                     <li class="nav-item"><a href="#" class="nav-link" onclick="showContact()">Contact</a></li>
                 </ul>
@@ -91,15 +91,16 @@
 
     <!-- Contenu principal -->
     <main>
-        <!-- Section héros -->
+        <!-- Section héros avec présentation -->
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1>RIMBOOK<br>CARAVANE DES MOTS</h1>
-                    <p>Découvrez notre sélection de livres. Commandez en ligne et recevez chez vous.</p>
+                    <h1>RIMBOOK<br>Le livre accessible à tous</h1>
+                    <p>Fondée à l'initiative du poète mauritanien <strong>Salihina Moussa Konaté</strong>, Rimbook s'inscrit dans une démarche structurée de promotion et de diffusion du livre en Mauritanie.</p>
+                    <p>Choisissez votre ouvrage, nous nous chargeons du reste, et recevez-le où que vous soyez.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary" onclick="showBooks()">Voir les livres</a>
-                        <a href="#" class="btn btn-secondary" onclick="showAuthor()">L'auteur</a>
+                        <a href="#" class="btn btn-primary" onclick="showBooks()">Découvrir les livres</a>
+                        <a href="#" class="btn btn-secondary" onclick="showAuthor()">Le fondateur</a>
                     </div>
                 </div>
             </div>
@@ -139,22 +140,34 @@
             </div>
         </section>
 
-        <!-- Section auteur (cachée par défaut) -->
-        <section class="author-section" id="authorSection" style="display: none;">
+        <!-- Section fondateur (Salihina Moussa Konaté) -->
+        <section class="author-section" id="authorSection">
             <div class="container">
                 <div class="author-content">
                     <div class="author-image">
-                        <img src="https://placehold.co/400x400/002CC8/white?text=Auteur" alt="Photo de l'auteur">
+                        <img src="images/salihina.jpeg" alt="Salihina Moussa Konaté - Fondateur de Rimbook" onerror="this.src='https://placehold.co/400x400/002CC8/white?text=Salihina'">
                     </div>
                     <div class="author-bio">
-                        <h2>À propos de l'auteur</h2>
-                        <p>Biographie de l'auteur à remplir avec les informations du client...</p>
-                        <p>Passionné d'écriture depuis son plus jeune âge, il a publié plusieurs ouvrages salués par la critique.</p>
-                        <div class="author-contact">
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:contact@rimbook.com">contact@rimbook.com</a></p>
-                            <p><i class="fas fa-phone"></i> +222 31 03 76 97</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Nouakchott, Mauritanie</p>
+                        <h2>Salihina Moussa Konaté</h2>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 20px;">Poète mauritanien, Fondateur de Rimbook</h3>
+                        <p>À l'initiative du poète mauritanien Salihina Moussa Konaté, Rimbook s'inscrit dans une démarche structurée de promotion et de diffusion du livre en Mauritanie.</p>
+                        <p>Cette librairie en ligne a été créée pour répondre à un enjeu essentiel : améliorer la disponibilité des ressources bibliographiques et faciliter leur accès à travers un service fiable d'acquisition et de livraison.</p>
+                        <p>La mission de Rimbook est claire : renforcer l'accès au savoir, soutenir le développement culturel et intellectuel, et encourager durablement la lecture sur l'ensemble du territoire.</p>
+                        <p><strong>Avec Rimbook, le livre devient accessible à tous.</strong></p>
+                        
+                        <div class="author-contact" style="margin-top: 30px;">
+                            <h4>Coordonnées</h4>
+                            <p><i class="fas fa-phone"></i> Conseil & commandes WhatsApp: <strong>41291914</strong></p>
+                            <p><i class="fas fa-university"></i> Paiement Bankily: <strong>32202460</strong></p>
+                            <p><i class="fas fa-truck"></i> Livraison sous 72h - Prix selon la localité</p>
                         </div>
+                        
+                        <div class="social-links" style="justify-content: flex-start; margin-top: 25px;">
+                            <a href="https://facebook.com/rimbook" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://instagram.com/rimbook" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/22241291914" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <p style="margin-top: 10px;"><small>Salihina Moussa sur Facebook & Instagram | Page : Rimbook</small></p>
                     </div>
                 </div>
             </div>
@@ -181,15 +194,16 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>RIMBOOK</h3>
-                    <p><i class="fas fa-phone"></i> +222 31 03 76 97</p>
-                    <p><i class="fas fa-envelope"></i> contact@rimbook.com</p>
+                    <p><i class="fas fa-phone"></i> <strong>41291914</strong> (WhatsApp)</p>
+                    <p><i class="fas fa-university"></i> Bankily: <strong>32202460</strong></p>
+                    <p><i class="fas fa-truck"></i> Livraison sous 72h</p>
                     <p><i class="fas fa-map-marker"></i> Nouakchott, Mauritanie</p>
                 </div>
 
                 <div class="footer-section">
                     <h3>Liens utiles</h3>
                     <ul>
-                        <li><a href="#" onclick="showAuthor()">L'auteur</a></li>
+                        <li><a href="#" onclick="showAuthor()">Le fondateur</a></li>
                         <li><a href="#" onclick="showEvents()">Événements</a></li>
                         <li><a href="#" onclick="showContact()">Contact</a></li>
                         <li><a href="#">Mentions légales</a></li>
@@ -199,25 +213,27 @@
                 <div class="footer-section">
                     <h3>Suivez-nous</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://facebook.com/rimbook" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/rimbook" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/22241291914" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
+                    <p style="margin-top: 15px; font-size: 13px; color: #999;">Salihina Moussa sur Facebook & Instagram</p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Paiement sécurisé</h3>
-                    <div class="payment-methods">
-                        <img src="https://placehold.co/50x30/002CC8/white?text=Bankily" alt="Bankily">
-                        <img src="https://placehold.co/50x30/28a745/white?text=Masrvi" alt="Masrvi">
-                        <span>Paiement à la livraison</span>
+                    <h3>Paiement</h3>
+                    <div class="payment-methods" style="flex-direction: column; align-items: flex-start;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="https://placehold.co/50x30/002CC8/white?text=Bankily" alt="Bankily">
+                            <span style="color: white;">32202460</span>
+                        </div>
+                        <span style="color: #999; margin-top: 10px;">Paiement à la livraison</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 RIMBOOK - CARAVANE DES MOTS. Tous droits réservés.</p>
+                <p>&copy; 2026 RIMBOOK - Fondée par Salihina Moussa Konaté. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
