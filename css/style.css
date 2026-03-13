@@ -1,4 +1,4 @@
-/* style.css - Design inspiré de momox-shop pour librairie */
+/* style.css - RIMBOOK - Design inspiré de momox-shop */
 :root {
     --primary-blue: #002CC8;
     --light-blue: #f0f4ff;
@@ -60,23 +60,36 @@ body {
     gap: 30px;
 }
 
-/* Logo */
+/* Logo avec image officielle */
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    gap: 10px;
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--primary-blue);
-    margin-left: 10px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #4169E1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Barre de recherche */
@@ -247,10 +260,30 @@ body {
     color: white;
     padding: 80px 0;
     margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .hero-content {
     max-width: 600px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -258,6 +291,7 @@ body {
     line-height: 1.2;
     margin-bottom: 20px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero-content p {
@@ -312,6 +346,7 @@ body {
     margin-bottom: 40px;
     position: relative;
     padding-bottom: 15px;
+    color: var(--dark-text);
 }
 
 .section-title:after {
@@ -435,6 +470,7 @@ body {
     font-weight: 600;
     margin-bottom: 5px;
     color: var(--dark-text);
+    line-height: 1.4;
 }
 
 .book-author {
@@ -492,7 +528,7 @@ body {
     color: white;
 }
 
-/* Section auteur */
+/* Section fondateur */
 .author-section {
     padding: 80px 0;
     background: var(--white);
@@ -509,18 +545,31 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    border: 3px solid var(--primary-blue);
 }
 
 .author-image img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s;
+}
+
+.author-image img:hover {
+    transform: scale(1.02);
 }
 
 .author-bio h2 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--dark-text);
+}
+
+.author-bio h3 {
+    font-size: 18px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .author-bio p {
@@ -534,6 +583,13 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin-top: 30px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.author-contact h4 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
 .author-contact p {
@@ -542,6 +598,7 @@ body {
     align-items: center;
     gap: 10px;
     color: var(--dark-text);
+    font-size: 15px;
 }
 
 .author-contact i {
@@ -568,6 +625,18 @@ body {
     font-size: 18px;
     margin-bottom: 20px;
     color: white;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-blue);
 }
 
 .footer-section ul {
@@ -586,6 +655,7 @@ body {
 
 .footer-section ul li a:hover {
     color: var(--primary-blue);
+    padding-left: 5px;
 }
 
 .footer-section p {
@@ -598,6 +668,7 @@ body {
 
 .footer-section p i {
     color: var(--primary-blue);
+    width: 20px;
 }
 
 /* Paiement */
@@ -634,11 +705,20 @@ body {
 .social-links a {
     color: white;
     font-size: 20px;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-links a:hover {
-    color: var(--primary-blue);
+    color: white;
+    background: var(--primary-blue);
+    transform: translateY(-3px);
 }
 
 .footer-bottom {
@@ -671,7 +751,7 @@ body {
     background: white;
     padding: 40px;
     border-radius: 12px;
-    max-width: 400px;
+    max-width: 500px;
     width: 90%;
     position: relative;
     max-height: 90vh;
@@ -682,14 +762,21 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     color: #999;
     transition: color 0.3s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .modal-close:hover {
     color: var(--primary-blue);
+    background: var(--light-blue);
 }
 
 .modal-title {
@@ -742,11 +829,13 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    font-weight: 600;
 }
 
 .cart-item-quantity button:hover {
     background: var(--primary-blue);
     color: white;
+    border-color: var(--primary-blue);
 }
 
 .cart-total {
@@ -774,7 +863,7 @@ body {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 14px;
@@ -792,24 +881,60 @@ body {
 .success-message {
     background: #d4edda;
     color: #155724;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 15px;
+    border-radius: 8px;
     margin-bottom: 10px;
+    border-left: 4px solid #28a745;
 }
 
 .error-message {
     background: #f8d7da;
     color: #721c24;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 15px;
+    border-radius: 8px;
     margin-bottom: 10px;
+    border-left: 4px solid #dc3545;
+}
+
+/* Info message */
+.info-message {
+    background: #d1ecf1;
+    color: #0c5460;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #17a2b8;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .header-top {
+        flex-wrap: wrap;
+    }
+    
+    .search-bar {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .header-top {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .logo a {
+        justify-content: center;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 24px;
     }
 
     .search-bar {
@@ -846,5 +971,37 @@ body {
 
     .categories-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 20px;
     }
 }
