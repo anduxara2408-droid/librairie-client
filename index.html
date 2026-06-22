@@ -83,7 +83,6 @@
         .top-bar .right span {
             cursor: pointer;
             opacity: 0.9;
-            transition: opacity 0.2s;
             font-size: clamp(0.5rem, 0.9vw, 0.7rem);
             white-space: nowrap;
         }
@@ -153,7 +152,6 @@
             border-radius: 8px;
             overflow: hidden;
             background: #fff;
-            transition: border-color 0.3s, box-shadow 0.3s;
             width: 100%;
         }
         .search-bar form:focus-within {
@@ -634,6 +632,10 @@
             padding-bottom: 6px;
             display: inline-block;
         }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
         .footer-section ul li {
             margin-bottom: 5px;
             font-size: clamp(0.7rem, 0.9vw, 0.85rem);
@@ -722,6 +724,11 @@
         .newsletter-section h2 {
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
         }
+        .newsletter-section p {
+            font-size: clamp(0.8rem, 1vw, 0.95rem);
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
         .newsletter-section form {
             display: flex;
             justify-content: center;
@@ -738,6 +745,11 @@
             border-radius: 8px;
             font-size: clamp(0.8rem, 1vw, 1rem);
         }
+        .newsletter-section input:focus {
+            border-color: #145daa;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(20,93,170,0.15);
+        }
         .newsletter-section button {
             padding: 8px 20px;
             background: #145daa;
@@ -747,9 +759,16 @@
             font-weight: 600;
             cursor: pointer;
             font-size: clamp(0.8rem, 1vw, 1rem);
+            transition: background 0.3s, transform 0.2s;
         }
         .newsletter-section button:hover {
             background: #0d4a8a;
+            transform: translateY(-2px);
+        }
+        #newsletterMessage {
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1vw, 1rem);
         }
 
         .presentation-text {
@@ -859,7 +878,7 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
+    <!-- ========================= TOP BAR ========================= -->
     <div class="top-bar">
         <div class="left">📚 Leader de l'occasion en Mauritanie</div>
         <div class="center">
@@ -873,7 +892,7 @@
         </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- ========================= HEADER ========================= -->
     <header class="header">
         <div class="container header-top">
             <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
@@ -930,7 +949,7 @@
         </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- ========================= MAIN ========================= -->
     <main class="container">
 
         <!-- SLIDER -->
@@ -1104,19 +1123,22 @@
             </div>
         </section>
 
-        <!-- NEWSLETTER -->
+        <!-- ============================================================
+               NEWSLETTER AVEC ENVOI PAR MAILTO:
+               ============================================================ -->
         <section class="newsletter-section">
             <h2>Restez informé</h2>
             <p>Recevez nos dernières actualités et offres exclusives</p>
-            <form onsubmit="event.preventDefault(); showMessage('Inscription réussie !', 'success')">
-                <input type="email" placeholder="Votre email" required />
+            <form id="newsletterForm" onsubmit="event.preventDefault(); sendNewsletter();">
+                <input type="email" id="newsletterEmail" placeholder="Votre email" required />
                 <button type="submit">S'abonner</button>
             </form>
+            <div id="newsletterMessage"></div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ========================= FOOTER ========================= -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-section">
@@ -1130,19 +1152,30 @@
             <div class="footer-section">
                 <h4>À PROPOS</h4>
                 <ul style="list-style:none; padding:0;">
-                    <li><a href="#" onclick="scrollToAuthor()">Le fondateur</a></li>
-                    <li><a href="#">Nos engagements</a></li>
-                    <li><a href="#">Notre charte qualité</a></li>
-                    <li><a href="#" onclick="showEvents()">Nos événements</a></li>
+                    <li><a href="index.html#authorSection">Le fondateur</a></li>
+                    <li><a href="engagements.html">Nos engagements</a></li>
+                    <li><a href="charte-qualite.html">Notre charte qualité</a></li>
+                    <li><a href="alerte-disponibilite.html">L'alerte disponibilité</a></li>
+                    <li><a href="evenements.html">Nos événements</a></li>
+                    <li><a href="histoire.html">Notre histoire</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>SERVICES</h4>
                 <ul style="list-style:none; padding:0;">
-                    <li><a href="aide.html">FAQ</a></li>
-                    <li><a href="#">Je commande</a></li>
-                    <li><a href="#">Service retours</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="guide-achat.html">Je commande</a></li>
+                    <li><a href="retours.html">Service retours</a></li>
                     <li><a href="contact.html">Nous contacter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONDITIONS</h4>
+                <ul style="list-style:none; padding:0;">
+                    <li><a href="conditions-livraison.html">Conditions de livraison</a></li>
+                    <li><a href="moyens-paiement.html">Moyens de paiement</a></li>
+                    <li><a href="cgu.html">Conditions générales</a></li>
+                    <li><a href="confidentialite.html">Politique de confidentialité</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1159,11 +1192,13 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- ========================= SCRIPTS ========================= -->
     <script src="js/main.js"></script>
     <script src="js/cookies.js"></script>
     <script>
+        // ============================================================
         // SLIDER
+        // ============================================================
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slider-slide');
         const dots = document.querySelectorAll('.slider-dots span');
@@ -1202,7 +1237,9 @@
             });
         }
 
+        // ============================================================
         // SIDE MENU
+        // ============================================================
         function initSideMenu() {
             const sideMenu = document.createElement('div');
             sideMenu.id = 'sideMenu';
@@ -1264,7 +1301,9 @@
             if (window.closeSideMenu) window.closeSideMenu();
         }
 
+        // ============================================================
         // CATÉGORIES
+        // ============================================================
         function generateCategories() {
             const container = document.getElementById('categoryBlock');
             if (!container) return;
@@ -1290,12 +1329,57 @@
             }).join('');
         }
 
+        // ============================================================
+        // NEWSLETTER
+        // ============================================================
+        function sendNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            const messageDiv = document.getElementById('newsletterMessage');
+
+            // Vérifier l'email
+            if (!email || !email.includes('@')) {
+                messageDiv.style.display = 'block';
+                messageDiv.style.color = 'red';
+                messageDiv.textContent = '⚠️ Veuillez entrer une adresse email valide.';
+                return;
+            }
+
+            // 1. Envoyer un email à l'admin (vous)
+            const subject = encodeURIComponent('Nouvel inscrit newsletter MAURILIVRES');
+            const body = encodeURIComponent(
+                `Nouvelle inscription à la newsletter :\n\n` +
+                `Email : ${email}\n` +
+                `Date : ${new Date().toLocaleString()}\n\n` +
+                `Site : MAURILIVRES\n` +
+                `https://rimbook.online`
+            );
+            window.location.href = `mailto:contact@rimbook.online?subject=${subject}&body=${body}`;
+
+            // 2. Message de confirmation pour le client
+            messageDiv.style.display = 'block';
+            messageDiv.style.color = 'green';
+            messageDiv.textContent = '✅ Inscription réussie ! Un email de bienvenue vous a été envoyé.';
+            document.getElementById('newsletterEmail').value = '';
+
+            // 3. Petit délai pour masquer le message (facultatif)
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 8000);
+        }
+
+        // ============================================================
+        // EXPOSER LES FONCTIONS
+        // ============================================================
         window.prevSlide = prevSlide;
         window.nextSlide = nextSlide;
         window.goToSlide = goToSlide;
         window.scrollToAuthor = scrollToAuthor;
         window.generateCategories = generateCategories;
+        window.sendNewsletter = sendNewsletter;
 
+        // ============================================================
+        // INITIALISATION
+        // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
             initSideMenu();
             setTimeout(generateCategories, 100);
