@@ -7,7 +7,7 @@ const booksData = [
     // ---- Romans ----
     { id: 1, title: "L'Enfant noir", author: "Camara Laye", price: 400, category: "roman", image: "images/books/camara-laye.jpg", description: "Autobiographie d'une enfance en Haute-Guinée.", isNew: true, isBestseller: true },
     { id: 2, title: "Marche ou crève", author: "Stephen King", price: 600, category: "roman", image: "images/books/marche-ou-creve.jpg", description: "Cent adolescents en marche forcée.", isNew: true, isBestseller: false },
-    { id: 3, title: "Priére aux vivants pour leur pardonner d'être vivants", author: "Charlotte Delbo", price: 500, category: "roman", image: "images/books/charlotte.jpg", description: "Vie tragique de Charlotte Salomon.", isNew: false, isBestseller: true },
+    { id: 3, title: "Priére aux vivants pour leur pardonner d'être vivants", author: "Charlotte Delbo", price: 500, category: "poésie", image: "images/books/charlotte.jpg", description: "Vie tragique de Charlotte Salomon.", isNew: false, isBestseller: true },
     { id: 4, title: "La Femme de ménage", author: "Freida McFadden", price: 600, category: "roman", image: "images/books/femme-menage.jpg", description: "Millie découvre des secrets sombres.", isNew: true, isBestseller: true },
     { id: 5, title: "Nos étoiles contraires", author: "John Green", price: 600, category: "roman", image: "images/books/nos-etoiles-contraires.jpg", description: "Hazel et Augustus.", isNew: true, isBestseller: true },
     { id: 6, title: "Mille et un je", author: "Mariam Derwich", price: 300, category: "poésie", image: "images/books/mille-en-un.jpg", description: "Poppy et Rune.", isNew: true, isBestseller: false },
