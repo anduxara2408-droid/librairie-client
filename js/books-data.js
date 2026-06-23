@@ -1,8 +1,8 @@
-// js/books-data.js - Données complètes des livres MAURILIVRES
+// js/books-data.js - DONNÉES COMPLÈTES DES LIVRES MAURILIVRES
 
 const booksData = [
     // ============================================================
-    // ROMANS
+    // ROMANS (1 à 16)
     // ============================================================
     {
         id: 1,
@@ -284,21 +284,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Une fillette au visage d'une disparue.",
-        resume: "Trois cadavres et un bébé abandonné : c'est la macabre découverte que fait la police dans une demeure de Chelsea. Faute de preuves, on privilégie la piste d'un suicide collectif et l'affaire est classée. Dix ans plus tard, Ellie, disparue à l'âge de quinze ans, refait surface... Ou plutôt, une jeune fille qui lui ressemble étrangement.",
+        resume: "Une troublante impression de déjà-vu... Ellie a disparu à l'âge de quinze ans. Sa mère n'a jamais réussi à faire son deuil, d'autant plus que la police n'a retrouvé ni le coupable ni le corps. Dix ans plus tard, cette femme brisée doit pourtant se résoudre à tourner la page. C'est alors qu'elle fait la connaissance de Floyd, un homme charmant, père célibataire, auquel elle se lie peu à peu. Mais lorsqu'elle rencontre la fille de celui-ci, Poppy, âgée de neuf ans, le passé la rattrape brutalement : cette fillette est le portrait craché de sa fille disparue...",
         details: {
-            ean: "9782381960054",
-            isbn: "2381960058",
+            ean: "9782811226671",
+            isbn: "2811226672",
             contributeurs: "Lisa Jewell (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 480,
-            editeur: "Hauteville",
-            collection: "Hauteville Thriller",
-            largeur: "14 cm",
-            longueur: "21 cm",
+            format: "Livre",
+            nbPages: 384,
+            editeur: "Milady",
+            collection: "HAUTEVILLE SUSP",
+            largeur: "14.4 cm",
+            longueur: "21.3 cm",
             epaisseur: "2.5 cm",
-            poids: "0.480 kg",
+            poids: "0.385 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Thriller"
+            categories: "Livres, Littérature anglophone, Romans et Littérature, Polars, thrillers et romans d'espionnage"
         }
     },
     {
@@ -311,48 +311,47 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Max et le Prince de la Brume.",
-        resume: "1943, Angleterre. Fuyant la guerre, la famille Carver se réfugie dans un village de bord de mer. Max, le fils aîné, découvre un jardin rempli de statues étranges et un mystérieux personnage : le Prince de la Brume. Un roman d'horreur et de mystère pour adolescents.",
+        resume: "1943, Angleterre. Fuyant la guerre, la famille Carver se réfugie dans un village de bord de mer. Leur nouvelle maison appartenait à un couple riche qui a quitté le pays après la mort de leur fils Jacob. Max, le fils aîné, découvre un jardin rempli de statues étranges et un mystérieux personnage : le Prince de la Brume. Doté de pouvoirs diaboliques, le Prince de la Brume réclame le paiement d'une dette contractée avant la naissance de Jacob. S'ils veulent sauver leur ami Roland, Max et Alicia doivent affronter l'être maléfique sur son territoire.",
         details: {
-            ean: "9782747038917",
-            isbn: "2747038919",
-            contributeurs: "Carlos Ruiz Zafón (Auteur principal)",
-            format: "Livre poche",
-            nbPages: 280,
-            editeur: "Bayard Jeunesse",
-            collection: "Bayard Jeunesse",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1.5 cm",
-            poids: "0.200 kg",
+            ean: "9782221122891",
+            isbn: "2221122895",
+            contributeurs: "Carlos Ruiz Zafon (Auteur principal)",
+            format: "Livre",
+            nbPages: 209,
+            editeur: "Robert Laffont",
+            largeur: "13.7 cm",
+            longueur: "21.6 cm",
+            epaisseur: "1.9 cm",
+            poids: "0.264 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Horreur"
+            categories: "Livres, Romans et Littérature, Littérature hispanophone"
         }
     },
     {
         id: 13,
         title: "Oksa Pollock",
-        author: "Anne Plichota",
+        author: "Anne Plichota, Cendrine Wolf",
         price: 600,
         category: "roman",
         image: "images/books/oksa-pollock.jpg",
         isNew: true,
         isBestseller: false,
         description: "Oksa et ses dons.",
-        resume: "Oksa Pollock, 13 ans, pensait être comme tout le monde, mais ce soir tout a changé. Un peu angoissée par la rentrée dans son nouveau collège, Oksa déclenche tout à coup des phénomènes étranges dans sa chambre. Un coin de son bureau prend feu... Une série fantasy qui a conquis des milliers de lecteurs.",
+        resume: "Oksa Pollock, 13 ans, pensait être comme tout le monde, mais ce soir tout a changé. Un peu angoissée par la rentrée dans son nouveau collège, Oksa déclenche tout à coup des phénomènes étranges dans sa chambre. Un coin de son bureau prend feu, ses cartons de déménagement explosent. Elle qui a toujours rêvé d'être une ninja, voilà qu'elle se découvre des dons surnaturels ! Sa grand-mère, l'excentrique Dragomira, lui avoue le secret de ses origines : la famille Pollock vient d'Édéfia, un monde invisible caché quelque part sur Terre. Oksa est leur Inespérée, leur seul espoir d'y retourner.",
         details: {
-            ean: "9782075102436",
-            isbn: "2075102430",
-            contributeurs: "Anne Plichota, Cendrine Wolf (Auteurs principaux)",
-            format: "Livre poche",
-            nbPages: 380,
-            editeur: "Gallimard Jeunesse",
-            collection: "Folio Junior",
-            largeur: "12.5 cm",
-            longueur: "18 cm",
-            epaisseur: "1.8 cm",
-            poids: "0.280 kg",
+            ean: "9782845634602",
+            isbn: "2845634609",
+            contributeurs: "Anne Plichota (Auteur principal), Cendrine Wolf (Auteur principal)",
+            format: "Livre",
+            nbPages: 485,
+            editeur: "XO",
+            largeur: "15.5 cm",
+            longueur: "24.2 cm",
+            epaisseur: "3.7 cm",
+            poids: "0.612 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Fantasy"
+            saga: "Oksa Pollock",
+            categories: "Livres, Jeunesse"
         }
     },
     {
@@ -365,21 +364,22 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Pip enquête.",
-        resume: "Il y a cinq ans, Sal Singh s'est accusé du meurtre de sa petite amie, Andie Bell, avant de se donner la mort. La police est sûre que l'affaire est résolue. Toute la ville aussi. Mais Pippa, une lycéenne de 17 ans passionnée par le true crime, décide de mener sa propre enquête.",
+        resume: "Il y a cinq ans, Sal Singh s'est accusé du meurtre de sa petite amie, Andie Bell, avant de se donner la mort. La police est sûre que l'affaire est résolue. Toute la ville aussi. Mais Pippa, une lycéenne de 17 ans passionnée par le true crime, décide de mener sa propre enquête. Elle déterre un à un des secrets compromettants sur Andie. La liste des suspects se rallonge. Mais à trop s'approcher de la vérité, Pippa alerte aussi le véritable meurtrier... se mettant elle-même en danger.",
         details: {
-            ean: "9782203225756",
-            isbn: "2203225752",
+            ean: "9782203228610",
+            isbn: "220322861X",
             contributeurs: "Holly Jackson (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 522,
+            format: "Livre",
+            nbPages: 528,
             editeur: "Casterman",
-            collection: "Casterman",
-            largeur: "14 cm",
-            longueur: "22 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.520 kg",
+            collection: "ROMANS JUNIOR",
+            largeur: "14.5 cm",
+            longueur: "21.9 cm",
+            epaisseur: "3.5 cm",
+            poids: "0.548 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Thriller jeunesse"
+            saga: "Meurtre mode d'emploi",
+            categories: "Livres, Jeunesse, Adolescents, Adolescents et jeunes adultes"
         }
     },
     {
@@ -438,7 +438,7 @@ const booksData = [
     },
 
     // ============================================================
-    // DÉVELOPPEMENT PERSONNEL
+    // DÉVELOPPEMENT PERSONNEL (17 à 24)
     // ============================================================
     {
         id: 17,
@@ -450,21 +450,20 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Devenez riche rapidement.",
-        resume: "L’Autoroute du millionnaire est un livre qui remet en question les croyances traditionnelles sur la richesse. MJ DeMarco, multimillionnaire autodidacte, expose sa vision : la voie rapide vers la liberté financière passe par l'entrepreneuriat et la création de valeur, non par l'épargne et la retraite.",
+        resume: "Allez à l'école, obtenez de bons diplômes et un poste de cadre. Achetez votre résidence principale dès que possible, limitez les dépenses au maximum et épargnez 10% de vos revenus. Si vous suivez ces recommandations, vous serez peut-être riche un jour... mais pas avant de nombreuses années ! Ou bien, oubliez ces conseils et devenez riche maintenant. MJ DeMarco, entrepreneur parti de zéro, est devenu multimillionnaire en respectant les 5 commandements qui mènent vers la richesse.",
         details: {
-            ean: "9782897811903",
-            isbn: "2897811906",
-            contributeurs: "MJ DeMarco (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 400,
-            editeur: "Un Monde Différent",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.600 kg",
+            ean: "9782849334652",
+            isbn: "2849334650",
+            contributeurs: "MJ DeMarco (Auteur principal), Florence Logerot-depraz (Traducteur)",
+            format: "Livre",
+            nbPages: 501,
+            editeur: "Contre-Dires",
+            largeur: "15.4 cm",
+            longueur: "23.1 cm",
+            epaisseur: "2.8 cm",
+            poids: "0.726 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Finance"
+            categories: "Livres, Guides pratiques de développement personnel, Gestion de fortune et patrimoine"
         }
     },
     {
@@ -477,21 +476,20 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Les clés de la réussite financière.",
-        resume: "Père riche, père pauvre est un best-seller mondial qui brise le mythe selon lequel il faut gagner beaucoup d'argent pour devenir riche. Robert Kiyosaki propose un parallèle entre la mentalité d'un père riche et celle d'un père pauvre, et enseigne les principes de l'éducation financière.",
+        resume: "Père riche, Père pauvre est le meilleur ouvrage de tous les temps en matière de finances personnelles ! Il brise le mythe selon lequel il faut gagner beaucoup d'argent pour devenir riche, remet en question la croyance voulant que votre maison est un actif, et explique aux parents pourquoi ils ne doivent pas se fier au système d'éducation pour enseigner les rudiments de l'argent à leurs enfants.",
         details: {
-            ean: "9782081517017",
-            isbn: "2081517019",
+            ean: "9782892259551",
+            isbn: "289225955X",
             contributeurs: "Robert T. Kiyosaki (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 300,
-            editeur: "Maxima",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2 cm",
-            poids: "0.450 kg",
+            format: "Livre",
+            nbPages: 336,
+            editeur: "UN MONDE DIFFERENT",
+            largeur: "15.3 cm",
+            longueur: "22.9 cm",
+            epaisseur: "2.4 cm",
+            poids: "0.38 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Finance"
+            categories: "Livres, Gestion de fortune et patrimoine, Méditation et développement personnel"
         }
     },
     {
@@ -504,21 +502,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Les 13 principes de la réussite.",
-        resume: "Réfléchissez et devenez riche est un classique du développement personnel. Napoleon Hill y développe treize principes universels pour atteindre la réussite, basés sur des interviews de plus de 500 personnes riches et célèbres.",
+        resume: "Vous trouverez dans ce livre ce que personne ne vous enseignera jamais ailleurs : comment assimiler et appliquer les principes qui vous permettront de faire fortune et d'atteindre les buts que vous vous êtes fixés. Napoleon Hill parvient avec brio à démontrer comment vos pensées et vos croyances peuvent changer le cours de votre vie. Fruit d'une recherche de plus de vingt ans, Réfléchissez et devenez riche développe treize principes universels qui vous mèneront vers une réussite garantie.",
         details: {
-            ean: "9782897818322",
-            isbn: "2897818323",
+            ean: "9782290028827",
+            isbn: "2290028827",
             contributeurs: "Napoleon Hill (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 320,
-            editeur: "Un Monde Différent",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2 cm",
-            poids: "0.480 kg",
+            format: "Livre poche",
+            nbPages: 224,
+            editeur: "J'ai lu",
+            collection: "Bien-être",
+            largeur: "11 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.3 cm",
+            poids: "0.166 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Motivation"
+            categories: "Livres, Beauté, santé et bien-être, Sciences Humaines, Coaching professionnel"
         }
     },
     {
@@ -531,21 +529,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Changez vos habitudes.",
-        resume: "Atomic Habits est un guide pratique pour former de bonnes habitudes et se débarrasser des mauvaises. James Clear, expert mondial en matière de formation des habitudes, propose des stratégies concrètes pour réussir à changer durablement son comportement.",
+        resume: "Vous avez du mal à changer vos habitudes ? Le problème ne vient pas de vous, mais des moyens que vous utilisez. Les mauvaises habitudes se répètent non pas parce que vous ne voulez pas changer, mais parce que vous utilisez des moyens incompatibles avec le changement. James Clear, expert mondial en matière de création d'habitudes, vous offre des stratégies pratiques pour créer de bonnes habitudes et abandonner les mauvaises, grâce à de petits changements quotidiens.",
         details: {
-            ean: "9782100867192",
-            isbn: "2100867197",
-            contributeurs: "James Clear (Auteur principal)",
-            format: "Livre broché",
+            ean: "9782035969200",
+            isbn: "2035969204",
+            contributeurs: "James Clear (Auteur principal), Emmanuelle Hautbois (Traducteur)",
+            format: "Livre",
             nbPages: 320,
-            editeur: "Dunod",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2 cm",
-            poids: "0.450 kg",
+            editeur: "Larousse",
+            collection: "ESSAIS - DEVELO",
+            largeur: "14.2 cm",
+            longueur: "22.5 cm",
+            epaisseur: "2.5 cm",
+            poids: "0.422 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Habitudes"
+            categories: "Livres, Guides pratiques de développement personnel, Questions de société, Coaching professionnel"
         }
     },
     {
@@ -558,21 +556,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Sagesse toltèque.",
-        resume: "Dans ce livre, Don Miguel Ruiz révèle la source des croyances limitatrices qui nous privent de joie et créent des souffrances inutiles. Il montre en des termes très clairs comment appliquer les quatre accords toltèques pour se libérer et retrouver l'amour inconditionnel et la liberté personnelle.",
+        resume: "Don Miguel Ruiz révèle la source des croyances limitatrices qui nous privent de joie et créent des souffrances inutiles. Il montre en des termes très simples comment se libérer du conditionnement collectif afin de retrouver la dimension d'amour inconditionnel. Les quatre accords proposent un puissant code de conduite capable de transformer rapidement notre vie en une expérience de liberté, de vrai bonheur et d'amour.",
         details: {
-            ean: "9782702912436",
-            isbn: "2702912438",
-            contributeurs: "Don Miguel Ruiz (Auteur principal)",
+            ean: "9782889116546",
+            isbn: "2889116549",
+            contributeurs: "Miguel Ruiz (Auteur principal)",
             format: "Livre poche",
-            nbPages: 160,
-            editeur: "J'ai lu",
-            collection: "J'ai lu Bien-être",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1 cm",
-            poids: "0.100 kg",
+            nbPages: 141,
+            editeur: "Jouvence",
+            collection: "Poche",
+            largeur: "10.8 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.3 cm",
+            poids: "0.126 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Spiritualité"
+            categories: "Livres, Guides pratiques de développement personnel, Chamanisme"
         }
     },
     {
@@ -585,21 +583,20 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Choisissez vos combats.",
-        resume: "Mark Manson invite à un moment de parler vrai en mode je-te-regarde-dans-les-yeux, fait d'histoires vécues et d'humour potache. Un livre-manifeste pour construire des vies plus réjouissantes, plus ancrées. 'S'en foutre ne signifie pas être indifférent, mais être à l'aise avec le sentiment d'être différent'.",
+        resume: "Le discours ambiant nous pousse sans cesse à nous améliorer. Mais il faut en finir avec la pensée positive, nous dit Mark Manson. Soyons honnêtes : parfois tout va de travers, et il faut faire avec. C'est en regardant en face nos peurs, nos défauts et nos incertitudes que nous pourrons trouver le courage et la confiance qui nous manquent tant. Un livre-manifeste pour construire des vies plus réjouissantes, plus ancrées.",
         details: {
-            ean: "9782290135655",
-            isbn: "2290135657",
+            ean: "9782212567595",
+            isbn: "2212567596",
             contributeurs: "Mark Manson (Auteur principal)",
-            format: "Livre poche",
-            nbPages: 256,
-            editeur: "J'ai lu",
-            collection: "J'ai lu Bien-être",
-            largeur: "11 cm",
-            longueur: "18 cm",
+            format: "Livre",
+            nbPages: 188,
+            editeur: "Eyrolles",
+            largeur: "13.7 cm",
+            longueur: "21.5 cm",
             epaisseur: "1.5 cm",
-            poids: "0.160 kg",
+            poids: "0.238 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Philosophie"
+            categories: "Livres, Guides pratiques de développement personnel, Coaching professionnel"
         }
     },
     {
@@ -612,21 +609,16 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Management et productivité.",
-        resume: "Les 7 habitudes des gens efficaces est un classique du management. Stephen Covey y présente une approche de la croissance personnelle et professionnelle basée sur des principes intemporels. Le programme des Sept Habitudes fournit des pistes de réflexion et des exercices pour tirer le meilleur parti de soi-même.",
+        resume: "Pensez gagnant, changez ! Cette méthode développée par Stephen R. Covey propose une approche qui opère sur les leviers de l'efficacité personnelle et interpersonnelle. Le programme des Sept Habitudes fournit des pistes de réflexion et des exercices pour tirer le meilleur parti de soi-même, des autres et de toutes les situations d'interdépendance.",
         details: {
-            ean: "9782750102007",
-            isbn: "2750102008",
-            contributeurs: "Stephen R. Covey (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 400,
-            editeur: "First",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.550 kg",
+            ean: "9782895584315",
+            isbn: "2895584311",
+            contributeurs: "Sean Covey (Auteur principal)",
+            format: "CD-ROM",
+            editeur: "STANKE ALEXANDRE",
+            poids: "0.075 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Management"
+            categories: "Livres, Activités manuelles et artistiques, Romans, Autres Livres"
         }
     },
     {
@@ -639,26 +631,26 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Vivez mieux en travaillant moins.",
-        resume: "La Semaine de 4 heures est un véritable manifeste pour un changement radical de mode de vie. Timothy Ferriss vous démontre, exemples concrets à l'appui, qu'il est possible de diviser son temps de travail par quatre tout en augmentant ses revenus.",
+        resume: "Le guide pratique pour améliorer radicalement sa vie et faire ce que l'on aime, tout en ayant plus de temps et plus d'argent. Timothy Ferriss vous démontre qu'il est possible de diviser son temps de travail par quatre tout en augmentant ses revenus.",
         details: {
             ean: "9782744064173",
-            isbn: "2744064170",
+            isbn: "2744064173",
             contributeurs: "Timothy Ferriss (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 384,
+            format: "Livre",
+            nbPages: 390,
             editeur: "Pearson",
-            collection: "Développement personnel",
-            largeur: "15 cm",
-            longueur: "23 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.500 kg",
+            collection: "Efficacite prof",
+            largeur: "17 cm",
+            longueur: "21 cm",
+            epaisseur: "2.1 cm",
+            poids: "0.58 kg",
             impression: "Non",
-            categories: "Livres, Développement personnel, Productivité"
+            categories: "Livres, Ressources humaines - RH, Réussite professionnelle, Coaching professionnel"
         }
     },
 
     // ============================================================
-    // THRILLERS
+    // THRILLERS (25 à 28)
     // ============================================================
     {
         id: 25,
@@ -670,21 +662,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Tricia et Ethan piégés.",
-        resume: "Jeunes mariés, Tricia et Ethan recherchent la maison de leurs rêves. Alors qu'ils visitent un manoir isolé ayant appartenu au docteur Adrienne Hale, une psychiatre renommée disparue sans laisser de trace quatre ans plus tôt, une violente tempête de neige les piège sur place. Un thriller psychologique haletant.",
+        resume: "Jeunes mariés, Tricia et Ethan recherchent la maison de leurs rêves. Alors qu'ils visitent le manoir isolé de la docteure Adrienne Hale, une psychiatre disparue trois ans plus tôt, ils se retrouvent piégés par une violente tempête de neige. Tricia découvre une pièce secrète qui renferme les enregistrements audio de chaque patient. Le voile de mystère qui recouvre la disparition de la psy se lève lentement. Mais déterrer des secrets enfouis est un jeu dangereux...",
         details: {
-            ean: "9782290395677",
-            isbn: "2290395676",
-            contributeurs: "Freida McFadden (Auteur principal)",
+            ean: "9782290415627",
+            isbn: "2290415626",
+            contributeurs: "Freida McFadden (Auteur principal), Karine Forestier (Traducteur)",
             format: "Livre poche",
             nbPages: 416,
             editeur: "J'ai lu",
-            collection: "J'ai lu Thriller",
+            collection: "Policier",
             largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1.6 cm",
-            poids: "0.220 kg",
+            longueur: "17.8 cm",
+            epaisseur: "2.2 cm",
+            poids: "0.224 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Thriller psychologique"
+            categories: "Polars, thrillers et romans d'espionnage, Livres, Polars, thrillers et romans d'espionnage étrangers"
         }
     },
     {
@@ -697,21 +689,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "John Grimes.",
-        resume: "Dans ce premier roman écrit en 1952, James Baldwin raconte l'histoire de John Grimes, un adolescent intelligent dans le Harlem des années 1930, et sa relation avec sa famille et son église. Un roman semi-autobiographique sur la religion, la race et l'identité.",
+        resume: "Au soir de ses quatorze ans, au milieu des prières cadencées de ses frères, John Grimes traverse un moment essentiel, entre crise spirituelle et épiphanie. Selon sa famille, son destin est scellé : il sera prédicateur. Mais John veut mener sa vie comme il l'entend. Le libre arbitre existe-t-il pour un jeune Noir en Amérique ? Dans ce premier roman autobiographique, James Baldwin raconte à la fois son expérience et une odyssée collective.",
         details: {
-            ean: "9782267045237",
-            isbn: "2267045238",
-            contributeurs: "James Baldwin (Auteur principal)",
+            ean: "9782253250746",
+            isbn: "2253250740",
+            contributeurs: "James Baldwin (Auteur principal), Michele Albaret-maatsch (Traducteur)",
             format: "Livre poche",
-            nbPages: 288,
-            editeur: "Christian Bourgois",
-            collection: "Littérature étrangère",
+            nbPages: 352,
+            editeur: "Le Livre de Poche",
+            collection: "Biblio romans",
             largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1.5 cm",
-            poids: "0.200 kg",
+            longueur: "17.8 cm",
+            epaisseur: "1.6 cm",
+            poids: "0.184 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Littérature américaine"
+            categories: "Romans et Littérature, Livres"
         }
     },
     {
@@ -724,21 +716,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Czentovic.",
-        resume: "Prisonnier des nazis, Monsieur B., en dérobant un manuel d'échecs, a pu, à travers ce qui est devenu littéralement une folle passion, découvrir le moyen de résister à l'oppression. Cette dénonciation poignante de la barbarie nazie est le dernier texte écrit par Stefan Zweig avant son suicide.",
+        resume: "Qui est cet inconnu capable d'en remontrer au grand Czentovic, le champion mondial des échecs ? Le narrateur découvrira les circonstances terribles dans lesquelles l'inconnu a acquis cette science : les expérimentations nazies sur l'isolement absolu, où, aux frontières de la folie, le cerveau humain parvient à déployer ses facultés les plus étranges. Une fable inquiétante, fantastique, qui pourrait servir d'illustration à la charmante époque où nous vivons.",
         details: {
-            ean: "9782253075868",
-            isbn: "2253075865",
-            contributeurs: "Stefan Zweig (Auteur principal)",
+            ean: "9782253174073",
+            isbn: "2253174076",
+            contributeurs: "Stefan Zweig (Auteur principal), Brigitte Vergne-Cain (Traducteur)",
             format: "Livre poche",
-            nbPages: 96,
+            nbPages: 128,
             editeur: "Le Livre de Poche",
-            collection: "Le Livre de Poche",
+            collection: "Littérature",
             largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.100 kg",
+            longueur: "17.8 cm",
+            epaisseur: "1 cm",
+            poids: "0.108 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Classique"
+            categories: "Livres, Romans et Littérature"
         }
     },
     {
@@ -751,52 +743,53 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Carmen et Carmélito.",
-        resume: "Au poulailler souffle un vent de folie. Carmen, Carmélito, Bélino et tous leurs copains ont la tête à l'envers. La fête des fous, c'est aujourd'hui ! Et les P'tites Poules n'ont plus qu'une idée : gagner l'épreuve la plus zinzin, la plus foldingue, et devenir pour un jour le roi des fous.",
+        resume: "Rien ne va plus au poulailler : Pitikok n'arrive pas à faire lever le soleil ! Comme tous les matins, le papa de Carmen et de Carmélito a lancé son appel vers le ciel : 'Cocorico !' Mais rien ne se passe. L'astre solaire a disparu. Qu'à cela ne tienne : Carmen, Carmélito et Bélino retrouveront le soleil ! Nom d'une poule !",
         details: {
-            ean: "9782226391377",
-            isbn: "2226391372",
-            contributeurs: "Christian Jolibois (Auteur principal)",
+            ean: "9782266156639",
+            isbn: "2266156632",
+            contributeurs: "Christian Jolibois (Auteur principal), Christian Heinrich (Auteur principal)",
             format: "Livre poche",
             nbPages: 48,
             editeur: "Pocket Jeunesse",
-            collection: "Pocket Jeunesse",
-            largeur: "14 cm",
-            longueur: "19 cm",
-            epaisseur: "0.5 cm",
-            poids: "0.100 kg",
+            collection: "COLLECTION 6/9 ANS",
+            largeur: "15.1 cm",
+            longueur: "19.1 cm",
+            epaisseur: "6 mm",
+            poids: "0.11 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            saga: "Les P'tites poules",
+            categories: "Livres, Premières lectures, Lectures pour les 7-12 ans, Albums illustrés"
         }
     },
 
     // ============================================================
-    // POÉSIE
+    // POÉSIE (29 à 34)
     // ============================================================
     {
         id: 29,
         title: "Le Petit Prince",
         author: "Antoine de Saint-Exupéry",
         price: 500,
-        category: "roman",
+        category: "poesie",
         image: "images/books/le-petit-prince.jpg",
         isNew: true,
         isBestseller: true,
         description: "Conte philosophique.",
-        resume: "Le Petit Prince est une œuvre poétique et philosophique sous l'apparence d'un conte pour enfants. Le narrateur, un aviateur, rencontre un petit prince venu d'une autre planète. À travers leurs échanges, Saint-Exupéry aborde des thèmes universels comme l'amitié, l'amour, la solitude et le sens de la vie.",
+        resume: "J'ai ainsi vécu seul, sans personne avec qui parler véritablement, jusqu'à une panne dans le désert du Sahara, il y a six ans. Le premier soir je me suis endormi sur le sable à mille milles de toute terre habitée. Alors vous imaginez ma surprise, au lever du jour, quand une drôle de petite voix m'a réveillé. Elle disait : 'S'il vous plaît... dessine-moi un mouton !'",
         details: {
-            ean: "9782070612758",
-            isbn: "207061275X",
+            ean: "9782070408504",
+            isbn: "2070408507",
             contributeurs: "Antoine de Saint-Exupéry (Auteur principal)",
             format: "Livre poche",
-            nbPages: 96,
-            editeur: "Gallimard",
+            nbPages: 104,
+            editeur: "Folio",
             collection: "Folio",
             largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.080 kg",
+            longueur: "15 cm",
+            epaisseur: "7 mm",
+            poids: "0.123 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Classique"
+            categories: "Livres, Romans et Littérature, Littérature française"
         }
     },
     {
@@ -809,21 +802,18 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Poésie en prose.",
-        resume: "Une saison en enfer est un recueil de poèmes en prose dans lequel le locuteur vit et affronte ce qu'il nomme l'enfer, entre existence réelle et visions. Une œuvre majeure de la poésie française qui a marqué le symbolisme et la littérature moderne.",
+        resume: "Ce livre incandescent est le résumé d'une quête et d'une crise : quête de la vérité, crise d'un jeune homme et d'une société, crise du langage, de la culture et de la foi. Crise signifie jugement : jugement porté sur ce qu'on a cru, désillusion qui conduit à l'initiation, à la liberté de posséder la vérité dans une âme et un corps.",
         details: {
-            ean: "9782070365135",
-            isbn: "2070365132",
+            ean: "9782910233150",
+            isbn: "2910233154",
             contributeurs: "Arthur Rimbaud (Auteur principal)",
             format: "Livre poche",
-            nbPages: 128,
-            editeur: "Gallimard",
-            collection: "Poésie",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.100 kg",
+            nbPages: 64,
+            editeur: "Mille et Une Nuits",
+            collection: "La petite collection",
+            poids: "0.05 kg",
             impression: "Non",
-            categories: "Livres, Poésie, Classique"
+            categories: "Livres, Romans et Littérature, Poésie"
         }
     },
     {
@@ -836,21 +826,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Surréalisme.",
-        resume: "Capitale de la douleur est le premier recueil surréaliste de Paul Éluard, poète incontournable du XXe siècle. Ce recueil comprend une centaine de poèmes, dont les deux tiers avaient déjà été publiés dans des revues. Une œuvre fondatrice du mouvement surréaliste.",
+        resume: "Fruit de cinq années de production poétique, Capitale de la douleur (1926) est l'un des recueils les plus célèbres de Paul Éluard. S'y trouve retracé le parcours initiatique d'un jeune poète, qui exorcise son désespoir par la recherche d'un verbe pur, simple et enchanteur. La poésie qui en résulte est, pour André Breton, un miracle, un secret qui prend les couleurs de l'éternité.",
         details: {
-            ean: "9782070300730",
-            isbn: "2070300731",
+            ean: "9782080424563",
+            isbn: "2080424564",
             contributeurs: "Paul Éluard (Auteur principal)",
             format: "Livre poche",
-            nbPages: 160,
-            editeur: "Gallimard",
-            collection: "Poésie",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1 cm",
-            poids: "0.120 kg",
+            nbPages: 288,
+            editeur: "Flammarion",
+            collection: "Gf poesie",
+            largeur: "17.8 cm",
+            longueur: "10.8 cm",
+            epaisseur: "1.3 cm",
+            poids: "0.148 kg",
             impression: "Non",
-            categories: "Livres, Poésie, Surréalisme"
+            categories: "Romans et Littérature, Livres, Poésie"
         }
     },
     {
@@ -863,21 +853,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Amour, travail, liberté.",
-        resume: "Après douze ans d'exil, son navire est enfin arrivé. La mer l'appelle. Bientôt, Almustafa va quitter la terre d'Orphalese. Avant de partir, il livre à la foule venue l'écouter des leçons de vie sur l'amour, le travail, la liberté, la mort. Une œuvre poétique universelle traduite en plus de 40 langues.",
+        resume: "Après douze ans d'exil, son navire est enfin arrivé. La mer l'appelle. Bientôt, Almustafa reverra son île natale. Mais il ne quittera pas la cité d'Orphalèse sans dispenser à son peuple les enseignements de sa profonde sagesse. Amour, mariage, liberté, travail, mort... Ce qui bouge en nos âmes n'a pas de secret pour lui, qui connaît les rêves du vent et le cœur de Dieu.",
         details: {
-            ean: "9782253064091",
-            isbn: "225306409X",
-            contributeurs: "Khalil Gibran (Auteur principal)",
+            ean: "9782266294546",
+            isbn: "2266294547",
+            contributeurs: "Khalil Gibran (Auteur principal), Didier Senecal (Traducteur)",
             format: "Livre poche",
-            nbPages: 126,
-            editeur: "Le Livre de Poche",
-            collection: "Le Livre de Poche",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1 cm",
-            poids: "0.100 kg",
+            nbPages: 96,
+            editeur: "Pocket",
+            collection: "Classiques Pocket",
+            largeur: "10.9 cm",
+            longueur: "17.9 cm",
+            epaisseur: "9 mm",
+            poids: "0.07 kg",
             impression: "Non",
-            categories: "Livres, Poésie, Philosophie"
+            categories: "Livres, Romans et Littérature, Poésie"
         }
     },
     {
@@ -890,21 +880,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Symbolisme.",
-        resume: "Les Fleurs du Mal est un recueil de poèmes de Charles Baudelaire qui a marqué l'histoire de la littérature française. L'œuvre explore les thèmes du mal, de la beauté, de la mort et de la mélancolie dans une langue d'une grande richesse et modernité.",
+        resume: "Plonger au fond du gouffre, Enfer ou Ciel, qu'importe ? Au fond de l'inconnu, pour trouver du nouveau ! Ces vers du Voyage éclairent à eux seuls l'entreprise du poète. Baudelaire explore les dédales de la conscience, atteint tantôt à l'extase, tantôt se perd dans les abîmes du péché. À travers ses poèmes, il nous fait partager le drame qui se joue en lui et qui n'est autre que la tragédie humaine.",
         details: {
-            ean: "9782253056508",
-            isbn: "225305650X",
+            ean: "9782070307661",
+            isbn: "2070307662",
             contributeurs: "Charles Baudelaire (Auteur principal)",
             format: "Livre poche",
-            nbPages: 384,
-            editeur: "Le Livre de Poche",
-            collection: "Le Livre de Poche",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1.5 cm",
-            poids: "0.200 kg",
+            nbPages: 352,
+            editeur: "Gallimard",
+            collection: "Poésie/Gallimard",
+            largeur: "10.8 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.7 cm",
+            poids: "0.282 kg",
             impression: "Non",
-            categories: "Livres, Poésie, Classique"
+            categories: "Livres, Poésie"
         }
     },
     {
@@ -917,26 +907,26 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Résistance.",
-        resume: "Fureur et Mystère est un recueil de poésie de René Char publié en 1948. Il rassemble ses textes poétiques écrits depuis près d'une décennie, de Seuls demeurent... Une œuvre majeure du poète résistant, marquée par son engagement et sa révolte contre l'oppression.",
+        resume: "Pourquoi le cacher ? Ce n'est pas une poésie facile. Ses difficultés sont à proportion, en nous, des vieilles habitudes de voir et de leur résistance : René Char ou la jeunesse des mots, du monde... Il faut le lire et le relire pour, peu à peu, sentir en soi la débâcle des vieilles digues, de l'imagination paresseuse. Poésie qui se gagne, comme la terre promise de la légende et de l'histoire.",
         details: {
-            ean: "9782070317962",
-            isbn: "2070317960",
-            contributeurs: "René Char (Auteur principal)",
+            ean: "9782070300655",
+            isbn: "207030065X",
+            contributeurs: "Rene Char (Auteur principal)",
             format: "Livre poche",
             nbPages: 224,
             editeur: "Gallimard",
-            collection: "Poésie",
-            largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1 cm",
-            poids: "0.150 kg",
+            collection: "Poésie/Gallimard",
+            largeur: "10.8 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.1 cm",
+            poids: "0.186 kg",
             impression: "Non",
-            categories: "Livres, Poésie, Résistance"
+            categories: "Livres, Poésie"
         }
     },
 
     // ============================================================
-    // MANGAS (sélection)
+    // MANGAS (35 à 44)
     // ============================================================
     {
         id: 35,
@@ -948,21 +938,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Luffy veut devenir Roi des Pirates.",
-        resume: "Nous sommes à l'ère des pirates. Luffy, un garçon espiègle, rêve de devenir le roi des pirates en trouvant le 'One Piece', un fabuleux trésor. Il a avalé par mégarde un fruit démoniaque qui l'a transformé en homme-caoutchouc. Commence alors une grande aventure sur les mers.",
+        resume: "Nous sommes à l'ère des pirates. Luffy, un garçon espiègle, rêve de devenir le roi des pirates en trouvant le 'One Piece', un fabuleux trésor. Il a avalé un fruit du démon qui l'a transformé en homme-caoutchouc. Depuis, il est capable de contorsionner son corps dans tous les sens, mais il a perdu la faculté de nager. Avec l'aide de ses précieux amis, il va devoir affronter de redoutables pirates dans des aventures toujours plus rocambolesques.",
         details: {
-            ean: "9782723480109",
-            isbn: "2723480100",
-            contributeurs: "Eiichiro Oda (Auteur principal)",
+            ean: "9782723488525",
+            isbn: "2723488527",
+            contributeurs: "Eiichirō Oda (Auteur principal)",
             format: "Livre poche",
-            nbPages: 207,
+            nbPages: 208,
             editeur: "Glénat",
-            collection: "Shonen",
+            collection: "Shōnen",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.4 cm",
-            poids: "0.180 kg",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.15 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "One Piece",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -975,21 +966,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Denji et son démon.",
-        resume: "Pour rembourser ses dettes, Denji, jeune homme dans la dèche la plus totale, est exploité en tant que Devil Hunter avec son chien-démon-tronçonneuse, Pochita. Mais suite à une cruelle trahison, Denji se retrouve transformé en Chainsaw Man, un hybride mi-homme mi-démon, prêt à tout pour survivre.",
+        resume: "Pour rembourser ses dettes, Denji, jeune homme dans la dèche la plus totale, est exploité en tant que Devil Hunter avec son chien-démon-tronçonneuse, 'Pochita'. Mais suite à une cruelle trahison, il voit enfin une possibilité de se tirer des bas-fonds où il croupit ! Devenu surpuissant après sa fusion avec Pochita, Denji est recruté par une organisation de Devil Hunters et part à la chasse aux démons.",
         details: {
-            ean: "9782820338026",
-            isbn: "2820338026",
-            contributeurs: "Tatsuki Fujimoto (Auteur principal)",
+            ean: "9782820337825",
+            isbn: "2820337821",
+            contributeurs: "Tatsuki Fujimoto (Auteur principal), Sebastien Ludmann (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
-            editeur: "Kazé",
-            collection: "Shonen",
+            editeur: "Crunchyroll",
+            collection: "Shonen up!",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
+            longueur: "17.7 cm",
             epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            poids: "0.13 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Seinen"
+            saga: "Chainsaw Man",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen, Seinen, Josei"
         }
     },
     {
@@ -1002,21 +994,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Eren contre les Titans.",
-        resume: "Dans un monde où l'humanité vit recluse derrière d'immenses murs pour se protéger des Titans, des créatures géantes dévoreuses d'hommes, Eren Yeager rêve de voir le monde extérieur. Après la destruction de son village, il jure de se venger et de libérer l'humanité.",
+        resume: "Le monde appartient désormais aux Titans, des êtres gigantesques qui ont presque décimé l'Humanité. Voilà une centaine d'années, les derniers rescapés ont bâti une place forte, une cité cernée d'une haute muraille. Hélas, cette illusion de sécurité vole en éclats le jour où surgit un Titan démesuré, encore bien plus colossal que tous les autres. S'engage alors un combat désespéré pour la survie du genre humain.",
         details: {
-            ean: "9782811620790",
-            isbn: "2811620796",
+            ean: "9782811611699",
+            isbn: "281161169X",
             contributeurs: "Hajime Isayama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.180 kg",
+            collection: "Pika Seinen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.188 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "L'Attaque des Titans",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
     {
@@ -1029,21 +1022,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Le ninja au démon-renard.",
-        resume: "Konoha sévit Naruto, le pire garnement de l'école des ninjas ! Son passe-temps favori ? Faire des farces. Mais Naruto cache un terrible secret : il est le dépositaire du démon-renard à neuf queues qui a détruit le village. Déterminé à devenir Hokage, le chef de son village, il s'entraîne sans relâche.",
+        resume: "Naruto est un garçon un peu spécial. Il est toujours tout seul et son caractère fougueux ne l'aide pas vraiment à se faire apprécier dans son village. Malgré cela, il garde au fond de lui une ambition : celle de devenir un maître Hokage, la plus haute distinction dans l'ordre des ninjas, et ainsi obtenir la reconnaissance de ses pairs.",
         details: {
-            ean: "9782871296140",
-            isbn: "2871296146",
+            ean: "9782871294146",
+            isbn: "2871294143",
             contributeurs: "Masashi Kishimoto (Auteur principal)",
             format: "Livre poche",
-            nbPages: 187,
+            nbPages: 192,
             editeur: "Kana",
-            collection: "Shonen Kana",
-            largeur: "11.5 cm",
+            collection: "Shōnen",
+            largeur: "12 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.2 cm",
-            poids: "0.160 kg",
+            epaisseur: "1.4 cm",
+            poids: "0.138 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Naruto",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1056,21 +1050,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Son Goku et les Dragon Balls.",
-        resume: "Son Goku, un jeune garçon avec une queue de singe, mène une vie paisible dans les montagnes jusqu'au jour où il rencontre Bulma, une jeune fille en quête des sept Dragon Balls. Si on les réunit, un dragon puissant apparaît et exauce un vœu. Commence alors une grande aventure.",
+        resume: "Les dragon balls sont des boules de cristal magiques. Celui qui les réunit invoque un dragon qui réalisera ses vœux. Sangoku, Dendé, Végéta et tous les protagonistes de cette grande saga tentent de trouver les sept dragon balls qui, une fois le vœu exaucé, s'éparpilleront à nouveau dans l'univers.",
         details: {
-            ean: "9782723480918",
-            isbn: "2723480917",
+            ean: "9782876952058",
+            isbn: "287695205X",
             contributeurs: "Akira Toriyama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Glénat",
-            collection: "Shonen",
+            collection: "Shōnen",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            longueur: "18 cm",
+            poids: "0.135 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Dragon Ball",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1083,21 +1077,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Tanjiro sauve sa sœur.",
-        resume: "Le Japon, au début du XXe siècle. Tanjiro, un jeune marchand de charbon, mène une vie paisible jusqu'au jour funeste où il découvre sa famille entièrement décimée par un démon. Sa sœur Nezuko est la seule survivante, mais elle a été transformée en démon. Tanjiro décide de devenir un pourfendeur de démons pour trouver un remède.",
+        resume: "Le Japon, au début du XXe siècle. Un jeune vendeur de charbon nommé Tanjiro mène une vie sans histoire dans les montagnes, jusqu'au jour tragique où il découvre son village et sa famille massacrés par un démon. La seule survivante est sa jeune sœur Nezuko, qui s'est métamorphosée en monstre féroce. Afin de renverser le processus et de venger sa famille, Tanjiro décide de partir en quête de vérité.",
         details: {
-            ean: "9791039101264",
-            isbn: "1039101268",
-            contributeurs: "Koyoharu Gotouge (Auteur principal)",
+            ean: "9782809482317",
+            isbn: "2809482314",
+            contributeurs: "Koyoharu Gotôge (Auteur principal), Arnaud Takahashi (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Panini",
-            collection: "Shonen",
-            largeur: "11.5 cm",
+            largeur: "11.6 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            epaisseur: "1.7 cm",
+            poids: "0.155 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Demon Slayer",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1110,21 +1104,22 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "La malédiction du zodiaque.",
-        resume: "Tohru Honda, jeune lycéenne courageuse et volontaire, vit sous une tente dans les bois depuis que sa mère est décédée. Elle est découverte par la famille Soma, qui l'invite à vivre chez eux. Mais Tohru découvre bientôt que les Soma sont maudits : ils se transforment en animaux du zodiaque chinois lorsqu'ils sont stressés ou serrés dans les bras.",
+        resume: "Tohru, orpheline de seize ans, a décidé d'être totalement indépendante. Elle installe une grande tente au milieu d'un terrain en friche. Malheureusement, le terrain appartient aux Sôma, une famille maudite, dont les membres se transforment en l'un des douze animaux du zodiaque chinois à chaque fois qu'ils sont trop fatigués ou approchés de près par une personne du sexe opposé ! Tohru est la première à percer leur secret.",
         details: {
-            ean: "9782344040830",
-            isbn: "2344040831",
+            ean: "9782413000778",
+            isbn: "2413000771",
             contributeurs: "Natsuki Takaya (Auteur principal)",
             format: "Livre poche",
-            nbPages: 200,
-            editeur: "Akata",
-            collection: "Shojo",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            nbPages: 392,
+            editeur: "Delcourt",
+            collection: "SHOJO DELCOURT/TONKAM",
+            largeur: "12.8 cm",
+            longueur: "18.2 cm",
+            epaisseur: "2.7 cm",
+            poids: "0.37 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shojo"
+            saga: "Fruits basket",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōjo"
         }
     },
     {
@@ -1137,21 +1132,22 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Usagi, guerrière magique.",
-        resume: "Usagi Tsukino est une jeune collégienne un peu maladroite et pleurnicharde. Sa vie change lorsqu'elle rencontre un chat noir qui lui apprend qu'elle est la réincarnation d'une guerrière lunaire, Sailor Moon. Elle doit désormais protéger la Terre des forces du mal.",
+        resume: "Usagi est une jeune fille de 14 ans comme tant d'autres : elle aime dormir, jouer aux jeux vidéo, elle pleure pour un oui ou pour un non et elle ne se passionne pas pour ses études. Mais un beau jour, elle croise le chemin de Luna, un chat doué de parole qui va la transformer en une jolie justicière : Sailor Moon ! La voilà investie de plusieurs missions, tout en luttant contre de mystérieux ennemis.",
         details: {
-            ean: "9782723485647",
-            isbn: "2723485641",
-            contributeurs: "Naoko Takeuchi (Auteur principal)",
+            ean: "9782811607135",
+            isbn: "2811607137",
+            contributeurs: "Naoko Takeuchi (Auteur principal), Fedoua Lamodiere (Traducteur)",
             format: "Livre poche",
-            nbPages: 226,
-            editeur: "Glénat",
-            collection: "Shojo",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.4 cm",
-            poids: "0.180 kg",
+            nbPages: 248,
+            editeur: "Pika",
+            collection: "PURPLE SHINE",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "2 cm",
+            poids: "0.214 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shojo"
+            saga: "Sailor Moon",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōjo"
         }
     },
     {
@@ -1164,21 +1160,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Yuji et Sukuna.",
-        resume: "Yuji Itadori est un lycéen au physique hors norme qui intègre le club de recherche sur les phénomènes occultes. Un jour, il tombe sur un doigt maudit qui attire les démons. Pour sauver ses amis, il avale le doigt et devient l'hôte de Ryomen Sukuna, un démon redoutable.",
+        resume: "Chaque année au Japon, on recense plus de 10 000 morts inexpliquées et portés disparus. Dans la majorité des cas, ce sont les sentiments négatifs des êtres humains qui sont en cause. Yuji Itadori, lycéen et membre du club de spiritisme, va découvrir à ses dépens la réalité des malédictions. Il avale le doigt sectionné d'une créature millénaire et se retrouve possédé par Ryomen Sukuna, le célèbre démon à deux visages.",
         details: {
-            ean: "9791032706749",
-            isbn: "1032706740",
-            contributeurs: "Gege Akutami (Auteur principal)",
+            ean: "9791032705544",
+            isbn: "9791032705544",
+            contributeurs: "Gege Akutami (Illustrateur), Gege Akutami (Scénariste), Fedoua Lamodiere (Traducteur)",
             format: "Livre poche",
             nbPages: 188,
             editeur: "Ki-oon",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Shōnen",
+            largeur: "12 cm",
+            longueur: "17.7 cm",
+            epaisseur: "1.8 cm",
+            poids: "0.175 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Jujutsu Kaisen",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1191,26 +1188,27 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Thorfinn, vengeance et paix.",
-        resume: "Thorfinn est un jeune guerrier viking qui a juré de venger la mort de son père, tué par le chef de guerre Askeladd. Pour cela, il s'est engagé dans sa troupe et participe à ses pillages. Mais peu à peu, Thorfinn remet en question sa quête de vengeance et aspire à un monde de paix.",
+        resume: "Depuis qu'Askeladd, un chef de guerre fourbe et sans honneur, a tué son père lorsqu'il était enfant, Thorfinn le suit partout dans le but de se venger. Mais bien qu'il soit devenu un guerrier redoutable, il ne parvient toujours pas à vaincre son ennemi. Au fil des ans, le gentil Thorfinn est devenu froid et solitaire, prisonnier de son passé et incapable d'aller de l'avant. Jusqu'à ce que la vie le force à regarder le Monde différemment.",
         details: {
             ean: "9782351423554",
             isbn: "2351423550",
-            contributeurs: "Makoto Yukimura (Auteur principal)",
+            contributeurs: "Makoto Yukimura (Auteur principal), Xaviere Daumarie (Traducteur)",
             format: "Livre poche",
-            nbPages: 213,
+            nbPages: 228,
             editeur: "Kurokawa",
-            collection: "Seinen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.4 cm",
-            poids: "0.180 kg",
+            collection: "Vinland saga",
+            largeur: "13 cm",
+            longueur: "18.4 cm",
+            epaisseur: "1.9 cm",
+            poids: "0.209 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Seinen"
+            saga: "Vinland Saga",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
 
     // ============================================================
-    // NOUVEAUX LIVRES
+    // NOUVEAUX LIVRES (45 à 49)
     // ============================================================
     {
         id: 45,
@@ -1222,21 +1220,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Katniss et les jeux de la faim.",
-        resume: "Dans un futur sombre, sur les ruines des États-Unis, un jeu télévisé est organisé chaque année. Vingt-quatre jeunes, un garçon et une fille par district, sont tirés au sort pour participer aux Hunger Games. La règle est simple : 24 concurrents, un seul survivant. Katniss Everdeen se porte volontaire pour sauver sa sœur.",
+        resume: "Dans un futur sombre, sur les ruines des États-Unis, un jeu télévisé est créé pour contrôler le peuple par la terreur. Douze garçons et douze filles tirés au sort participent à cette sinistre téléréalité. Quand sa petite sœur est appelée pour participer aux Hunger Games, Katniss n'hésite pas une seconde. Elle prend sa place, consciente du danger. À seize ans, Katniss a déjà été confrontée plusieurs fois à la mort. Chez elle, survivre est comme une seconde nature.",
         details: {
-            ean: "9782266228030",
-            isbn: "2266228038",
+            ean: "9782266260770",
+            isbn: "2266260774",
             contributeurs: "Suzanne Collins (Auteur principal), Guillaume Fournier (Traducteur)",
             format: "Livre poche",
             nbPages: 432,
             editeur: "Pocket Jeunesse",
-            collection: "Pocket Jeunesse",
+            collection: "ROMANS CONTES",
             largeur: "11 cm",
-            longueur: "18 cm",
-            epaisseur: "1.8 cm",
-            poids: "0.250 kg",
+            longueur: "17.9 cm",
+            epaisseur: "3.1 cm",
+            poids: "0.283 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Science-fiction"
+            saga: "Hunger Games",
+            categories: "Livres, Jeunesse, Adolescents"
         }
     },
     {
@@ -1249,21 +1248,20 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Une petite fille surdouée.",
-        resume: "Matilda est une petite fille surdouée de cinq ans qui adore lire. Ses parents, qui la négligent, ne comprennent pas son intelligence exceptionnelle. À l'école, elle affronte la terrible directrice Miss Trunchbull et découvre qu'elle possède des pouvoirs télékinésiques.",
+        resume: "Avant même d'avoir cinq ans, Matilda sait lire et écrire, connaît tout Dickens, tout Hemingway, a dévoré Kipling et Steinbeck. Pourtant son existence est loin d'être facile entre une mère indifférente et un père d'une franche malhonnêteté. Sans oublier mademoiselle Legourdin, la directrice de l'école, qui voue à tous les enfants une haine implacable.",
         details: {
-            ean: "9782070618361",
-            isbn: "2070618367",
+            ean: "9782070512546",
+            isbn: "2070512541",
             contributeurs: "Roald Dahl (Auteur principal)",
             format: "Livre poche",
-            nbPages: 272,
             editeur: "Gallimard Jeunesse",
             collection: "Folio Junior",
             largeur: "12.5 cm",
-            longueur: "18 cm",
-            epaisseur: "1.5 cm",
-            poids: "0.200 kg",
+            longueur: "17.8 cm",
+            epaisseur: "1.2 cm",
+            poids: "0.16 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Roman"
+            categories: "Livres, Jeunesse"
         }
     },
     {
@@ -1276,21 +1274,22 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Les aventures de Nicolas.",
-        resume: "Le Petit Nicolas est une série de livres pour enfants créée par René Goscinny et illustrée par Sempé. Les histoires racontent les aventures d'un petit garçon, Nicolas, et de sa bande de copains à l'école et à la maison.",
+        resume: "Ensemble, le Petit Nicolas et ses copains s'amusent beaucoup. Il faut dire qu'à la maison, au cirque, à la fête foraine ou en retenue, ils ont toujours des idées chouettes comme tout, même si le surveillant, le directeur, la maîtresse, les parents, les voisins et le patron de papa n'ont pas l'air d'être de cet avis... Pourtant, Nicolas et ses amis ne font jamais de bêtises, c'est vrai quoi à la fin !",
         details: {
-            ean: "9782070616503",
-            isbn: "207061650X",
-            contributeurs: "René Goscinny (Auteur principal), Sempé (Illustrateur)",
+            ean: "9782070619870",
+            isbn: "2070619877",
+            contributeurs: "René Goscinny (Auteur principal), Sempé (Auteur principal)",
             format: "Livre poche",
             nbPages: 160,
             editeur: "Gallimard Jeunesse",
             collection: "Folio Junior",
-            largeur: "12.5 cm",
-            longueur: "18 cm",
-            epaisseur: "1 cm",
-            poids: "0.150 kg",
+            largeur: "12.4 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.1 cm",
+            poids: "0.212 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Roman"
+            saga: "Le petit Nicolas : les histoires inédites",
+            categories: "Livres, Jeunesse, Romans d'humour, Lectures pour les 7-12 ans"
         }
     },
     {
@@ -1303,21 +1302,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un roman contemporain.",
-        resume: "Chris et Chloé s’adorent autant qu’ils s’exaspèrent. Plus de trois minutes dans la même pièce et c’est l’apocalypse. Et pour cause : Chloé n’a jamais pardonné à Chris... Une romance poignante marquée par la maladie, l’espoir et la force des sentiments.",
+        resume: "Il arrive parfois que le destin nous mette face à la bonne personne. Encore faut-il y être prêt. Chris et Chloé s'adorent autant qu'ils s'exaspèrent. Chloé n'a jamais pardonné à Christopher Dean Lewis de lui avoir brisé le cœur quand ils étaient plus jeunes. Lorsque Chloé se retrouve à la rue et que Chris est contraint de l'héberger, les barrières tombent une à une. Mais à vouloir gagner à tout prix, ils risquent de perdre bien plus que ce qu'ils avaient misé.",
         details: {
-            ean: "9782755698534",
-            isbn: "2755698531",
-            contributeurs: "Lyly Blabla (Auteur principal)",
-            format: "Livre poche",
+            ean: "9782755673821",
+            isbn: "2755673826",
+            contributeurs: "Lylyblabla (Auteur principal)",
+            format: "Livre",
             nbPages: 496,
-            editeur: "Hugo & Cie",
-            collection: "Romance",
-            largeur: "14 cm",
-            longueur: "21 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.450 kg",
+            editeur: "Hugo Roman",
+            collection: "New Romance",
+            largeur: "13 cm",
+            longueur: "20.5 cm",
+            epaisseur: "3.5 cm",
+            poids: "0.444 kg",
             impression: "Non",
-            categories: "Livres, Romans et Littérature, Romance"
+            categories: "Romance et Littérature sentimentale, Littérature française, Livres"
         }
     },
     {
@@ -1330,26 +1329,27 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un roman fantastique.",
-        resume: "Dans un roman aux airs du Château Ambulant de Miyazaki, découvrez la fabuleuse relation entre Theodora, une jeune fille, et le monde des faës. Un roman historique qui mêle enquête et magie, le tout saupoudré d'une pointe de romance.",
+        resume: "Faire son entrée dans la haute société londonienne pour trouver un époux n'est pas un problème lorsqu'on est aussi ravissante que Vanessa Ettings. Mais pour sa cousine Theodora, qui n'éprouve plus aucune émotion depuis qu'un faë s'est emparé de la moitié de son âme, ce n'est pas chose aisée. Rien ne pourrait vaincre son indifférence. Mais alors, pourquoi le mauvais caractère du lord Sorcier la perturbe-t-elle autant ?",
         details: {
-            ean: "9782226484345",
-            isbn: "2226484346",
+            ean: "9782226479662",
+            isbn: "222647966X",
             contributeurs: "Olivia Atwater (Auteur principal), Nathalie Huet (Traducteur)",
-            format: "Livre broché",
+            format: "Livre",
             nbPages: 360,
-            editeur: "Albin Michel Jeunesse",
-            collection: "Fantasy",
-            largeur: "14 cm",
-            longueur: "21 cm",
-            epaisseur: "2.2 cm",
-            poids: "0.400 kg",
+            editeur: "Albin Michel",
+            collection: "Wiz",
+            largeur: "14.5 cm",
+            longueur: "21.5 cm",
+            epaisseur: "2.8 cm",
+            poids: "0.482 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Fantasy"
+            saga: "Chroniques de la cour des faës",
+            categories: "Livres, Jeunesse, Adolescents et jeunes adultes, Jeunes adultes"
         }
     },
 
     // ============================================================
-    // MANGAS SUPPLÉMENTAIRES
+    // MANGAS SUPPLÉMENTAIRES (50 à 67)
     // ============================================================
     {
         id: 50,
@@ -1361,21 +1361,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Luffy et son équipage.",
-        resume: "Suite et fin du combat dantesque entre Luffy et le capitaine Creek. Fidèle à ses convictions et ignorant la peur, Luffy défie Don Krieg sans la moindre hésitation afin de mettre fin à la bataille acharnée qui fait rage sur le Baratie.",
+        resume: "Ferme dans ses convictions et ignorant la peur, Luffy défie Don Krieg sans aucune hésitation. Ce combat mettra-t-il un terme à la bataille acharnée qui s'est engagée sur le 'Baratie' ? Pour Sanji, l'heure du départ à l'aventure s'apprête à sonner.",
         details: {
-            ean: "9782723485838",
-            isbn: "2723485830",
-            contributeurs: "Eiichiro Oda (Auteur principal)",
+            ean: "9782723489959",
+            isbn: "2723489957",
+            contributeurs: "Eiichirō Oda (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Glénat",
-            collection: "Shonen",
+            collection: "Shōnen",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.143 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "One Piece",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1388,21 +1389,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Saitama, le héros le plus puissant.",
-        resume: "Saitama est un jeune homme sans emploi et sans réelle perspective d'avenir, jusqu'au jour où il décide de prendre sa vie en main. Son nouvel objectif : devenir un super-héros. Après un entraînement intensif, il est devenu si puissant qu'il peut vaincre n'importe quel ennemi en un seul coup de poing.",
+        resume: "Saitama est un jeune homme sans emploi et sans réelle perspective d'avenir, jusqu'au jour où il décide de prendre sa vie en main. Son nouvel objectif : devenir un super-héros. Il s'entraîne alors sans relâche pendant trois ans et devient si puissant qu'il est capable d'éliminer ses adversaires d'un seul coup de poing. On le surnomme désormais One-Punch Man. Mais rapidement, l'euphorie du succès cède place à l'ennui, car lorsqu'on est si fort, les victoires perdent de leur saveur.",
         details: {
-            ean: "9782368523263",
-            isbn: "2368523269",
-            contributeurs: "Yusuke Murata (Illustrateur), ONE (Scénariste)",
+            ean: "9782368522257",
+            isbn: "2368522255",
+            contributeurs: "Yūsuke Murata (Auteur principal), ONE (Auteur principal), Frederic Malet (Traducteur)",
             format: "Livre poche",
-            nbPages: 192,
+            nbPages: 208,
             editeur: "Kurokawa",
-            collection: "Seinen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "One-Punch Man",
+            largeur: "11.7 cm",
+            longueur: "17.8 cm",
+            epaisseur: "1.7 cm",
+            poids: "0.164 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Seinen"
+            saga: "One-Punch Man",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1415,21 +1417,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Tanjiro affronte les démons.",
-        resume: "Tanjiro, Zenitsu et Inosuke sont partis en mission dans le quartier des plaisirs de Yoshiwara avec Tengen Uzui, le pilier du son. En effet, c'est là-bas que les trois kunoichis de Tengen, envoyées en reconnaissance pour débusquer un démon, ont disparu. Pour mener leur enquête, ils doivent se déguiser en filles.",
+        resume: "Tanjiro, Zenitsu et Inosuke sont partis en mission dans le quartier des plaisirs de Yoshiwara avec Tengen Uzui, le pilier du son. En effet, c'est là-bas que les trois kunoichis de Tengen, envoyées en reconnaissance pour débusquer un démon, ont disparu. Pour mener leur enquête dans les maisons des courtisanes, Tanjiro et ses compagnons doivent se déguiser en filles. Mais malgré tous leurs efforts, le démon semble introuvable.",
         details: {
-            ean: "9791039124775",
-            isbn: "1039124772",
-            contributeurs: "Koyoharu Gotouge (Auteur principal)",
+            ean: "9782809487565",
+            isbn: "2809487561",
+            contributeurs: "Koyoharu Gotôge (Illustrateur), Koyoharu Gotôge (Scénariste), Arnaud Takahashi (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Panini",
-            collection: "Shonen",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            longueur: "17.8 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.152 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Demon Slayer",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1442,21 +1444,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Suite des aventures.",
-        resume: "Pour la première fois depuis 113 ans, un démon de la lune supérieure a été battu. Hors de lui, Muzan convoque les autres démons de la lune supérieure afin de leur ordonner d'intensifier l'attaque contre les pourfendeurs. Lors de la bataille contre Dahi et Gyutaro, le sabre de Tanjiro a été brisé.",
+        resume: "Pour la première fois depuis 113 ans, un démon de la Lune supérieure a été battu. Hors de lui, Muzan convoque les autres démons de la lune supérieure afin de leur ordonner d'intensifier l'attaque contre les pourfendeurs. Lors de la bataille contre Dahi et Gyutaro, le sabre de Tanjiro a été brisé. Tandis qu'il est à la recherche d'un nouveau sabre, Tanjiro visite le village caché des forgerons où se trouve Haganezuka.",
         details: {
-            ean: "9791039115643",
-            isbn: "1039115641",
-            contributeurs: "Koyoharu Gotouge (Auteur principal)",
+            ean: "9782809490084",
+            isbn: "2809490082",
+            contributeurs: "Koyoharu Gotôge (Auteur principal), Arnaud Takahashi (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Panini",
-            collection: "Shonen",
+            collection: "Panini Manga",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            longueur: "17.6 cm",
+            epaisseur: "2.1 cm",
+            poids: "0.153 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Demon Slayer",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1469,21 +1472,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Suite des aventures.",
-        resume: "Les lunes supérieures Gyokko et Hantengu ont attaqué le village caché des forgeurs de sabres. Tandis que Tanjiro, Genya et Nezuko font face à Hantengu (qui se dédouble à chaque fois qu'on lui coupe un membre), Tokito, le pilier de la Brume, et Kanroji, le pilier de l'Amour, affrontent Gyokko.",
+        resume: "Les lunes supérieures Gyokko et Hantengu ont attaqué le village caché des forgeurs de sabres. Tandis que Tanjiro, Genya et Nezuko font face à Hantengu (qui se dédouble à chaque fois qu'on lui coupe un membre), Tokito, le pilier de la Brume, et Kanroji, le pilier de l'Amour, affrontent Gyokko et son vase tout droit sorti d'un cauchemar.",
         details: {
-            ean: "9791039115650",
-            isbn: "103911565X",
-            contributeurs: "Koyoharu Gotouge (Auteur principal)",
+            ean: "9782809491616",
+            isbn: "2809491615",
+            contributeurs: "Koyoharu Gotôge (Auteur principal), Xaviere Daumarie (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Panini",
-            collection: "Shonen",
+            collection: "Panini Manga",
             largeur: "11.5 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            epaisseur: "1.7 cm",
+            poids: "0.153 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Demon Slayer",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1496,21 +1500,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Suite des aventures.",
-        resume: "A peine Tanjiro et Genya croient-ils avoir vaincu la lune supérieure Hantengu que celui-ci créé un avatar encore plus puissant : Zohakuten, la personnification de la Haine. Les avatars de la quatrième lune supérieure ont fusionné pour attaquer Tanjiro, qui doit alors mener un combat difficile.",
+        resume: "A peine Tanjiro et Genya croient-ils avoir vaincu la lune supérieure Hantengu que celui-ci créé un avatar encore plus puissant : Zohakuten, la personnification de la Haine. Heureusement que Mitsuri, le pilier de l'Amour, est là pour leur prêter main-forte. Pendant ce temps, la lune supérieure Gyokko s'apprête à tuer Haganezuka, qui ne peut pas interrompre son travail de polissage sous peine de ruiner à jamais un sabre précieux.",
         details: {
-            ean: "9791039115667",
-            isbn: "1039115668",
-            contributeurs: "Koyoharu Gotouge (Auteur principal)",
+            ean: "9782809492491",
+            isbn: "2809492492",
+            contributeurs: "Koyoharu Gotôge (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Panini",
-            collection: "Shonen",
+            collection: "Panini Manga",
             largeur: "11.5 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            epaisseur: "1.6 cm",
+            poids: "0.156 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Demon Slayer",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1523,21 +1528,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Eren et les Titans.",
-        resume: "Avec la brèche dans le mur Rose, le 104e bataillon doit évacuer les villages menacés par les Titans. Sur le chemin de la sécurité, ils décident de passer la nuit au château d'Utgard. Mais l'ennemi est déjà là...",
+        resume: "Partis inspecter le mur Rose afin de localiser la brèche à l'origine de la nouvelle intrusion, les membres de la 104e Brigade pensent avoir trouvé un abri sûr dans les ruines de la forteresse d'Utgard et s'apprêtent à prendre un peu de repos pour la nuit. Malheureusement, les Titans, pourtant censés être inactifs après le coucher du soleil, n'ont pas l'intention de leur laisser le moindre répit !",
         details: {
-            ean: "9782811625429",
-            isbn: "2811625429",
+            ean: "9782811615994",
+            isbn: "2811615997",
             contributeurs: "Hajime Isayama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Seinen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.192 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "L'Attaque des Titans",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
     {
@@ -1550,21 +1556,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Eren et les Titans.",
-        resume: "Erwin est parvenu à récupérer Eren des mains des Titans. Mais pendant la bataille, il a fait une découverte qui pourrait changer le cours de l'histoire. Le gouvernement royal n'est plus digne de diriger l'humanité...",
+        resume: "Le Roi a donné l'ordre aux Brigades spéciales de capturer Eren et Christa. De son côté, le Bataillon d'exploration prépare une opération d'envergure : renverser le trône !",
         details: {
-            ean: "9782811625467",
-            isbn: "2811625461",
+            ean: "9782811618810",
+            isbn: "2811618813",
             contributeurs: "Hajime Isayama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Seinen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.184 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "L'Attaque des Titans",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
     {
@@ -1577,21 +1584,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Eren et les Titans.",
-        resume: "Le gouvernement royal, qui a placé sa propre richesse et sa position au-dessus de la survie de l'humanité, n'est plus digne de diriger. Erwin a pris une décision cruciale : renverser le pouvoir en place.",
+        resume: "Désormais certains que la famille Reiss est bien l'authentique lignée royale, les membres du Bataillon d'exploration s'apprêtent à supplanter le Roi, mais une unité spéciale des Brigades centrales déjoue leur projet en ravissant Historia et Eren !",
         details: {
-            ean: "9782811625474",
-            isbn: "281162547X",
+            ean: "9782811620943",
+            isbn: "281162094X",
             contributeurs: "Hajime Isayama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Seinen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.192 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "L'Attaque des Titans",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
     {
@@ -1604,21 +1612,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Eren et les Titans.",
-        resume: "L'interrogatoire d'un membre de la police militaire a révélé que Krista (alias Historia Reiss) est la véritable héritière du trône. Le combat pour le pouvoir s'intensifie dans les murs.",
+        resume: "Alors que les Brigades spéciales sont sur le point de mettre la main sur Eren, le Bataillon d'exploration fait son apparition pour déjouer leurs plans. Les deux camps s'affrontent dans une bataille décisive qui pourrait changer le cours de l'histoire.",
         details: {
-            ean: "9782811625481",
-            isbn: "2811625488",
+            ean: "9782811620950",
+            isbn: "2811620958",
             contributeurs: "Hajime Isayama (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Seinen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.192 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "L'Attaque des Titans",
+            categories: "Livres, Mangas, Manwha, Man Hua, Seinen, Josei"
         }
     },
     {
@@ -1631,21 +1640,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Gon et ses amis.",
-        resume: "Dans les pas de son père, Gon quitte son village pour se présenter au difficile examen des Hunters. En chemin, Gon se fera des amis et devra affronter des participants particulièrement dangereux. L'examen Hunter est une épreuve de tous les dangers.",
+        resume: "Kirua sort de ses gonds ! Le résultat n'est pas beau à voir : un innocent participant en fera les frais. On fait connaissance avec le frère aîné de Kirua qui n'a pas l'air commode et semble bien connaître Hisoka.",
         details: {
-            ean: "9782871292470",
-            isbn: "2871292477",
+            ean: "9782871292708",
+            isbn: "2871292701",
             contributeurs: "Yoshihiro Togashi (Auteur principal)",
             format: "Livre poche",
-            nbPages: 192,
+            nbPages: 190,
             editeur: "Kana",
-            collection: "Shonen Kana",
-            largeur: "11.5 cm",
+            collection: "Shōnen",
+            largeur: "11.8 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            epaisseur: "1.4 cm",
+            poids: "0.136 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Hunter X Hunter",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1658,21 +1668,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Gon et ses amis.",
-        resume: "Fin de l'interdiction d'utiliser le 'nen' ! Promesse tenue pendant 2 mois ! Le véritable entraînement peut commencer. Ce septième volume est celui où Hunter x Hunter prend une dimension nouvelle avec l'introduction concrète du Nen, ce système de pouvoir qui va devenir central.",
+        resume: "Fin de l'interdiction d'utiliser le 'nen' ! Promesse tenue pendant 2 mois ! Le véritable entraînement peut commencer ! Hisoka a exigé de Gon qu'il gagne un match dans son groupe du 200e étage avant de pouvoir l'affronter. Mais les membres de ce groupe ont pour cible les nouveaux venus.",
         details: {
-            ean: "9782871292487",
-            isbn: "2871292485",
+            ean: "9782871293224",
+            isbn: "2871293228",
             contributeurs: "Yoshihiro Togashi (Auteur principal)",
             format: "Livre poche",
-            nbPages: 192,
+            nbPages: 190,
             editeur: "Kana",
-            collection: "Shonen Kana",
-            largeur: "11.5 cm",
+            collection: "Shōnen",
+            largeur: "11.7 cm",
             longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            epaisseur: "1.5 cm",
+            poids: "0.134 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Hunter X Hunter",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1685,21 +1696,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Naruto et ses compagnons.",
-        resume: "Vingt candidats s'affrontent dans des duels au sommet afin de pouvoir participer à la troisième épreuve de l'examen chunin. Lee affronte le redoutable Gaara dans un combat qui va marquer les esprits.",
+        resume: "Dans le village de Konoha sévit Naruto, le pire garnement de l'école des ninjas ! Son passe-temps favori ? Faire les quatre cents coups ! Mais Naruto a aussi un rêve démesuré : devenir le plus puissant ninja de son village. 'Un jour, je deviendrai Hokage, moi aussi !'",
         details: {
-            ean: "9782871296140",
-            isbn: "2871296146",
+            ean: "9782505115045",
+            isbn: "2505115044",
             contributeurs: "Masashi Kishimoto (Auteur principal)",
             format: "Livre poche",
-            nbPages: 187,
+            nbPages: 372,
             editeur: "Kana",
-            collection: "Shonen Kana",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.2 cm",
-            poids: "0.160 kg",
+            collection: "Shōnen",
+            largeur: "14.5 cm",
+            longueur: "21.3 cm",
+            epaisseur: "3.4 cm",
+            poids: "0.426 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Naruto",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1712,21 +1724,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Naruto et ses compagnons.",
-        resume: "Naruto s'entraîne avec un nouveau mentor, Jiraiya, pour maîtriser le chakra du démon-renard à neuf queues enfermé en lui. Pendant ce temps, les épreuves de l'examen chunin continuent, et les ennemis se font de plus en plus dangereux.",
+        resume: "La suite des aventures de Naruto, le ninja le plus fou de Konoha ! Naruto et ses compagnons continuent leur entraînement pour devenir des ninjas d'élite, affrontant de nouveaux défis et de redoutables ennemis sur leur chemin.",
         details: {
-            ean: "9782871297925",
-            isbn: "2871297924",
+            ean: "9782505115052",
+            isbn: "2505115052",
             contributeurs: "Masashi Kishimoto (Auteur principal)",
             format: "Livre poche",
-            nbPages: 187,
+            nbPages: 400,
             editeur: "Kana",
-            collection: "Shonen Kana",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.2 cm",
-            poids: "0.160 kg",
+            collection: "Shōnen",
+            largeur: "14.5 cm",
+            longueur: "21.3 cm",
+            epaisseur: "3.7 cm",
+            poids: "0.454 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Naruto",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1739,21 +1752,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Le football version survival.",
-        resume: "L'objectif du coach du Blue Lock, Jinpachi Ego, est clair : détecter l'unique attaquant qui écrasera tous ses rivaux par son talent et son hyper-individualisme. Pour Yoichi Isagi, c'est l'occasion de devenir le meilleur buteur du monde.",
+        resume: "Coupe du monde 2018, l'équipe de football du Japon est éliminée en huitièmes de finale. Ce nouvel échec incite l'Union japonaise de football à fonder le 'Blue Lock' : un centre de formation révolutionnaire rassemblant les 300 meilleurs attaquants lycéens du pays. L'objectif : détecter l'unique attaquant qui écrasera tous ses rivaux par son talent et son hyper-individualisme !",
         details: {
-            ean: "9782811671277",
-            isbn: "2811671277",
-            contributeurs: "Muneyuki Kaneshiro (Auteur principal), Yusuke Nomura (Illustrateur)",
+            ean: "9782811650254",
+            isbn: "2811650253",
+            contributeurs: "Muneyuki Kaneshiro (Auteur principal), Yûsuke Nomura (Auteur principal)",
             format: "Livre poche",
-            nbPages: 192,
+            nbPages: 208,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Shōnen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.6 cm",
+            poids: "0.175 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Blue Lock",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1766,21 +1780,22 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Le football version survival.",
-        resume: "Ayant survécu au premier écrémage, Yoichi Isagi se retrouve dans l'équipe Z, formée exclusivement d'attaquants. Avec elle, il devra lutter dans une poule de cinq équipes où seules les deux meilleures resteront en lice.",
+        resume: "En dépit des critiques enflammées du grand public et des médias, le projet Blue Lock a finalement été lancé. Ayant survécu au premier écrémage, Yoichi Isagi se retrouve dans l'équipe Z, formée exclusivement d'attaquants. Avec elle, il devra lutter dans une poule de cinq équipes où seules les deux meilleures resteront en lice. L'équipe Z n'aura qu'un seul moyen de survie : découvrir une arme capable de faire éclore l'égo de chacun !",
         details: {
-            ean: "9782811671284",
-            isbn: "2811671285",
-            contributeurs: "Muneyuki Kaneshiro (Auteur principal), Yusuke Nomura (Illustrateur)",
+            ean: "9782811661274",
+            isbn: "2811661271",
+            contributeurs: "Muneyuki Kaneshiro (Auteur principal), Yûsuke Nomura (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
             editeur: "Pika",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Shōnen",
+            largeur: "12 cm",
+            longueur: "18 cm",
+            epaisseur: "1.6 cm",
+            poids: "0.167 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Blue Lock",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen"
         }
     },
     {
@@ -1793,21 +1808,21 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Denji et ses démons.",
-        resume: "La bataille fait rage entre la team de Quanxi et la section spéciale. Le mystérieux Père Noël dévoile l'étendue de son pouvoir et, par là-même, son véritable objectif. Un contrat maudit chargé de haine et taché de sang se lie, ouvrant la porte vers un monde de désespoir.",
+        resume: "Suite aux attaques dont ses agents ont été les cibles, la Sécurité Publique a décidé de contre-attaquer en engageant toutes ses forces dans la bataille ! Dévoré par les flammes de la vengeance, Aki se retrouve confronté à Ghost, le puissant démon qu'employait autrefois l'agent Himeno. De son côté, Denji affronte une nouvelle fois Samouraï Sword ! Tronçonneuse contre katana... quelle lame aura le dessus ?",
         details: {
-            ean: "9782820347264",
-            isbn: "2820347262",
-            contributeurs: "Tatsuki Fujimoto (Auteur principal)",
+            ean: "9782820340672",
+            isbn: "2820340679",
+            contributeurs: "Tatsuki Fujimoto (Auteur principal), Sebastien Ludmann (Traducteur)",
             format: "Livre poche",
             nbPages: 192,
-            editeur: "Kazé",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            editeur: "Crunchyroll",
+            largeur: "11.3 cm",
+            longueur: "17.6 cm",
+            epaisseur: "1.4 cm",
+            poids: "0.142 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Chainsaw Man",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen, Seinen, Josei"
         }
     },
     {
@@ -1820,26 +1835,27 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Denji et ses démons.",
-        resume: "Un contrat maudit chargé de haine et taché de sang se lie, ouvrant la porte vers un monde de désespoir que même les démons redoutent. Entre effroi et désolation, les voici transportés dans le domaine du démon-ténèbres.",
+        resume: "Suite aux attaques dont ses agents ont été les cibles, la Sécurité Publique a décidé de contre-attaquer en engageant toutes ses forces dans la bataille ! Dévoré par les flammes de la vengeance, Aki se retrouve confronté à Ghost, le puissant démon qu'employait autrefois l'agent Himeno. De son côté, Denji affronte une nouvelle fois Samouraï Sword ! Tronçonneuse contre katana... quelle lame aura le dessus ?",
         details: {
-            ean: "9782820349008",
-            isbn: "2820349001",
+            ean: "9782820340849",
+            isbn: "2820340849",
             contributeurs: "Tatsuki Fujimoto (Auteur principal)",
             format: "Livre poche",
             nbPages: 192,
-            editeur: "Kazé",
-            collection: "Shonen",
+            editeur: "Crunchyroll",
+            collection: "Shonen up!",
             largeur: "11.5 cm",
-            longueur: "17.5 cm",
+            longueur: "18.3 cm",
             epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            poids: "0.132 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Chainsaw Man",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen, Seinen, Josei"
         }
     },
 
     // ============================================================
-    // LIVRES JEUNESSE / ALBUMS
+    // LIVRES JEUNESSE / ALBUMS (68 à 78)
     // ============================================================
     {
         id: 68,
@@ -1851,21 +1867,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un album tendre sur l'amour inconditionnel.",
-        resume: "Petit Renard est de très mauvaise humeur. Il dit que personne ne l'aime. Mais sa maman va lui expliquer que leur amour durera toujours, quoi qu'il arrive. Une histoire tendre sur l'amour maternel et la confiance.",
+        resume: "Petit Renard est inquiet car il craint de ne plus être aimé de sa maman s'il fait trop de bêtises... Mais sa maman lui explique que leur amour durera toujours... quoi qu'il arrive ! Un album pour rassurer tous les enfants.",
         details: {
-            ean: "9782013933995",
-            isbn: "2013933996",
+            ean: "9782013944762",
+            isbn: "2013944764",
             contributeurs: "Debi Gliori (Auteur principal)",
-            format: "Livre broché",
+            format: "Livre",
             nbPages: 32,
             editeur: "Gautier Languereau",
-            collection: "Les petites histoires du soir",
-            largeur: "20.3 cm",
-            longueur: "23.6 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.300 kg",
+            collection: "TU ME LIS UNE HISTOIRE ?",
+            largeur: "16 cm",
+            longueur: "18 cm",
+            epaisseur: "5 mm",
+            poids: "0.1 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Albums illustrés, Albums"
         }
     },
     {
@@ -1878,21 +1894,20 @@ const booksData = [
         isNew: true,
         isBestseller: true,
         description: "Un livre animé pour aider les enfants à identifier leurs émotions.",
-        resume: "Le monstre des couleurs se sent tout barbouillé, aujourd'hui. Ses émotions sont sens dessus dessous ! Il ne comprend pas ce qui lui arrive. Un album illustré pour découvrir ses émotions et apprendre à les identifier.",
+        resume: "Le monstre des couleurs se sent tout barbouillé, aujourd'hui. Ses émotions sont sens dessus dessous ! Il ne comprend pas ce qui lui arrive. Réussira-t-il à mettre de l'ordre dans son cœur et à retrouver son équilibre ? Un livre tout animé pour découvrir ses émotions.",
         details: {
-            ean: "9782508036530",
-            isbn: "2508036534",
+            ean: "9791026400134",
+            isbn: "9791026400134",
             contributeurs: "Anna Llenas (Auteur principal)",
-            format: "Livre animé",
-            nbPages: 48,
+            format: "Livre Pop-Up",
+            nbPages: 22,
             editeur: "Glénat Jeunesse",
-            collection: "Les émotions",
-            largeur: "25.2 cm",
-            longueur: "25.2 cm",
-            epaisseur: "2.5 cm",
-            poids: "0.600 kg",
+            largeur: "27 cm",
+            longueur: "23.8 cm",
+            epaisseur: "2.2 cm",
+            poids: "0.705 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Livres animés et pop-up, Jeunesse"
         }
     },
     {
@@ -1905,21 +1920,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Une histoire sur la colère et comment l'apprivoiser.",
-        resume: "Robert a passé une très mauvaise journée. Il n'est pas de bonne humeur et en plus, son papa l'a envoyé dans sa chambre. Alors Robert sent tout à coup une grosse colère monter en lui. Un album qui traite avec justesse le thème de la colère chez l'enfant.",
+        resume: "Robert a passé une très mauvaise journée. Il n'est pas de bonne humeur et en plus, son papa l'a envoyé dans sa chambre. Alors Robert sent tout à coup monter une chose terrible : la colère...",
         details: {
-            ean: "9782211231134",
-            isbn: "2211231139",
-            contributeurs: "Mireille d'Allancé (Auteur principal)",
+            ean: "9782211061773",
+            isbn: "221106177X",
+            contributeurs: "Mireille d' Allancé (Auteur principal)",
             format: "Livre poche",
             nbPages: 32,
             editeur: "L'École des Loisirs",
-            collection: "Lutin poche",
-            largeur: "19 cm",
-            longueur: "15 cm",
-            epaisseur: "0.5 cm",
-            poids: "0.100 kg",
+            collection: "Les lutins",
+            largeur: "15 cm",
+            longueur: "19 cm",
+            epaisseur: "2 mm",
+            poids: "0.084 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Albums illustrés, Albums"
         }
     },
     {
@@ -1932,21 +1947,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un album poignant sur le deuil et l'amitié.",
-        resume: "Un matin, les amis de Blaireau se rassemblent devant sa porte. Ils s'inquiètent parce que leur vieil ami n'est pas venu pour leur dire bonjour comme d'habitude. Le vieux Blaireau va mourir, mais il existera toujours dans le cœur de ceux qui l'aiment, grâce aux souvenirs qu'il leur laisse.",
+        resume: "Un matin, les amis de Blaireau se rassemblent devant sa porte. Ils s'inquiètent parce que leur vieil ami n'est pas sorti pour leur dire bonjour comme d'habitude... Un livre plein d'émotion et d'espoir, à lire ensemble.",
         details: {
-            ean: "9782075136394",
-            isbn: "2075136394",
+            ean: "9782075155120",
+            isbn: "2075155127",
             contributeurs: "Susan Varley (Auteur principal)",
-            format: "Livre broché",
+            format: "Livre",
             nbPages: 32,
             editeur: "Gallimard Jeunesse",
-            collection: "Album",
-            largeur: "21 cm",
-            longueur: "26 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.350 kg",
+            collection: "L'heure des histoires",
+            largeur: "16 cm",
+            longueur: "20.6 cm",
+            epaisseur: "4 mm",
+            poids: "0.098 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Jeunesse, Premières lectures, Albums illustrés"
         }
     },
     {
@@ -1959,21 +1974,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Une histoire poétique sur les rêves et l'imagination.",
-        resume: "Un petit écureuil aimerait offrir une étoile à sa maman. Ce cadeau lui tient à cœur ! Pour lui dire au revoir. Pour donner un sens à la mort. Accompagné de son meilleur copain, un jeune écureuil se met en quête d'une étoile pour sa maman.",
+        resume: "Un cadeau fait main, ça vaut combien d'objets achetés ? Accompagné de son meilleur copain, un jeune écureuil se met en quête d'une étoile pour sa maman. Elle est morte et, depuis, le temps s'est arrêté pour lui. Il lui tient à cœur, ce cadeau ! Pour essayer de donner du sens à ce qui n'en a pas. Pour dire au revoir. Pour que la vie continue.",
         details: {
-            ean: "9782874265413",
-            isbn: "2874265418",
+            ean: "9782874266690",
+            isbn: "2874266698",
             contributeurs: "Jerome Camil (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 32,
+            format: "Livre",
+            nbPages: 48,
             editeur: "ALICE",
-            collection: "Album",
+            collection: "Albums",
             largeur: "22 cm",
-            longueur: "28 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.380 kg",
+            longueur: "30 cm",
+            epaisseur: "1.3 cm",
+            poids: "0.49 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Albums illustrés, Premiers albums, Livres, Livres pour grandir"
         }
     },
     {
@@ -1986,21 +2001,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un album pour célébrer l'amour filial.",
-        resume: "Avec des textes pleins de poésie de Karine-Marie Amiot et des illustrations délicates de Diane de Saint-Exupéry, cet album raconte, de façon tendre et joyeuse, les préparatifs de la Fête des mères. Une histoire poétique évoquant de manière tendre les préparatifs de la fête des mères.",
+        resume: "Dans le sillage des Belles Histoires de grand-mère, cette nouvelle collection parlera aux plus jeunes d'événements de la vie d'une famille d'aujourd'hui. Avec des textes pleins de poésie de Karine-Marie Amiot et des illustrations délicates de Diane de Saint-Exupéry, cet album raconte, de façon tendre et joyeuse, les préparatifs de la Fête des mères.",
         details: {
-            ean: "9782728933103",
-            isbn: "2728933102",
-            contributeurs: "Karine-Marie Amiot (Auteur principal), Diane De Saint-exupery (Illustrateur)",
-            format: "Livre relié",
+            ean: "9782728934829",
+            isbn: "2728934827",
+            contributeurs: "Karine-Marie Amiot (Auteur principal), Diane De Saint-exupery (Auteur principal)",
+            format: "Livre",
             nbPages: 32,
             editeur: "MAME",
-            collection: "La famille Lapin",
-            largeur: "21 cm",
-            longueur: "26 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.350 kg",
+            collection: "La famille lapi",
+            largeur: "20.8 cm",
+            longueur: "21.1 cm",
+            epaisseur: "9 mm",
+            poids: "0.266 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Albums illustrés, Premiers albums, Livres, Albums"
         }
     },
     {
@@ -2013,21 +2028,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un livre tendre sur les premiers émois.",
-        resume: "Une histoire tendre pour aider votre tout-petit à reconnaître ses émotions, et pour partager avec lui un moment de bonheur. Un livre cartonné pour les tout-petits sur le thème de l'amour.",
+        resume: "Une histoire tendre pour aider votre tout-petit à reconnaître ses émotions, et pour partager avec lui un moment de bonheur.",
         details: {
-            ean: "9782215138172",
-            isbn: "2215138176",
-            contributeurs: "Nadine Brun-Cosme (Auteur principal), Marion Cocklico (Illustrateur)",
-            format: "Livre cartonné",
+            ean: "9782215135968",
+            isbn: "2215135964",
+            contributeurs: "Nadine Brun-Cosme (Auteur principal), Marion Cocklico (Auteur principal)",
+            format: "Livre",
             nbPages: 12,
             editeur: "Fleurus",
             collection: "Petit doux",
-            largeur: "18 cm",
-            longueur: "18 cm",
-            epaisseur: "1.2 cm",
-            poids: "0.250 kg",
+            largeur: "17.5 cm",
+            longueur: "17.6 cm",
+            epaisseur: "1.5 cm",
+            poids: "0.315 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Tout-petits - de 0 à 3 ans, Livres pour grandir, Albums"
         }
     },
     {
@@ -2040,21 +2055,20 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Un message d'amour pour sa maman.",
-        resume: "Quand nos enfants posent leur regard malicieux et clairvoyant sur nos imperfections de parents... Une déclaration d'amour espiègle, drôle et totalement décomplexante. Un album humoristique dans lequel des enfants posent leur regard malicieux sur les imperfections de leurs parents.",
+        resume: "Quand nos enfants posent leur regard malicieux et clairvoyant sur nos imperfections de parents... Une déclaration d'amour espiègle, drôle et totalement décomplexante. 'Tu dis toujours que tu es plus fatiguée qu'avant. Tu m'habilles dès la rentrée comme si on vivait au Pôle Nord. Et pourtant : moi, dans le magasin des mamans, j'aurais choisi toi.'",
         details: {
-            ean: "9782221265774",
-            isbn: "2221265773",
+            ean: "9782221263914",
+            isbn: "222126391X",
             contributeurs: "Mathou (Auteur principal)",
-            format: "Livre broché",
-            nbPages: 32,
+            format: "Livre",
+            nbPages: 40,
             editeur: "Robert Laffont",
-            collection: "Album",
             largeur: "21.2 cm",
-            longueur: "25.8 cm",
-            epaisseur: "1.1 cm",
-            poids: "0.400 kg",
+            longueur: "26 cm",
+            epaisseur: "1 cm",
+            poids: "0.354 kg",
             impression: "Non",
-            categories: "Livres, Jeunesse, Album"
+            categories: "Livres, Albums illustrés, Premiers albums"
         }
     },
     {
@@ -2067,21 +2081,21 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Une aventure des Schtroumpfs dans la neige.",
-        resume: "Comme chaque année, les premiers frimas sont attendus de pied ferme par les Schtroumpfs, qui se sont bien préparés. Mais personne ne s'attendait à un tel blizzard ! Partis tester une nouvelle luge, les Schtroumpfs Farceur, à Lunettes et Bricoleur se retrouvent coupés du village.",
+        resume: "Comme chaque année, les premiers frimas sont attendus de pied ferme par les Schtroumpfs, qui se sont bien préparés. Mais personne ne s'attendait à un tel blizzard ! Partis tester une nouvelle luge, les Schtroumpfs Farceur, à Lunettes et Bricoleur se retrouvent coupés d'un village qui s'organise tant bien que mal. Ils trouvent refuge chez un sourcier acariâtre, qui a pourtant tout fait pour fuir la vie en communauté. Et si le salut des uns schtroumpfait par celui des autres ?",
         details: {
             ean: "9782803680047",
             isbn: "2803680041",
-            contributeurs: "Peyo (Auteur principal), Alain Jost, Thierry Culliford",
-            format: "Livre broché",
+            contributeurs: "Peyo (Auteur principal), Alain Jost (Auteur principal), Thierry Culliford (Auteur principal)",
+            format: "Livre",
             nbPages: 48,
             editeur: "Le Lombard",
-            collection: "Les Schtroumpfs",
-            largeur: "21 cm",
-            longueur: "29 cm",
-            epaisseur: "0.8 cm",
-            poids: "0.350 kg",
+            largeur: "22.2 cm",
+            longueur: "29.5 cm",
+            epaisseur: "1.1 cm",
+            poids: "0.378 kg",
             impression: "Non",
-            categories: "Livres, BD, Humour"
+            saga: "Les Schtroumpfs",
+            categories: "Livres, BD"
         }
     },
     {
@@ -2094,21 +2108,22 @@ const booksData = [
         isNew: true,
         isBestseller: false,
         description: "Les aventures de Pokémon en version manga.",
-        resume: "Rouge est persuadé d'avoir déjoué pour de bon les plans de la Team Rocket avec l'aide de ses amis. Toujours décidé à compléter le pokédex que lui a confié le professeur Chen, il repart sur les routes accompagné de ses pokémons.",
+        resume: "Suivez la grande aventure de Rouge et Bleu, deux jeunes Dresseurs qui se sont promis de réaliser leurs rêves ! Rouge est un jeune garçon plein d'ambition et de fougue. Sa plus grande fierté : être considéré comme le meilleur Dresseur de Pokémon des environs de Bourg Palette ! Le Professeur Chen va le convaincre de partir à la découverte de nouveaux Pokémon pour compléter le fameux Pokédex.",
         details: {
-            ean: "9782368522518",
-            isbn: "2368522513",
-            contributeurs: "Hidenori Kusaka (Scénariste), Mato (Illustrateur)",
+            ean: "9782368520130",
+            isbn: "2368520139",
+            contributeurs: "Hidenori Kusaka (Auteur principal), Mato (Auteur principal)",
             format: "Livre poche",
-            nbPages: 192,
+            nbPages: 512,
             editeur: "Kurokawa",
-            collection: "Shonen",
-            largeur: "11.5 cm",
-            longueur: "17.5 cm",
-            epaisseur: "1.3 cm",
-            poids: "0.170 kg",
+            collection: "Pokémon",
+            largeur: "12.8 cm",
+            longueur: "18.3 cm",
+            epaisseur: "4 cm",
+            poids: "0.427 kg",
             impression: "Non",
-            categories: "Livres, Mangas, Shonen"
+            saga: "Pokémon",
+            categories: "Livres, Mangas, Manwha, Man Hua, Shōnen, Kodomo"
         }
     },
     {
@@ -2121,21 +2136,18 @@ const booksData = [
         isNew: false,
         isBestseller: false,
         description: "Le film d'animation adapté de la BD d'Hergé.",
-        resume: "Parce qu'il achète la maquette d'un bateau appelé la Licorne, le jeune reporter Tintin se retrouve entraîné dans une fantastique aventure à la recherche d'un fabuleux secret. Avec l'aide de Milou, il va devoir percer le mystère de la Licorne.",
+        resume: "Parce qu'il achète la maquette d'un bateau appelé la Licorne, Tintin, un jeune reporter, se retrouve entraîné dans une fantastique aventure à la recherche d'un fabuleux secret. Avec l'aide de Milou, du capitaine Haddock et des détectives Dupond et Dupont, Tintin va parcourir la moitié de la planète dans une course au trésor à la recherche d'une épave engloutie.",
         details: {
-            ean: "9781480603303",
-            isbn: "1480603301",
-            contributeurs: "Steven Spielberg (Réalisateur), Hergé (Auteur adapté)",
+            ean: "3333297719186",
+            contributeurs: "Steven Spielberg (Realisateur), Jamie Bell (Acteur), Andy Serkis (Acteur), Daniel Craig (Acteur), Sony Pictures Home Entertainment (Producteur)",
             format: "DVD",
             nbPages: 1,
             editeur: "Sony Pictures Home Entertainment",
-            collection: "Film",
-            largeur: "13.5 cm",
-            longueur: "19 cm",
-            epaisseur: "1.5 cm",
-            poids: "0.100 kg",
+            genre: "Aventure",
+            poids: "0.25 kg",
+            duree: "107 min",
             impression: "Non",
-            categories: "Livres, BD, Film"
+            categories: "Vidéo, Jeunesse - Animation, Walt Disney"
         }
     }
 ];
