@@ -33,7 +33,7 @@
             width: 100%;
             max-width: 100vw;
             -webkit-font-smoothing: antialiased;
-            padding-top: 110px; /* IMPORTANT: espace pour le header fixe */
+            padding-top: 110px;
         }
         a {
             text-decoration: none;
@@ -52,7 +52,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== FIXED HEADER WRAPPER ===== */
         .sticky-wrapper {
             position: fixed;
             top: 0;
@@ -63,7 +62,6 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
-        /* ===== TOP BAR ===== */
         .top-bar {
             background: #145daa;
             color: #fff;
@@ -113,7 +111,6 @@
             }
         }
 
-        /* ===== HEADER ===== */
         .header {
             background: #fff;
             border-bottom: 1px solid #e9ecef;
@@ -313,6 +310,74 @@
             .hamburger {
                 display: flex;
             }
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+            z-index: 100000;
+            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+        .side-menu.open {
+            left: 0;
+        }
+        .side-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+        }
+        .side-menu .menu-header {
+            padding: 0 20px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .side-menu ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .side-menu ul li a {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            cursor: pointer;
+        }
+        .side-menu ul li a:hover {
+            color: #145daa;
+        }
+        .side-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .side-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         /* ===== SLIDER ===== */
@@ -860,67 +925,6 @@
             font-size: clamp(0.8rem, 1vw, 0.95rem);
         }
 
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 280px;
-            height: 100%;
-            background: #fff;
-            box-shadow: 2px 0 12px rgba(0,0,0,0.08);
-            z-index: 100000;
-            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 20px 0;
-            overflow-y: auto;
-        }
-        .side-menu.open {
-            left: 0;
-        }
-        .side-menu .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            font-size: 1.6rem;
-            cursor: pointer;
-            color: #333;
-            background: none;
-            border: none;
-        }
-        .side-menu .menu-header {
-            padding: 0 20px 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .side-menu ul li {
-            padding: 10px 20px;
-            border-bottom: 1px solid #f1f3f5;
-        }
-        .side-menu ul li a {
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-        }
-        .side-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: 99999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .side-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* ============================================================
-               PAGE PANIER AVEC FORMULAIRE
-               ============================================================ */
         .cart-page {
             display: none;
             padding: 30px 0;
@@ -1269,6 +1273,28 @@
             background: #0d4a8a;
         }
 
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            z-index: 999999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+        }
+        .toast-notification.visible {
+            opacity: 1;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding-top: 95px;
@@ -1303,29 +1329,6 @@
                 min-width: 100px;
             }
         }
-
-        /* ===== TOAST ===== */
-        .toast-notification {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a1a2e;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 500;
-            font-size: 14px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            z-index: 999999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            max-width: 90%;
-            text-align: center;
-        }
-        .toast-notification.visible {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
@@ -1333,7 +1336,6 @@
     <!-- ========================= HEADER FIXE ========================= -->
     <div class="sticky-wrapper">
 
-        <!-- TOP BAR -->
         <div class="top-bar">
             <div class="left">📚 La lecture à portée de clic en Mauritanie</div>
             <div class="center">
@@ -1347,7 +1349,6 @@
             </div>
         </div>
 
-        <!-- HEADER -->
         <header class="header">
             <div class="container header-top">
                 <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
@@ -1411,7 +1412,6 @@
         <!-- ===== PAGE D'ACCUEIL ===== -->
         <div id="homePage">
 
-            <!-- SLIDER -->
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
                     <div class="slider-slide">
@@ -1447,14 +1447,12 @@
                 </div>
             </div>
 
-            <!-- CATÉGORIES -->
             <section style="margin:30px 0;">
                 <h2 class="section-title">Choisissez ce qui vous plaît</h2>
                 <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.8rem,1vw,0.95rem);">Nos catégories les plus vues !</p>
                 <div class="category-block" id="categoryBlock"></div>
             </section>
 
-            <!-- CARROUSELS -->
             <section style="margin:30px 0;">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <h2 class="section-title">Livres immanquables</h2>
@@ -1521,14 +1519,12 @@
                 </div>
             </section>
 
-            <!-- GRILLE COMPLÈTE -->
             <section style="margin:30px 0;" id="booksSection">
                 <h2 class="section-title">Tous nos livres</h2>
                 <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Parcourez notre catalogue complet.</p>
                 <div class="books-grid" id="booksContainer"></div>
             </section>
 
-            <!-- POUR VOUS -->
             <section style="margin:30px 0; background:#f1f3f5; padding:20px 15px; border-radius:12px;">
                 <h2 class="section-title">Pour vous</h2>
                 <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Avantages, événements gratuits, jeux concours.</p>
@@ -1551,14 +1547,12 @@
                 </div>
             </section>
 
-            <!-- PRÉSENTATION -->
             <div class="presentation-text">
                 <p><strong>MAURILIVRES</strong> est la librairie en ligne de référence en Mauritanie. Que vous cherchiez un roman captivant, un essai de développement personnel, un thriller haletant, un recueil de poésie ou un manga, notre catalogue regorge de trésors pour tous les goûts.</p>
                 <p style="margin-top:12px;">Notre mission est de rendre la culture et le savoir accessibles à tous, en facilitant l'accès aux livres partout en Mauritanie.</p>
                 <p style="margin-top:12px;"><strong>Faites le choix de la lecture et du savoir avec MAURILIVRES.</strong></p>
             </div>
 
-            <!-- AUTEUR -->
             <section class="author-section" id="authorSection">
                 <div class="author-image">
                     <img src="images/salihina.jpeg" alt="Salihina Moussa Konaté" onerror="this.src='https://placehold.co/300x300/145daa/fff?text=Salihina'" />
@@ -1582,7 +1576,6 @@
                 </div>
             </section>
 
-            <!-- NEWSLETTER -->
             <section class="newsletter-section">
                 <h2>Restez informé</h2>
                 <p>Recevez nos dernières actualités et offres exclusives</p>
@@ -1598,15 +1591,13 @@
 
         </div>
 
-        <!-- ===== PAGE PANIER AVEC FORMULAIRE ===== -->
+        <!-- ===== PAGE PANIER ===== -->
         <div class="cart-page" id="cartPage">
             <div class="back-to-shop" onclick="showHomePage()">
                 <i class="fas fa-arrow-left"></i> Continuer vos achats
             </div>
             <h1><i class="fas fa-shopping-cart"></i> Finaliser votre commande</h1>
-            <div id="cartContent">
-                <!-- Contenu injecté par JS -->
-            </div>
+            <div id="cartContent"></div>
         </div>
 
     </main>
@@ -1669,7 +1660,7 @@
     <script src="js/books-data.js"></script>
     <script>
         // ============================================================
-        // DONNÉES DES PAYS AVEC INDICATIFS ET DRAPEAUX
+        // DONNÉES DES PAYS
         // ============================================================
         const countries = [
             { code: '+222', name: 'Mauritanie', flag: '🇲🇷' },
@@ -1877,7 +1868,7 @@
         }
 
         // ============================================================
-        // AFFICHAGE DE LA PAGE PANIER AVEC FORMULAIRE
+        // AFFICHAGE PAGE PANIER
         // ============================================================
         function renderCartPage() {
             const container = document.getElementById('cartContent');
@@ -1893,12 +1884,10 @@
                 return;
             }
 
-            // Générer les options de pays
             const countryOptions = countries.map(c =>
                 `<option value="${c.code}">${c.flag} ${c.code} ${c.name}</option>`
             ).join('');
 
-            // Liste des articles
             let itemsHTML = cart.map(item => `
                     <div class="cart-item-row">
                         <img src="${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/70x95/145daa/fff?text=Livre'">
@@ -1921,7 +1910,6 @@
             container.innerHTML = `
                     <div class="cart-items-list">${itemsHTML}</div>
 
-                    <!-- Formulaire de commande -->
                     <div class="checkout-section">
                         <h2><i class="fas fa-user" style="color:#145daa; margin-right:8px;"></i> Vos coordonnées</h2>
                         <form id="checkoutForm">
@@ -1967,7 +1955,6 @@
                         </form>
                     </div>
 
-                    <!-- Résumé et boutons -->
                     <div class="cart-summary">
                         <div class="total">Total : <span>${total} MRU</span></div>
                         <div class="actions">
@@ -1977,7 +1964,6 @@
                     </div>
                 `;
 
-            // Gestion des modes de paiement (style)
             document.querySelectorAll('.payment-options label').forEach(label => {
                 label.addEventListener('click', function() {
                     document.querySelectorAll('.payment-options label').forEach(l => l.classList.remove('selected'));
@@ -1987,7 +1973,7 @@
         }
 
         // ============================================================
-        // SOUMISSION DE LA COMMANDE VIA WHATSAPP
+        // SOUMISSION COMMANDE
         // ============================================================
         function submitOrder() {
             const name = document.getElementById('customerName')?.value.trim();
@@ -1996,31 +1982,11 @@
             const phone = document.getElementById('customerPhone')?.value.trim();
             const paymentMethod = document.querySelector('input[name="payment"]:checked');
 
-            // Validation
-            if (!name) {
-                showToast('Veuillez entrer votre nom complet');
-                document.getElementById('customerName')?.focus();
-                return;
-            }
+            if (!name) { showToast('Veuillez entrer votre nom complet'); document.getElementById('customerName')?.focus(); return; }
+            if (!country) { showToast('Veuillez sélectionner votre pays'); document.getElementById('customerCountry')?.focus(); return; }
+            if (!phone) { showToast('Veuillez entrer votre numéro de téléphone'); document.getElementById('customerPhone')?.focus(); return; }
+            if (!paymentMethod) { showToast('Veuillez choisir un mode de paiement'); return; }
 
-            if (!country) {
-                showToast('Veuillez sélectionner votre pays');
-                document.getElementById('customerCountry')?.focus();
-                return;
-            }
-
-            if (!phone) {
-                showToast('Veuillez entrer votre numéro de téléphone');
-                document.getElementById('customerPhone')?.focus();
-                return;
-            }
-
-            if (!paymentMethod) {
-                showToast('Veuillez choisir un mode de paiement');
-                return;
-            }
-
-            // Construction du message WhatsApp
             const selectedCountry = countries.find(c => c.code === country);
             const total = getCartTotal();
 
@@ -2043,10 +2009,8 @@
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/22241291914?text=${encodedMessage}`;
 
-            // Ouvrir WhatsApp
             window.open(whatsappUrl, '_blank');
 
-            // Vider le panier
             cart = [];
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
@@ -2174,7 +2138,7 @@
         }
 
         // ============================================================
-        // FILTRES ET RECHERCHE
+        // FILTRES
         // ============================================================
         function filterCategory(category) {
             showHomePage();
@@ -2190,10 +2154,7 @@
             const query = document.getElementById('searchInput')?.value.toLowerCase().trim();
             const category = document.getElementById('searchCategory')?.value || 'all';
             showHomePage();
-            if (!query) {
-                displayBooks(booksData);
-                return;
-            }
+            if (!query) { displayBooks(booksData); return; }
             const filtered = booksData.filter(b => {
                 const matchTitle = b.title.toLowerCase().includes(query);
                 const matchAuthor = b.author.toLowerCase().includes(query);
@@ -2268,10 +2229,11 @@
         }
 
         // ============================================================
-        // SIDE MENU
+        // MENU LATÉRAL MOBILE (CORRIGÉ)
         // ============================================================
         function initSideMenu() {
             if (document.getElementById('sideMenu')) return;
+
             const sideMenu = document.createElement('div');
             sideMenu.id = 'sideMenu';
             sideMenu.className = 'side-menu';
@@ -2282,17 +2244,17 @@
                         <h3>MAURILIVRES</h3>
                     </div>
                     <ul>
-                        <li><a href="#" onclick="closeSideMenu(); showHomePage();"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="#" onclick="filterCategory('roman'); closeSideMenu();"><i class="fas fa-book"></i> Romans</a></li>
-                        <li><a href="#" onclick="filterCategory('developpement'); closeSideMenu();"><i class="fas fa-brain"></i> Développement</a></li>
-                        <li><a href="#" onclick="filterCategory('scolaire'); closeSideMenu();"><i class="fas fa-school"></i> Scolaire</a></li>
-                        <li><a href="#" onclick="filterCategory('poesie'); closeSideMenu();"><i class="fas fa-feather-alt"></i> Poésie</a></li>
-                        <li><a href="#" onclick="filterCategory('manga'); closeSideMenu();"><i class="fas fa-japanese-otaku"></i> Mangas</a></li>
-                        <li><a href="#" onclick="filterCategory('jeunesse'); closeSideMenu();"><i class="fas fa-child"></i> Jeunesse</a></li>
-                        <li><a href="#" onclick="filterCategory('bd'); closeSideMenu();"><i class="fas fa-comic"></i> BD</a></li>
-                        <li><a href="#" onclick="showCartPage(); closeSideMenu();"><i class="fas fa-shopping-cart"></i> Panier</a></li>
-                        <li><a href="#" onclick="showFavorites(); closeSideMenu();"><i class="fas fa-heart"></i> Favoris</a></li>
-                        <li><a href="#" onclick="scrollToAuthor(); closeSideMenu();"><i class="fas fa-user"></i> Le fondateur</a></li>
+                        <li><a href="#" data-action="home"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="#" data-action="roman"><i class="fas fa-book"></i> Romans</a></li>
+                        <li><a href="#" data-action="developpement"><i class="fas fa-brain"></i> Développement</a></li>
+                        <li><a href="#" data-action="scolaire"><i class="fas fa-school"></i> Scolaire</a></li>
+                        <li><a href="#" data-action="poesie"><i class="fas fa-feather-alt"></i> Poésie</a></li>
+                        <li><a href="#" data-action="manga"><i class="fas fa-japanese-otaku"></i> Mangas</a></li>
+                        <li><a href="#" data-action="jeunesse"><i class="fas fa-child"></i> Jeunesse</a></li>
+                        <li><a href="#" data-action="bd"><i class="fas fa-comic"></i> BD</a></li>
+                        <li><a href="#" data-action="cart"><i class="fas fa-shopping-cart"></i> Panier</a></li>
+                        <li><a href="#" data-action="favorites"><i class="fas fa-heart"></i> Favoris</a></li>
+                        <li><a href="#" data-action="author"><i class="fas fa-user"></i> Le fondateur</a></li>
                     </ul>
                 `;
             document.body.appendChild(sideMenu);
@@ -2305,19 +2267,75 @@
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const closeBtn = document.getElementById('closeSideMenu');
 
+            // Fonctions d'ouverture/fermeture
             window.openSideMenu = function() {
                 sideMenu.classList.add('open');
                 overlay.classList.add('active');
-                hamburgerBtn.classList.add('active');
+                if (hamburgerBtn) hamburgerBtn.classList.add('active');
                 document.body.style.overflow = 'hidden';
             };
 
             window.closeSideMenu = function() {
                 sideMenu.classList.remove('open');
                 overlay.classList.remove('active');
-                hamburgerBtn.classList.remove('active');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
                 document.body.style.overflow = '';
             };
+
+            // Gestionnaire de clic sur les liens du menu
+            sideMenu.querySelectorAll('ul li a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const action = this.dataset.action;
+
+                    // Fermer le menu
+                    window.closeSideMenu();
+
+                    // Exécuter l'action après un court délai pour que le menu se ferme
+                    setTimeout(() => {
+                        switch (action) {
+                            case 'home':
+                                showHomePage();
+                                break;
+                            case 'roman':
+                                filterCategory('roman');
+                                break;
+                            case 'developpement':
+                                filterCategory('developpement');
+                                break;
+                            case 'scolaire':
+                                filterCategory('scolaire');
+                                break;
+                            case 'poesie':
+                                filterCategory('poesie');
+                                break;
+                            case 'manga':
+                                filterCategory('manga');
+                                break;
+                            case 'jeunesse':
+                                filterCategory('jeunesse');
+                                break;
+                            case 'bd':
+                                filterCategory('bd');
+                                break;
+                            case 'cart':
+                                showCartPage();
+                                break;
+                            case 'favorites':
+                                showFavorites();
+                                break;
+                            case 'author':
+                                showHomePage();
+                                setTimeout(() => {
+                                    document.getElementById('authorSection')?.scrollIntoView({ behavior: 'smooth' });
+                                }, 100);
+                                break;
+                            default:
+                                break;
+                        }
+                    }, 100);
+                });
+            });
 
             if (hamburgerBtn) hamburgerBtn.addEventListener('click', window.openSideMenu);
             if (closeBtn) closeBtn.addEventListener('click', window.closeSideMenu);
@@ -2325,12 +2343,6 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') window.closeSideMenu();
             });
-        }
-
-        function scrollToAuthor() {
-            showHomePage();
-            document.getElementById('authorSection')?.scrollIntoView({ behavior: 'smooth' });
-            if (window.closeSideMenu) window.closeSideMenu();
         }
 
         // ============================================================
@@ -2392,7 +2404,6 @@
             // Newsletter
             handleNewsletter();
 
-            // Formulaire newsletter
             const form = document.getElementById('newsletterForm');
             const messageDiv = document.getElementById('newsletterMessage');
             if (form) {
@@ -2406,7 +2417,6 @@
                 });
             }
 
-            // Afficher les livres
             if (typeof booksData !== 'undefined' && booksData.length > 0) {
                 displayBooks(booksData);
                 updateCartCount();
@@ -2415,7 +2425,6 @@
                 console.warn('⚠️ booksData non chargé');
             }
 
-            // Carrousels
             const car1 = getSample(booksData, 8, b => b.isBestseller === true);
             initCarousel('carouselTrack1', car1);
 
@@ -2431,12 +2440,11 @@
             const car5 = getSample(booksData, 8, b => b.price < 400);
             initCarousel('carouselTrack5', car5);
 
-            // Cacher la page panier par défaut
             document.getElementById('cartPage').style.display = 'none';
         });
 
         // ============================================================
-        // EXPOSER LES FONCTIONS GLOBALEMENT
+        // EXPOSER LES FONCTIONS
         // ============================================================
         window.addToCart = addToCart;
         window.toggleFavorite = toggleFavorite;
@@ -2456,7 +2464,6 @@
         window.prevSlide = prevSlide;
         window.nextSlide = nextSlide;
         window.goToSlide = goToSlide;
-        window.scrollToAuthor = scrollToAuthor;
         window.generateCategories = generateCategories;
         window.handleNewsletter = handleNewsletter;
         window.showCartPage = showCartPage;
