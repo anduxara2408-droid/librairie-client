@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
         /* ============================================================
-               STYLES (copiés depuis index.html pour la cohérence)
+               STYLES PRINCIPAUX
                ============================================================ */
         * {
             margin: 0;
@@ -43,6 +43,7 @@
             overflow-x: hidden;
         }
 
+        /* ===== TOP BAR ===== */
         .top-bar {
             background: #145daa;
             color: #fff;
@@ -87,6 +88,7 @@
             }
         }
 
+        /* ===== HEADER ===== */
         .header {
             background: #fff;
             border-bottom: 1px solid #e9ecef;
@@ -198,6 +200,7 @@
             }
         }
 
+        /* ===== FOOTER ===== */
         .footer {
             background: #1a1a2e;
             color: #e0e0e0;
@@ -215,6 +218,7 @@
             margin: 0 auto;
         }
 
+        /* ===== SECTION TITRE ===== */
         .section-title {
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
             font-weight: 600;
@@ -232,6 +236,7 @@
             border-radius: 2px;
         }
 
+        /* ===== DÉTAIL LIVRE ===== */
         .book-detail {
             background: #fff;
             padding: 25px;
@@ -361,6 +366,7 @@
             color: #1a1a2e;
         }
 
+        /* ===== SUGGESTIONS ===== */
         .suggestions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr));
@@ -418,6 +424,352 @@
             }
             .details-section {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+               MODALE PANIER AVEC FORMULAIRE DE COMMANDE
+               ============================================================ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+            animation: fadeIn 0.25s ease;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px 30px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-box h2 {
+            font-size: 22px;
+            color: #1a1a2e;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-box h2 i {
+            color: #145daa;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0 6px;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #1a1a2e;
+        }
+
+        /* ===== ARTICLE DU PANIER (non modifiable) ===== */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f3f5;
+            gap: 10px;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-item-title {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .cart-item-meta {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .cart-item-qty {
+            font-weight: 600;
+            color: #145daa;
+            flex-shrink: 0;
+            padding: 2px 10px;
+            background: #e9ecef;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .cart-total {
+            font-weight: 700;
+            font-size: 20px;
+            text-align: right;
+            margin-top: 14px;
+            color: #1a1a2e;
+            border-top: 2px solid #e9ecef;
+            padding-top: 14px;
+        }
+
+        /* ===== FORMULAIRE DE COMMANDE ===== */
+        .checkout-form label {
+            display: block;
+            font-weight: 500;
+            margin: 14px 0 4px;
+            color: #1a1a2e;
+            font-size: 14px;
+        }
+
+        .checkout-form label .required {
+            color: #e74c3c;
+        }
+
+        .checkout-form input,
+        .checkout-form select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #f8f9fa;
+            transition: border 0.2s;
+        }
+
+        .checkout-form input:focus,
+        .checkout-form select:focus {
+            outline: 2px solid #145daa;
+            border-color: transparent;
+        }
+
+        .checkout-form .phone-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .checkout-form .phone-group select {
+            flex: 0 0 120px;
+            max-width: 140px;
+        }
+
+        .checkout-form .phone-group input {
+            flex: 1;
+        }
+
+        /* ===== INDICATIFS PAYS AVEC DRAPEAUX ===== */
+        .country-select {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .country-select .flag {
+            font-size: 20px;
+        }
+
+        /* ===== MODE DE PAIEMENT ===== */
+        .payment-options {
+            display: flex;
+            gap: 12px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+        }
+
+        .payment-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 14px;
+            flex: 1;
+            min-width: 120px;
+            transition: all 0.2s;
+            margin: 0;
+        }
+
+        .payment-options label:hover {
+            border-color: #145daa;
+            background: #f8f9fa;
+        }
+
+        .payment-options input[type="radio"] {
+            accent-color: #145daa;
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .payment-options label.selected {
+            border-color: #145daa;
+            background: #e8f0fe;
+        }
+
+        .payment-options .payment-icon {
+            font-size: 20px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .modal-actions button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #f1f3f5;
+            color: #1a1a2e;
+            min-width: 100px;
+        }
+
+        .modal-actions button.primary {
+            background: #25D366;
+            color: #fff;
+        }
+
+        .modal-actions button.primary:hover {
+            background: #1da851;
+            transform: scale(1.02);
+        }
+
+        .modal-actions button.secondary {
+            background: #e9ecef;
+            color: #1a1a2e;
+        }
+
+        .modal-actions button.secondary:hover {
+            background: #d4d8dd;
+        }
+
+        /* ===== TOAST MESSAGE ===== */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            z-index: 99999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .toast-notification.visible {
+            opacity: 1;
+        }
+
+        /* ===== RÉSUMÉ PANIER DANS LA MODALE ===== */
+        .cart-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .cart-summary .items-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .cart-summary .item-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .cart-summary .item-line:last-child {
+            border-bottom: none;
+        }
+
+        /* ============================================================
+               RESPONSIVE MODALE
+               ============================================================ */
+        @media (max-width: 600px) {
+            .modal-box {
+                padding: 20px;
+                margin: 10px;
+                max-height: 95vh;
+            }
+
+            .checkout-form .phone-group {
+                flex-direction: column;
+            }
+
+            .checkout-form .phone-group select {
+                flex: 1;
+                max-width: 100%;
+            }
+
+            .payment-options label {
+                font-size: 13px;
+                padding: 8px 12px;
+                min-width: 80px;
+            }
+
+            .modal-actions button {
+                font-size: 13px;
+                padding: 10px;
+                min-width: 80px;
             }
         }
     </style>
@@ -480,6 +832,13 @@
         </section>
     </main>
 
+    <!-- ========================= MODALE PANIER / COMMANDE ========================= -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-box" id="modalBox">
+            <!-- Contenu injecté par JS -->
+        </div>
+    </div>
+
     <!-- ========================= FOOTER ========================= -->
     <footer class="footer">
         <div class="footer-bottom">
@@ -491,14 +850,171 @@
     <script src="js/books-data.js"></script>
     <script>
         // ============================================================
-        // FONCTIONS LOCALES (autonomes)
+        // DONNÉES DES PAYS AVEC INDICATIFS ET DRAPEAUX
         // ============================================================
+        const countries = [
+            { code: '+222', name: 'Mauritanie', flag: '🇲🇷' },
+            { code: '+221', name: 'Sénégal', flag: '🇸🇳' },
+            { code: '+223', name: 'Mali', flag: '🇲🇱' },
+            { code: '+224', name: 'Guinée', flag: '🇬🇳' },
+            { code: '+225', name: 'Côte d\'Ivoire', flag: '🇨🇮' },
+            { code: '+226', name: 'Burkina Faso', flag: '🇧🇫' },
+            { code: '+227', name: 'Niger', flag: '🇳🇪' },
+            { code: '+228', name: 'Togo', flag: '🇹🇬' },
+            { code: '+229', name: 'Bénin', flag: '🇧🇯' },
+            { code: '+231', name: 'Liberia', flag: '🇱🇷' },
+            { code: '+232', name: 'Sierra Leone', flag: '🇸🇱' },
+            { code: '+233', name: 'Ghana', flag: '🇬🇭' },
+            { code: '+234', name: 'Nigeria', flag: '🇳🇬' },
+            { code: '+235', name: 'Tchad', flag: '🇹🇩' },
+            { code: '+236', name: 'République Centrafricaine', flag: '🇨🇫' },
+            { code: '+237', name: 'Cameroun', flag: '🇨🇲' },
+            { code: '+238', name: 'Cap-Vert', flag: '🇨🇻' },
+            { code: '+239', name: 'Sao Tomé-et-Principe', flag: '🇸🇹' },
+            { code: '+240', name: 'Guinée Équatoriale', flag: '🇬🇶' },
+            { code: '+241', name: 'Gabon', flag: '🇬🇦' },
+            { code: '+242', name: 'République du Congo', flag: '🇨🇬' },
+            { code: '+243', name: 'République Démocratique du Congo', flag: '🇨🇩' },
+            { code: '+244', name: 'Angola', flag: '🇦🇴' },
+            { code: '+245', name: 'Guinée-Bissau', flag: '🇬🇼' },
+            { code: '+246', name: 'Diego Garcia', flag: '🇩🇬' },
+            { code: '+248', name: 'Seychelles', flag: '🇸🇨' },
+            { code: '+249', name: 'Soudan', flag: '🇸🇩' },
+            { code: '+250', name: 'Rwanda', flag: '🇷🇼' },
+            { code: '+251', name: 'Éthiopie', flag: '🇪🇹' },
+            { code: '+252', name: 'Somalie', flag: '🇸🇴' },
+            { code: '+253', name: 'Djibouti', flag: '🇩🇯' },
+            { code: '+254', name: 'Kenya', flag: '🇰🇪' },
+            { code: '+255', name: 'Tanzanie', flag: '🇹🇿' },
+            { code: '+256', name: 'Ouganda', flag: '🇺🇬' },
+            { code: '+257', name: 'Burundi', flag: '🇧🇮' },
+            { code: '+258', name: 'Mozambique', flag: '🇲🇿' },
+            { code: '+260', name: 'Zambie', flag: '🇿🇲' },
+            { code: '+261', name: 'Madagascar', flag: '🇲🇬' },
+            { code: '+262', name: 'La Réunion', flag: '🇷🇪' },
+            { code: '+263', name: 'Zimbabwe', flag: '🇿🇼' },
+            { code: '+264', name: 'Namibie', flag: '🇳🇦' },
+            { code: '+265', name: 'Malawi', flag: '🇲🇼' },
+            { code: '+266', name: 'Lesotho', flag: '🇱🇸' },
+            { code: '+267', name: 'Botswana', flag: '🇧🇼' },
+            { code: '+268', name: 'Eswatini', flag: '🇸🇿' },
+            { code: '+269', name: 'Comores', flag: '🇰🇲' },
+            { code: '+290', name: 'Sainte-Hélène', flag: '🇸🇭' },
+            { code: '+291', name: 'Érythrée', flag: '🇪🇷' },
+            { code: '+297', name: 'Aruba', flag: '🇦🇼' },
+            { code: '+298', name: 'Îles Féroé', flag: '🇫🇴' },
+            { code: '+299', name: 'Groenland', flag: '🇬🇱' },
+            { code: '+30', name: 'Grèce', flag: '🇬🇷' },
+            { code: '+31', name: 'Pays-Bas', flag: '🇳🇱' },
+            { code: '+32', name: 'Belgique', flag: '🇧🇪' },
+            { code: '+33', name: 'France', flag: '🇫🇷' },
+            { code: '+34', name: 'Espagne', flag: '🇪🇸' },
+            { code: '+36', name: 'Hongrie', flag: '🇭🇺' },
+            { code: '+39', name: 'Italie', flag: '🇮🇹' },
+            { code: '+40', name: 'Roumanie', flag: '🇷🇴' },
+            { code: '+41', name: 'Suisse', flag: '🇨🇭' },
+            { code: '+44', name: 'Royaume-Uni', flag: '🇬🇧' },
+            { code: '+45', name: 'Danemark', flag: '🇩🇰' },
+            { code: '+46', name: 'Suède', flag: '🇸🇪' },
+            { code: '+47', name: 'Norvège', flag: '🇳🇴' },
+            { code: '+48', name: 'Pologne', flag: '🇵🇱' },
+            { code: '+49', name: 'Allemagne', flag: '🇩🇪' },
+            { code: '+51', name: 'Pérou', flag: '🇵🇪' },
+            { code: '+52', name: 'Mexique', flag: '🇲🇽' },
+            { code: '+53', name: 'Cuba', flag: '🇨🇺' },
+            { code: '+54', name: 'Argentine', flag: '🇦🇷' },
+            { code: '+55', name: 'Brésil', flag: '🇧🇷' },
+            { code: '+56', name: 'Chili', flag: '🇨🇱' },
+            { code: '+57', name: 'Colombie', flag: '🇨🇴' },
+            { code: '+58', name: 'Venezuela', flag: '🇻🇪' },
+            { code: '+60', name: 'Malaisie', flag: '🇲🇾' },
+            { code: '+61', name: 'Australie', flag: '🇦🇺' },
+            { code: '+62', name: 'Indonésie', flag: '🇮🇩' },
+            { code: '+63', name: 'Philippines', flag: '🇵🇭' },
+            { code: '+64', name: 'Nouvelle-Zélande', flag: '🇳🇿' },
+            { code: '+65', name: 'Singapour', flag: '🇸🇬' },
+            { code: '+66', name: 'Thaïlande', flag: '🇹🇭' },
+            { code: '+81', name: 'Japon', flag: '🇯🇵' },
+            { code: '+82', name: 'Corée du Sud', flag: '🇰🇷' },
+            { code: '+84', name: 'Vietnam', flag: '🇻🇳' },
+            { code: '+86', name: 'Chine', flag: '🇨🇳' },
+            { code: '+90', name: 'Turquie', flag: '🇹🇷' },
+            { code: '+91', name: 'Inde', flag: '🇮🇳' },
+            { code: '+92', name: 'Pakistan', flag: '🇵🇰' },
+            { code: '+93', name: 'Afghanistan', flag: '🇦🇫' },
+            { code: '+94', name: 'Sri Lanka', flag: '🇱🇰' },
+            { code: '+95', name: 'Myanmar', flag: '🇲🇲' },
+            { code: '+98', name: 'Iran', flag: '🇮🇷' },
+            { code: '+211', name: 'Soudan du Sud', flag: '🇸🇸' },
+            { code: '+212', name: 'Maroc', flag: '🇲🇦' },
+            { code: '+213', name: 'Algérie', flag: '🇩🇿' },
+            { code: '+216', name: 'Tunisie', flag: '🇹🇳' },
+            { code: '+218', name: 'Libye', flag: '🇱🇾' },
+            { code: '+220', name: 'Gambie', flag: '🇬🇲' },
+            { code: '+230', name: 'Maurice', flag: '🇲🇺' },
+            { code: '+350', name: 'Gibraltar', flag: '🇬🇮' },
+            { code: '+351', name: 'Portugal', flag: '🇵🇹' },
+            { code: '+352', name: 'Luxembourg', flag: '🇱🇺' },
+            { code: '+353', name: 'Irlande', flag: '🇮🇪' },
+            { code: '+354', name: 'Islande', flag: '🇮🇸' },
+            { code: '+355', name: 'Albanie', flag: '🇦🇱' },
+            { code: '+356', name: 'Malte', flag: '🇲🇹' },
+            { code: '+357', name: 'Chypre', flag: '🇨🇾' },
+            { code: '+358', name: 'Finlande', flag: '🇫🇮' },
+            { code: '+359', name: 'Bulgarie', flag: '🇧🇬' },
+            { code: '+370', name: 'Lituanie', flag: '🇱🇹' },
+            { code: '+371', name: 'Lettonie', flag: '🇱🇻' },
+            { code: '+372', name: 'Estonie', flag: '🇪🇪' },
+            { code: '+373', name: 'Moldavie', flag: '🇲🇩' },
+            { code: '+374', name: 'Arménie', flag: '🇦🇲' },
+            { code: '+375', name: 'Biélorussie', flag: '🇧🇾' },
+            { code: '+376', name: 'Andorre', flag: '🇦🇩' },
+            { code: '+377', name: 'Monaco', flag: '🇲🇨' },
+            { code: '+378', name: 'Saint-Marin', flag: '🇸🇲' },
+            { code: '+380', name: 'Ukraine', flag: '🇺🇦' },
+            { code: '+381', name: 'Serbie', flag: '🇷🇸' },
+            { code: '+382', name: 'Monténégro', flag: '🇲🇪' },
+            { code: '+383', name: 'Kosovo', flag: '🇽🇰' },
+            { code: '+385', name: 'Croatie', flag: '🇭🇷' },
+            { code: '+386', name: 'Slovénie', flag: '🇸🇮' },
+            { code: '+387', name: 'Bosnie-Herzégovine', flag: '🇧🇦' },
+            { code: '+389', name: 'Macédoine du Nord', flag: '🇲🇰' },
+            { code: '+420', name: 'République Tchèque', flag: '🇨🇿' },
+            { code: '+421', name: 'Slovaquie', flag: '🇸🇰' },
+            { code: '+423', name: 'Liechtenstein', flag: '🇱🇮' },
+            { code: '+500', name: 'Îles Malouines', flag: '🇫🇰' }
+        ];
 
-        // 1. État
+        // ============================================================
+        // ÉTAT
+        // ============================================================
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        // 2. Panier
+        // ============================================================
+        // TOAST NOTIFICATION
+        // ============================================================
+        function showToast(message, type) {
+            const old = document.querySelector('.toast-notification');
+            if (old) old.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            void toast.offsetWidth;
+            toast.classList.add('visible');
+
+            setTimeout(() => {
+                toast.classList.remove('visible');
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // ============================================================
+        // PANIER
+        // ============================================================
         function addToCart(bookId) {
             const book = booksData.find(b => b.id === bookId);
             if (!book) return;
@@ -507,28 +1023,238 @@
             else cart.push({ ...book, quantity: 1 });
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
-            showMessage('Livre ajouté au panier', 'success');
+            showToast(`📚 ${book.title} ajouté au panier`);
+        }
+
+        function getCartTotal() {
+            return cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+        }
+
+        function getCartCount() {
+            return cart.reduce((sum, i) => sum + i.quantity, 0);
         }
 
         function updateCartCount() {
             const el = document.getElementById('cartCount');
-            if (el) {
-                const total = cart.reduce((s, i) => s + i.quantity, 0);
-                el.textContent = total;
+            if (el) el.textContent = getCartCount();
+        }
+
+        // ============================================================
+        // MODALE PANIER AVEC FORMULAIRE DE COMMANDE
+        // ============================================================
+        function showCart() {
+            const modal = document.getElementById('cartModal');
+            const modalBox = document.getElementById('modalBox');
+
+            // Générer la liste des pays pour le select
+            const countryOptions = countries.map(c =>
+                `<option value="${c.code}">${c.flag} ${c.code} ${c.name}</option>`
+            ).join('');
+
+            // Articles du panier (non modifiables)
+            let itemsHtml = '';
+            if (cart.length === 0) {
+                itemsHtml = `
+                        <div class="empty-message" style="text-align:center;padding:30px 0;color:#6c757d;">
+                            <i class="fas fa-shopping-basket" style="font-size:40px;display:block;margin-bottom:12px;color:#ced4da;"></i>
+                            Votre panier est vide.
+                        </div>
+                    `;
+            } else {
+                itemsHtml = cart.map(item => `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <span class="cart-item-title">${item.title}</span>
+                                <span class="cart-item-meta">${item.author} · ${item.price} MRU</span>
+                            </div>
+                            <span class="cart-item-qty">×${item.quantity}</span>
+                        </div>
+                    `).join('');
+            }
+
+            const total = getCartTotal();
+            const isCartEmpty = cart.length === 0;
+
+            modalBox.innerHTML = `
+                    <h2>
+                        <span><i class="fas fa-shopping-cart"></i> Votre commande</span>
+                        <button class="modal-close" id="closeModal">&times;</button>
+                    </h2>
+
+                    <div class="cart-summary">
+                        <div class="items-list">
+                            ${itemsHtml}
+                        </div>
+                        ${!isCartEmpty ? `
+                            <div class="cart-total" style="margin-top:10px;padding-top:10px;border-top:2px solid #e9ecef;">
+                                Total : ${total} MRU
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    ${!isCartEmpty ? `
+                        <form class="checkout-form" id="checkoutForm">
+                            <label>Nom complet <span class="required">*</span></label>
+                            <input type="text" id="checkoutName" placeholder="Votre nom et prénom" required>
+
+                            <label>Pays <span class="required">*</span></label>
+                            <select id="checkoutCountry" required>
+                                <option value="">Sélectionnez votre pays</option>
+                                ${countryOptions}
+                            </select>
+
+                            <label>Téléphone <span class="required">*</span></label>
+                            <div class="phone-group">
+                                <select id="checkoutPhoneCode">
+                                    ${countries.filter(c => ['+222', '+221', '+223', '+224', '+225', '+226', '+227', '+228', '+229', '+33', '+34', '+44', '+49', '+32', '+41', '+31', '+39', '+90', '+91', '+81', '+86', '+52', '+55', '+57', '+61', '+65', '+351', '+352', '+353'].includes(c.code)).map(c =>
+                                        `<option value="${c.code}" ${c.code === '+222' ? 'selected' : ''}>${c.flag} ${c.code}</option>`
+                                    ).join('')}
+                                    <option value="other">Autre...</option>
+                                </select>
+                                <input type="tel" id="checkoutPhone" placeholder="Numéro de téléphone" required>
+                            </div>
+
+                            <label>Mode de paiement <span class="required">*</span></label>
+                            <div class="payment-options" id="paymentOptions">
+                                <label class="selected">
+                                    <input type="radio" name="payment" value="livraison" checked>
+                                    <span class="payment-icon">🚚</span> À la livraison
+                                </label>
+                                <label>
+                                    <input type="radio" name="payment" value="bankily">
+                                    <span class="payment-icon">🏦</span> Bankily
+                                </label>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="submit" class="primary">
+                                    <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                                </button>
+                                <button type="button" class="secondary" onclick="closeCartModal()">Fermer</button>
+                            </div>
+                        </form>
+                    ` : `
+                        <div class="modal-actions">
+                            <button class="secondary" onclick="closeCartModal()">Fermer</button>
+                        </div>
+                    `}
+                `;
+
+            modal.classList.add('open');
+
+            // Gestion de la fermeture
+            document.getElementById('closeModal').addEventListener('click', closeCartModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeCartModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeCartModal();
+            });
+
+            // Gestion des modes de paiement (style)
+            document.querySelectorAll('.payment-options label').forEach(label => {
+                label.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-options label').forEach(l => l.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            // Soumission du formulaire
+            if (!isCartEmpty) {
+                document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitOrder();
+                });
             }
         }
 
-        function showCart() {
-            if (cart.length === 0) {
-                showMessage('Panier vide', 'info');
+        // ============================================================
+        // SOUMISSION DE LA COMMANDE VIA WHATSAPP
+        // ============================================================
+        function submitOrder() {
+            const name = document.getElementById('checkoutName').value.trim();
+            const country = document.getElementById('checkoutCountry').value;
+            const phoneCode = document.getElementById('checkoutPhoneCode').value;
+            const phone = document.getElementById('checkoutPhone').value.trim();
+            const paymentMethod = document.querySelector('input[name="payment"]:checked');
+
+            // Validation
+            if (!name) {
+                showToast('Veuillez entrer votre nom complet');
+                document.getElementById('checkoutName').focus();
                 return;
             }
-            const total = cart.reduce((s, i) => s + i.quantity * i.price, 0);
-            const items = cart.map(i => `${i.title} x${i.quantity} = ${i.price * i.quantity} MRU`).join('\n');
-            alert(`Votre panier :\n${items}\nTotal : ${total} MRU`);
+
+            if (!country) {
+                showToast('Veuillez sélectionner votre pays');
+                document.getElementById('checkoutCountry').focus();
+                return;
+            }
+
+            if (!phone) {
+                showToast('Veuillez entrer votre numéro de téléphone');
+                document.getElementById('checkoutPhone').focus();
+                return;
+            }
+
+            if (!paymentMethod) {
+                showToast('Veuillez choisir un mode de paiement');
+                return;
+            }
+
+            // Construction du message WhatsApp
+            const selectedCountry = countries.find(c => c.code === country);
+            const total = getCartTotal();
+
+            let itemsList = cart.map(item =>
+                `📚 ${item.title} – ${item.author} ×${item.quantity} = ${item.price * item.quantity} MRU`
+            ).join('\n');
+
+            const paymentLabel = paymentMethod.value === 'livraison' ? 'À la livraison (paiement en espèces)' : 'Bankily (Mobile Money)';
+            const countryName = selectedCountry ? selectedCountry.name : country;
+
+            const message = `📖 *NOUVELLE COMMANDE MAURILIVRES*
+
+        👤 *Client :* ${name}
+        🌍 *Pays :* ${countryName}
+        📞 *Téléphone :* ${phoneCode} ${phone}
+        💳 *Paiement :* ${paymentLabel}
+
+        *📦 Détail de la commande :*
+        ${itemsList}
+
+        *💰 Total : ${total} MRU*
+
+        Merci de confirmer cette commande. 🙏`;
+
+            // Encoder le message pour WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/22241291914?text=${encodedMessage}`;
+
+            // Ouvrir WhatsApp
+            window.open(whatsappUrl, '_blank');
+
+            // Vider le panier après la commande
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            // Fermer la modale
+            closeCartModal();
+
+            showToast('✅ Commande envoyée ! Vous serez redirigé vers WhatsApp.');
         }
 
-        // 3. Favoris
+        // ============================================================
+        // FERMETURE MODALE
+        // ============================================================
+        function closeCartModal() {
+            document.getElementById('cartModal').classList.remove('open');
+        }
+
+        // ============================================================
+        // FAVORIS
+        // ============================================================
         function isFavorite(bookId) {
             return favorites.some(f => f.id === bookId);
         }
@@ -539,13 +1265,20 @@
             const idx = favorites.findIndex(f => f.id === bookId);
             if (idx === -1) {
                 favorites.push(book);
-                showMessage('Ajouté aux favoris', 'success');
+                showToast(`❤️ ${book.title} ajouté aux favoris`);
             } else {
                 favorites.splice(idx, 1);
-                showMessage('Retiré des favoris', 'success');
+                showToast(`💔 ${book.title} retiré des favoris`);
             }
             localStorage.setItem('favorites', JSON.stringify(favorites));
             updateFavoriteCount();
+
+            const favBtn = document.querySelector('.btn-fav');
+            if (favBtn) {
+                const isFav = isFavorite(book.id);
+                favBtn.innerHTML =
+                    `<i class="fas fa-heart" style="color:${isFav ? '#e74c3c' : '#999'}"></i> ${isFav ? 'Retirer' : 'Ajouter aux favoris'}`;
+            }
         }
 
         function updateFavoriteCount() {
@@ -555,34 +1288,28 @@
 
         function showFavorites() {
             if (favorites.length === 0) {
-                showMessage('Aucun favori', 'info');
+                showToast('❤️ Aucun favori pour l\'instant.');
                 return;
             }
-            const list = favorites.map(b => b.title).join('\n');
+            const list = favorites.map(b => `📚 ${b.title} – ${b.author}`).join('\n');
             alert(`Vos favoris :\n${list}`);
         }
 
-        // 4. Messages
-        function showMessage(text, type) {
-            const colors = { success: '#d4edda', error: '#f8d7da', info: '#d1ecf1' };
-            const textColors = { success: '#155724', error: '#721c24', info: '#0c5460' };
-            const div = document.createElement('div');
-            div.style.cssText = `position:fixed; top:20px; right:20px; z-index:9999; padding:15px 25px; border-radius:8px; background:${colors[type] || '#fff'}; color:${textColors[type] || '#333'}; box-shadow:0 2px 10px rgba(0,0,0,0.1); animation: slideIn 0.3s;`;
-            div.textContent = text;
-            document.body.appendChild(div);
-            setTimeout(() => div.remove(), 3000);
-        }
-
-        // 5. Autres utilitaires (pour les liens du header)
+        // ============================================================
+        // AUTRES UTILITAIRES
+        // ============================================================
         function toggleLogin() {
-            showMessage('Connexion – Fonction à venir', 'info');
+            showToast('🔐 Connexion – Fonction à venir');
         }
 
-        // 6. AFFICHAGE DU DÉTAIL
+        // ============================================================
+        // AFFICHAGE DU DÉTAIL DU LIVRE
+        // ============================================================
         function displayBookDetail(bookId) {
             const book = booksData.find(b => b.id === parseInt(bookId));
             if (!book) {
-                document.getElementById('bookDetail').innerHTML = '<p style="color:red; text-align:center; padding:20px;">Livre non trouvé.</p>';
+                document.getElementById('bookDetail').innerHTML =
+                    '<p style="color:red; text-align:center; padding:20px;">Livre non trouvé.</p>';
                 return;
             }
 
@@ -624,6 +1351,8 @@
                     `;
             }
 
+            const isFav = isFavorite(book.id);
+
             container.innerHTML = `
                     <div class="flex">
                         <div class="image">
@@ -636,8 +1365,8 @@
                             <p class="description">${book.description}</p>
                             <div class="actions">
                                 <button class="btn-cart" onclick="addToCart(${book.id});"><i class="fas fa-shopping-cart"></i> Ajouter</button>
-                                <button class="btn-fav" onclick="toggleFavorite(${book.id}); location.reload();">
-                                    <i class="fas fa-heart" style="color:${isFavorite(book.id) ? '#e74c3c' : '#999'}"></i> ${isFavorite(book.id) ? 'Retirer' : 'Ajouter aux favoris'}
+                                <button class="btn-fav" onclick="toggleFavorite(${book.id});">
+                                    <i class="fas fa-heart" style="color:${isFav ? '#e74c3c' : '#999'}"></i> ${isFav ? 'Retirer' : 'Ajouter aux favoris'}
                                 </button>
                             </div>
                             <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
@@ -674,13 +1403,12 @@
                 suggestionsContainer.innerHTML = '';
             }
 
-            // Mettre à jour les badges
             updateCartCount();
             updateFavoriteCount();
         }
 
         // ============================================================
-        // INIT
+        // INITIALISATION
         // ============================================================
         document.addEventListener('DOMContentLoaded', function() {
             const params = new URLSearchParams(window.location.search);
@@ -690,20 +1418,23 @@
                 updateCartCount();
                 updateFavoriteCount();
             } else {
-                document.getElementById('bookDetail').innerHTML = '<p style="color:#6c757d; text-align:center; padding:20px;">Aucun livre spécifié.</p>';
+                document.getElementById('bookDetail').innerHTML =
+                    '<p style="color:#6c757d; text-align:center; padding:20px;">Aucun livre spécifié.</p>';
             }
         });
 
-        // Exposer les fonctions globalement pour les boutons onclick
+        // Exposer les fonctions globalement
         window.addToCart = addToCart;
         window.toggleFavorite = toggleFavorite;
         window.showCart = showCart;
         window.showFavorites = showFavorites;
         window.toggleLogin = toggleLogin;
         window.isFavorite = isFavorite;
-        window.showMessage = showMessage;
+        window.showToast = showToast;
         window.updateCartCount = updateCartCount;
         window.updateFavoriteCount = updateFavoriteCount;
+        window.closeCartModal = closeCartModal;
+        window.submitOrder = submitOrder;
     </script>
 </body>
 </html>

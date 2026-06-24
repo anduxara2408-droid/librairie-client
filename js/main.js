@@ -219,7 +219,7 @@ function showFavorites() {
     if (favorites.length === 0) { showMessage('Aucun favori', 'info'); return; }
     const modal = document.createElement('div');
     modal.className = 'modal show';
-    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center;';
+    modal.style.cssText = 'position:fixed; top:70px; left:0; width:100%; height:calc(100% - 70px); background:rgba(0,0,0,0.5); z-index:998; display:flex; align-items:center; justify-content:center;';
     modal.innerHTML = `
         <div style="background:white; padding:20px; border-radius:12px; max-width:600px; width:90%; max-height:80vh; overflow-y:auto;">
             <span onclick="this.closest('.modal').remove()" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
@@ -265,7 +265,7 @@ function showCart() {
     if (cart.length === 0) { showMessage('Panier vide', 'info'); return; }
     const modal = document.createElement('div');
     modal.className = 'modal show';
-    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center;';
+    modal.style.cssText = 'position:fixed; top:70px; left:0; width:100%; height:calc(100% - 70px); background:rgba(0,0,0,0.5); z-index:998; display:flex; align-items:center; justify-content:center;';
     modal.innerHTML = `
         <div style="background:white; padding:20px; border-radius:12px; max-width:600px; width:90%; max-height:80vh; overflow-y:auto;">
             <span onclick="this.closest('.modal').remove()" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
@@ -326,7 +326,7 @@ function showCheckout() {
     }
     const modal = document.createElement('div');
     modal.className = 'modal show';
-    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center;';
+    modal.style.cssText = 'position:fixed; top:70px; left:0; width:100%; height:calc(100% - 70px); background:rgba(0,0,0,0.5); z-index:998; display:flex; align-items:center; justify-content:center;';
     
     // Générer le récapitulatif du panier
     const cartItemsHtml = cart.map(item => `
@@ -480,7 +480,7 @@ function toggleLogin() {
 function showEvents() {
     const modal = document.createElement('div');
     modal.className = 'modal show';
-    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center;';
+    modal.style.cssText = 'position:fixed; top:70px; left:0; width:100%; height:calc(100% - 70px); background:rgba(0,0,0,0.5); z-index:998; display:flex; align-items:center; justify-content:center;';
     modal.innerHTML = `
         <div style="background:white; padding:20px; border-radius:12px; max-width:500px; width:90%;">
             <span onclick="this.closest('.modal').remove()" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
@@ -503,7 +503,7 @@ function showEvents() {
 function showContact() {
     const modal = document.createElement('div');
     modal.className = 'modal show';
-    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; display:flex; align-items:center; justify-content:center;';
+    modal.style.cssText = 'position:fixed; top:70px; left:0; width:100%; height:calc(100% - 70px); background:rgba(0,0,0,0.5); z-index:998; display:flex; align-items:center; justify-content:center;';
     modal.innerHTML = `
         <div style="background:white; padding:20px; border-radius:12px; max-width:500px; width:90%;">
             <span onclick="this.closest('.modal').remove()" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
