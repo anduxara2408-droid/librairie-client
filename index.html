@@ -52,6 +52,7 @@
             overflow-x: hidden;
         }
 
+        /* ===== HEADER FIXE ===== */
         .sticky-wrapper {
             position: fixed;
             top: 0;
@@ -226,6 +227,21 @@
             text-align: center;
             line-height: 16px;
         }
+        .connected-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: #28a745;
+            color: #fff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
         @media (max-width: 600px) {
             .user-nav a span {
                 display: none;
@@ -312,74 +328,6 @@
             }
         }
 
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 280px;
-            height: 100%;
-            background: #fff;
-            box-shadow: 2px 0 12px rgba(0,0,0,0.08);
-            z-index: 100000;
-            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 20px 0;
-            overflow-y: auto;
-        }
-        .side-menu.open {
-            left: 0;
-        }
-        .side-menu .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            font-size: 1.6rem;
-            cursor: pointer;
-            color: #333;
-            background: none;
-            border: none;
-        }
-        .side-menu .menu-header {
-            padding: 0 20px 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .side-menu ul li {
-            padding: 10px 20px;
-            border-bottom: 1px solid #f1f3f5;
-        }
-        .side-menu ul li a {
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            color: #1a1a2e;
-            cursor: pointer;
-        }
-        .side-menu ul li a:hover {
-            color: #145daa;
-        }
-        .side-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: 99999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .side-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
         /* ===== SLIDER ===== */
         .slider-container {
             position: relative;
@@ -458,7 +406,7 @@
         }
 
         .slider-slide:nth-child(1) {
-            background-image: url('https://picsum.photos/seed/library/1200/400');
+            background-image: url('https://picsum.photos/seed/events/1200/400');
         }
         .slider-slide:nth-child(2) {
             background-image: url('https://picsum.photos/seed/books/1200/400');
@@ -925,6 +873,76 @@
             font-size: clamp(0.8rem, 1vw, 0.95rem);
         }
 
+        /* ===== SIDE MENU ===== */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+            z-index: 100000;
+            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+        .side-menu.open {
+            left: 0;
+        }
+        .side-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+        }
+        .side-menu .menu-header {
+            padding: 0 20px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .side-menu ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .side-menu ul li a {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            cursor: pointer;
+        }
+        .side-menu ul li a:hover {
+            color: #145daa;
+        }
+        .side-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .side-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== PAGE PANIER ===== */
         .cart-page {
             display: none;
             padding: 30px 0;
@@ -1273,6 +1291,7 @@
             background: #0d4a8a;
         }
 
+        /* ===== TOAST ===== */
         .toast-notification {
             position: fixed;
             bottom: 30px;
@@ -1293,6 +1312,169 @@
         }
         .toast-notification.visible {
             opacity: 1;
+        }
+
+        /* ============================================================
+               STYLES AUTH
+               ============================================================ */
+        .auth-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: authFadeIn 0.3s ease;
+        }
+        
+        @keyframes authFadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes authSlideUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .auth-modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 420px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: authSlideUp 0.3s ease;
+            position: relative;
+        }
+        
+        .auth-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6c757d;
+            transition: color 0.2s;
+            padding: 4px 8px;
+        }
+        
+        .auth-close:hover {
+            color: #1a1a2e;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            color: #145daa;
+            border-bottom-color: #145daa;
+        }
+        
+        .auth-tab:hover {
+            color: #145daa;
+        }
+        
+        .auth-form-group {
+            margin-bottom: 16px;
+        }
+        
+        .auth-form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        
+        .auth-form-group label .required {
+            color: #dc3545;
+        }
+        
+        .auth-form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            transition: border 0.2s;
+        }
+        
+        .auth-form-group input:focus {
+            outline: 2px solid #145daa;
+            border-color: transparent;
+        }
+        
+        .auth-submit {
+            width: 100%;
+            padding: 12px;
+            background: #145daa;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+        
+        .auth-submit:hover {
+            background: #0d4a8a;
+            transform: translateY(-2px);
+        }
+        
+        .auth-submit:active {
+            transform: scale(0.98);
+        }
+        
+        .auth-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 9999999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        .auth-toast.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .auth-modal {
+                padding: 20px 16px;
+                margin: 10px;
+                max-height: 95vh;
+            }
         }
 
         @media (max-width: 600px) {
@@ -1378,15 +1560,18 @@
                     </form>
                 </div>
                 <div class="user-nav">
+                    <!-- FAVORIS -->
                     <a href="#" onclick="showFavorites()">
                         <i class="fas fa-heart"></i>
                         <span>Favoris</span>
                         <span class="badge" id="favoriteCount">0</span>
                     </a>
-                    <a href="#" onclick="toggleLogin()">
+                    <!-- COMPTE -->
+                    <a href="#" onclick="showAuthModal()">
                         <i class="fas fa-user"></i>
                         <span>Compte</span>
                     </a>
+                    <!-- PANIER -->
                     <a href="#" onclick="showCartPage()">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Panier</span>
@@ -1396,11 +1581,10 @@
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="#" onclick="filterCategory('roman')">Romans</a></li>
-                    <li><a href="#" onclick="filterCategory('developpement')">Développement</a></li>
-                    <li><a href="#" onclick="filterCategory('scolaire')">Scolaire</a></li>
-                    <li><a href="#" onclick="showNewReleases()">Nouveautés</a></li>
-                    <li><a href="#" onclick="showBestsellers()">Best-sellers</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#booksSection">Livres</a></li>
+                    <li><a href="evenements.html" style="color:#145daa; border-bottom-color:#145daa;">Événements</a></li>
+                    <li><a href="index.html#authorSection">Le fondateur</a></li>
                 </ul>
             </nav>
         </header>
@@ -1416,9 +1600,9 @@
                 <div class="slider-track" id="sliderTrack">
                     <div class="slider-slide">
                         <div class="slide-content">
-                            <h2>Découvrez notre sélection</h2>
-                            <p>Des milliers de livres neufs et d'occasion</p>
-                            <a href="#booksSection" class="btn-slide">Explorer</a>
+                            <h2>📅 Découvrez nos événements</h2>
+                            <p>Rencontres littéraires, dédicaces et moments de partage</p>
+                            <a href="evenements.html" class="btn-slide">Voir les événements</a>
                         </div>
                     </div>
                     <div class="slider-slide">
@@ -1617,10 +1801,10 @@
                 <h4>À PROPOS</h4>
                 <ul style="list-style:none; padding:0;">
                     <li><a href="index.html#authorSection">Le fondateur</a></li>
+                    <li><a href="evenements.html">Nos événements</a></li>
                     <li><a href="engagements.html">Nos engagements</a></li>
                     <li><a href="charte-qualite.html">Notre charte qualité</a></li>
                     <li><a href="alerte-disponibilite.html">L'alerte disponibilité</a></li>
-                    <li><a href="evenements.html">Nos événements</a></li>
                     <li><a href="histoire.html">Notre histoire</a></li>
                 </ul>
             </div>
@@ -1657,7 +1841,21 @@
     </footer>
 
     <!-- ========================= SCRIPTS ========================= -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Configuration Firebase -->
+    <script src="js/firebase-config.js"></script>
+
+    <!-- Données -->
     <script src="js/books-data.js"></script>
+
+    <!-- Authentification -->
+    <script src="js/auth.js"></script>
+
+    <!-- Code principal -->
     <script>
         // ============================================================
         // DONNÉES DES PAYS
@@ -2183,10 +2381,6 @@
             document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function toggleLogin() {
-            showToast('🔐 Connexion – Fonction à venir');
-        }
-
         // ============================================================
         // SLIDER
         // ============================================================
@@ -2229,7 +2423,7 @@
         }
 
         // ============================================================
-        // MENU LATÉRAL MOBILE (CORRIGÉ)
+        // MENU LATÉRAL MOBILE
         // ============================================================
         function initSideMenu() {
             if (document.getElementById('sideMenu')) return;
@@ -2244,7 +2438,8 @@
                         <h3>MAURILIVRES</h3>
                     </div>
                     <ul>
-                        <li><a href="#" data-action="home"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="evenements.html"><i class="fas fa-calendar-alt"></i> Événements</a></li>
                         <li><a href="#" data-action="roman"><i class="fas fa-book"></i> Romans</a></li>
                         <li><a href="#" data-action="developpement"><i class="fas fa-brain"></i> Développement</a></li>
                         <li><a href="#" data-action="scolaire"><i class="fas fa-school"></i> Scolaire</a></li>
@@ -2267,7 +2462,6 @@
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const closeBtn = document.getElementById('closeSideMenu');
 
-            // Fonctions d'ouverture/fermeture
             window.openSideMenu = function() {
                 sideMenu.classList.add('open');
                 overlay.classList.add('active');
@@ -2282,16 +2476,12 @@
                 document.body.style.overflow = '';
             };
 
-            // Gestionnaire de clic sur les liens du menu
             sideMenu.querySelectorAll('ul li a').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const action = this.dataset.action;
-
-                    // Fermer le menu
                     window.closeSideMenu();
 
-                    // Exécuter l'action après un court délai pour que le menu se ferme
                     setTimeout(() => {
                         switch (action) {
                             case 'home':
@@ -2395,13 +2585,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu latéral
             initSideMenu();
-
-            // Catégories
             generateCategories();
-
-            // Newsletter
             handleNewsletter();
 
             const form = document.getElementById('newsletterForm');
@@ -2441,6 +2626,11 @@
             initCarousel('carouselTrack5', car5);
 
             document.getElementById('cartPage').style.display = 'none';
+            
+            // Mettre à jour l'interface utilisateur si auth.js est chargé
+            if (typeof updateAuthUI === 'function') {
+                updateAuthUI();
+            }
         });
 
         // ============================================================
@@ -2457,7 +2647,6 @@
         window.showBestsellers = showBestsellers;
         window.showBooks = showBooks;
         window.showFavorites = showFavorites;
-        window.toggleLogin = toggleLogin;
         window.showToast = showToast;
         window.updateCartCount = updateCartCount;
         window.updateFavoriteCount = updateFavoriteCount;
@@ -2477,6 +2666,7 @@
         window.renderCartPage = renderCartPage;
         window.getCartTotal = getCartTotal;
         window.getCartCount = getCartCount;
+        window.showAuthModal = showAuthModal;
     </script>
 </body>
 </html>
