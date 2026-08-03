@@ -1511,6 +1511,18 @@
                 min-width: 100px;
             }
         }
+
+        /* ===== ADMIN LINK STYLE ===== */
+        .admin-link {
+            color: #e74c3c !important;
+            font-weight: 600;
+        }
+        .admin-link i {
+            color: #e74c3c !important;
+        }
+        .admin-link:hover {
+            color: #c0392b !important;
+        }
     </style>
 </head>
 <body>
@@ -1576,6 +1588,11 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span>Panier</span>
                         <span class="badge" id="cartCount">0</span>
+                    </a>
+                    <!-- ADMIN (caché par défaut, affiché si role=admin) -->
+                    <a href="#" id="adminLink" style="display:none;" class="admin-link" onclick="window.location.href='admin.html'">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Admin</span>
                     </a>
                 </div>
             </div>
@@ -2576,6 +2593,40 @@
         }
 
         // ============================================================
+        // VÉRIFICATION ADMIN - AFFICHER LE LIEN
+        // ============================================================
+        function checkAndShowAdminLink() {
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                document.getElementById('adminLink').style.display = 'none';
+                return;
+            }
+            
+            firebase.firestore().collection('users').doc(user.uid).get()
+                .then(doc => {
+                    if (doc.exists && doc.data().role === 'admin') {
+                        document.getElementById('adminLink').style.display = 'flex';
+                        console.log('👑 Mode Admin activé');
+                    } else {
+                        document.getElementById('adminLink').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur vérification admin:', error);
+                    document.getElementById('adminLink').style.display = 'none';
+                });
+        }
+
+        // Observer les changements d'authentification
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                checkAndShowAdminLink();
+            } else {
+                document.getElementById('adminLink').style.display = 'none';
+            }
+        });
+
+        // ============================================================
         // INITIALISATION
         // ============================================================
         function getSample(books, n, filterFn) {
@@ -2631,6 +2682,11 @@
             if (typeof updateAuthUI === 'function') {
                 updateAuthUI();
             }
+            
+            // Vérifier le statut admin au chargement
+            if (firebase.auth().currentUser) {
+                checkAndShowAdminLink();
+            }
         });
 
         // ============================================================
@@ -2667,6 +2723,7 @@
         window.getCartTotal = getCartTotal;
         window.getCartCount = getCartCount;
         window.showAuthModal = showAuthModal;
+        window.checkAndShowAdminLink = checkAndShowAdminLink;
     </script>
 </body>
 </html>
