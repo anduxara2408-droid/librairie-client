@@ -111,13 +111,10 @@
 
         /* ===== STATS ===== */
         .stats-grid {
-            display: none;
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
-        }
-        .stats-grid.visible {
-            display: grid;
         }
         .stat-card {
             background: #fff;
@@ -164,14 +161,10 @@
 
         /* ===== TABLEAU ===== */
         .table-container {
-            display: none;
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             overflow: hidden;
-        }
-        .table-container.visible {
-            display: block;
         }
         .table-container .table-toolbar {
             padding: 18px 24px;
@@ -345,107 +338,6 @@
             border-color: #145daa;
         }
 
-        /* ===== FORMULAIRE DE CONNEXION ===== */
-        .login-container {
-            max-width: 420px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .login-container h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a1a2e;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-container h2 i {
-            color: #145daa;
-        }
-        .login-container .form-group {
-            margin-bottom: 16px;
-        }
-        .login-container .form-group label {
-            display: block;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #1a1a2e;
-            margin-bottom: 4px;
-        }
-        .login-container .form-group input {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ced4da;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            background: #f8f9fa;
-            transition: border 0.2s;
-        }
-        .login-container .form-group input:focus {
-            outline: 2px solid #145daa;
-            border-color: transparent;
-        }
-        .login-container .btn-login {
-            width: 100%;
-            padding: 12px;
-            background: #145daa;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            margin-top: 8px;
-        }
-        .login-container .btn-login:hover {
-            background: #0d4a8a;
-            transform: translateY(-2px);
-        }
-        .login-container .btn-login i {
-            margin-right: 8px;
-        }
-        .login-container .login-error {
-            color: #dc3545;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-        }
-
-        /* ===== TOAST ===== */
-        .toast-admin {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            padding: 14px 24px;
-            border-radius: 12px;
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            z-index: 999999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s;
-            max-width: 400px;
-        }
-        .toast-admin.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .toast-admin.success {
-            background: #28a745;
-        }
-        .toast-admin.error {
-            background: #dc3545;
-        }
-        .toast-admin.info {
-            background: #17a2b8;
-        }
-
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             body {
@@ -488,10 +380,6 @@
             .user-cell .user-info .email {
                 font-size: 0.7rem;
             }
-            .login-container {
-                margin: 20px 10px;
-                padding: 20px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -506,6 +394,37 @@
                 font-size: 0.7rem;
             }
         }
+
+        /* ===== TOAST ===== */
+        .toast-admin {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            z-index: 999999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            max-width: 400px;
+        }
+        .toast-admin.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .toast-admin.success {
+            background: #28a745;
+        }
+        .toast-admin.error {
+            background: #dc3545;
+        }
+        .toast-admin.info {
+            background: #17a2b8;
+        }
     </style>
 </head>
 <body>
@@ -518,7 +437,7 @@
                 <h1><i class="fas fa-users-cog"></i> Administration MAURILIVRES</h1>
                 <div class="subtitle">Gestion des utilisateurs et des commandes</div>
             </div>
-            <div class="header-actions" id="adminActions" style="display:none;">
+            <div class="header-actions">
                 <button class="btn btn-outline" onclick="refreshData()">
                     <i class="fas fa-sync-alt"></i> Actualiser
                 </button>
@@ -529,26 +448,6 @@
                     <i class="fas fa-sign-out-alt"></i> Déconnexion
                 </button>
             </div>
-        </div>
-
-        <!-- ===== FORMULAIRE DE CONNEXION ===== -->
-        <div id="loginContainer" class="login-container">
-            <h2><i class="fas fa-shield-alt"></i> Administration</h2>
-            <p style="text-align:center; color:#6c757d; margin-bottom:20px; font-size:0.9rem;">Connectez-vous avec votre compte administrateur</p>
-            <form id="adminLoginForm" onsubmit="adminLogin(event)">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="loginEmail" value="salihina@maurilivres.com" required />
-                </div>
-                <div class="form-group">
-                    <label>Mot de passe</label>
-                    <input type="password" id="loginPassword" value="Admin-maurilivres.com" required />
-                </div>
-                <button type="submit" class="btn-login">
-                    <i class="fas fa-sign-in-alt"></i> Se connecter
-                </button>
-                <div id="loginError" class="login-error"></div>
-            </form>
         </div>
 
         <!-- ===== STATS ===== -->
@@ -580,7 +479,7 @@
         </div>
 
         <!-- ===== TABLEAU ===== -->
-        <div class="table-container" id="tableContainer">
+        <div class="table-container">
             <div class="table-toolbar">
                 <h2><i class="fas fa-list"></i> Liste des utilisateurs</h2>
                 <div class="search-box">
@@ -618,135 +517,23 @@
 
     <!-- Configuration Firebase -->
     <script src="js/firebase-config.js"></script>
-
     <!-- Authentification -->
     <script src="js/auth.js"></script>
 
     <script>
         // ============================================================
-        // Gestionnaire d'erreur global
-        // ============================================================
-        window.onerror = function(msg, url, line, col, error) {
-            console.error("Erreur:", msg);
-            return false;
-        };
-
-        // ============================================================
         // ÉTAT
         // ============================================================
-        var allUsers = [];
-        var filteredUsers = [];
-        var currentPage = 1;
-        var pageSize = 15;
-        var isAdmin = false;
-
-        // ============================================================
-        // AFFICHER/MASQUER LES ÉLÉMENTS
-        // ============================================================
-        function showAdminContent(show) {
-            var statsGrid = document.getElementById('statsGrid');
-            var tableContainer = document.getElementById('tableContainer');
-            var adminActions = document.getElementById('adminActions');
-            var loginContainer = document.getElementById('loginContainer');
-
-            if (show) {
-                statsGrid.classList.add('visible');
-                statsGrid.style.display = 'grid';
-                tableContainer.classList.add('visible');
-                tableContainer.style.display = 'block';
-                adminActions.style.display = 'flex';
-                loginContainer.style.display = 'none';
-            } else {
-                statsGrid.classList.remove('visible');
-                statsGrid.style.display = 'none';
-                tableContainer.classList.remove('visible');
-                tableContainer.style.display = 'none';
-                adminActions.style.display = 'none';
-                loginContainer.style.display = 'block';
-            }
-        }
-
-        // ============================================================
-        // CONNEXION ADMIN
-        // ============================================================
-        function adminLogin(e) {
-            e.preventDefault();
-            var email = document.getElementById('loginEmail').value.trim();
-            var password = document.getElementById('loginPassword').value.trim();
-            var errorDiv = document.getElementById('loginError');
-
-            errorDiv.style.display = 'none';
-            errorDiv.textContent = '';
-
-            if (!email || !password) {
-                errorDiv.textContent = 'Veuillez remplir tous les champs.';
-                errorDiv.style.display = 'block';
-                return;
-            }
-
-            showToast('🔄 Connexion en cours...', 'info');
-
-            firebase.auth().signInWithEmailAndPassword(email, password)
-                .then(function(userCredential) {
-                    console.log('✅ Connexion admin réussie');
-                    showToast('✅ Connexion réussie !', 'success');
-                    // Vérifier le rôle
-                    return firebase.firestore().collection('users').doc(userCredential.user.uid).get();
-                })
-                .then(function(doc) {
-                    if (doc.exists && doc.data().role === 'admin') {
-                        isAdmin = true;
-                        showAdminContent(true);
-                        loadUsers();
-                        showToast('👋 Bienvenue administrateur !', 'success');
-                    } else {
-                        showToast('⛔ Accès non autorisé', 'error');
-                        firebase.auth().signOut();
-                        showAdminContent(false);
-                    }
-                })
-                .catch(function(error) {
-                    console.error('❌ Erreur:', error.message);
-                    errorDiv.textContent = 'Erreur: ' + error.message;
-                    errorDiv.style.display = 'block';
-                    showToast('❌ ' + error.message, 'error');
-                });
-        }
-
-        // ============================================================
-        // VÉRIFICATION DE L'ÉTAT DE CONNEXION
-        // ============================================================
-        function checkAuthState() {
-            var user = firebase.auth().currentUser;
-
-            if (!user) {
-                showAdminContent(false);
-                return;
-            }
-
-            firebase.firestore().collection('users').doc(user.uid).get()
-                .then(function(doc) {
-                    if (doc.exists && doc.data().role === 'admin') {
-                        isAdmin = true;
-                        showAdminContent(true);
-                        loadUsers();
-                        console.log('👑 Admin authentifié');
-                    } else {
-                        showAdminContent(false);
-                        firebase.auth().signOut();
-                    }
-                })
-                .catch(function(error) {
-                    console.error('Erreur vérification admin:', error);
-                    showAdminContent(false);
-                });
-        }
+        let allUsers = [];
+        let filteredUsers = [];
+        let currentPage = 1;
+        const pageSize = 15;
 
         // ============================================================
         // CHARGEMENT DES DONNÉES
         // ============================================================
         async function loadUsers() {
-            var container = document.getElementById('usersContainer');
+            const container = document.getElementById('usersContainer');
             container.innerHTML = `
                     <div class="loading">
                         <i class="fas fa-spinner fa-spin"></i>
@@ -755,7 +542,7 @@
                 `;
 
             try {
-                var snapshot = await db.collection('users').orderBy('createdAt', 'desc').get();
+                const snapshot = await db.collection('users').orderBy('createdAt', 'desc').get();
 
                 if (snapshot.empty) {
                     container.innerHTML = `
@@ -769,15 +556,15 @@
                 }
 
                 allUsers = [];
-                var totalOrders = 0;
-                var totalFavorites = 0;
-                var today = new Date();
+                let totalOrders = 0;
+                let totalFavorites = 0;
+                let today = new Date();
                 today.setHours(0, 0, 0, 0);
-                var todayCount = 0;
+                let todayCount = 0;
 
-                snapshot.forEach(function(doc) {
-                    var data = doc.data();
-                    var user = {
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const user = {
                         id: doc.id,
                         ...data
                     };
@@ -787,7 +574,7 @@
                     if (data.favorites) totalFavorites += data.favorites.length;
 
                     if (data.createdAt) {
-                        var createdDate = data.createdAt.toDate ? data.createdAt.toDate() : new Date(data
+                        const createdDate = data.createdAt.toDate ? data.createdAt.toDate() : new Date(data
                         .createdAt);
                         createdDate.setHours(0, 0, 0, 0);
                         if (createdDate.getTime() === today.getTime()) {
@@ -819,29 +606,30 @@
         // MISE À JOUR DES STATS
         // ============================================================
         function updateStats(users, totalOrders, totalFavorites, todayCount) {
-            var total = users.length || 0;
+            const total = users.length || 0;
             document.getElementById('statUsers').textContent = total;
             document.getElementById('statOrders').textContent = totalOrders || 0;
             document.getElementById('statFavorites').textContent = totalFavorites || 0;
             document.getElementById('statToday').textContent = todayCount || 0;
 
-            var usersChange = document.getElementById('statUsersChange');
-            var ordersChange = document.getElementById('statOrdersChange');
-            var favoritesChange = document.getElementById('statFavoritesChange');
-            var todayChange = document.getElementById('statTodayChange');
+            // Stats changement
+            const usersChange = document.getElementById('statUsersChange');
+            const ordersChange = document.getElementById('statOrdersChange');
+            const favoritesChange = document.getElementById('statFavoritesChange');
+            const todayChange = document.getElementById('statTodayChange');
 
             if (todayCount > 0) {
-                usersChange.textContent = '+' + todayCount + " aujourd'hui";
+                usersChange.textContent = `+${todayCount} aujourd'hui`;
                 usersChange.className = 'stat-change up';
                 todayChange.textContent = '📈';
             } else {
-                usersChange.textContent = "0 aujourd'hui";
+                usersChange.textContent = '0 aujourd\'hui';
                 usersChange.className = 'stat-change';
                 todayChange.textContent = '📊';
             }
 
             if (totalOrders > 0) {
-                ordersChange.textContent = totalOrders + ' commandes totales';
+                ordersChange.textContent = `${totalOrders} commandes totales`;
                 ordersChange.className = 'stat-change up';
             } else {
                 ordersChange.textContent = 'Aucune commande';
@@ -849,7 +637,7 @@
             }
 
             if (totalFavorites > 0) {
-                favoritesChange.textContent = totalFavorites + ' favoris';
+                favoritesChange.textContent = `${totalFavorites} favoris`;
                 favoritesChange.className = 'stat-change up';
             } else {
                 favoritesChange.textContent = 'Aucun favori';
@@ -861,10 +649,10 @@
         // AFFICHAGE DES UTILISATEURS
         // ============================================================
         function renderUsers() {
-            var container = document.getElementById('usersContainer');
-            var start = (currentPage - 1) * pageSize;
-            var end = start + pageSize;
-            var pageUsers = filteredUsers.slice(start, end);
+            const container = document.getElementById('usersContainer');
+            const start = (currentPage - 1) * pageSize;
+            const end = start + pageSize;
+            const pageUsers = filteredUsers.slice(start, end);
 
             if (pageUsers.length === 0) {
                 container.innerHTML = `
@@ -877,7 +665,7 @@
                 return;
             }
 
-            var html = `
+            let html = `
                     <table>
                         <thead>
                             <tr>
@@ -893,11 +681,11 @@
                         <tbody>
                     `;
 
-            pageUsers.forEach(function(user, index) {
-                var num = start + index + 1;
-                var date = user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate() : new Date(user
+            pageUsers.forEach((user, index) => {
+                const num = start + index + 1;
+                const date = user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate() : new Date(user
                     .createdAt)) : new Date();
-                var formattedDate = date.toLocaleDateString('fr-FR', {
+                const formattedDate = date.toLocaleDateString('fr-FR', {
                     day: '2-digit',
                     month: '2-digit',
                     year: 'numeric',
@@ -905,8 +693,8 @@
                     minute: '2-digit'
                 });
 
-                var initials = user.name ? user.name.split(' ').map(function(n) { return n[0]; }).join('').toUpperCase()
-                    .slice(0, 2) : '?';
+                const initials = user.name ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) :
+                    '?';
 
                 html += `
                         <tr>
@@ -948,16 +736,16 @@
         // PAGINATION
         // ============================================================
         function renderPagination() {
-            var totalPages = Math.ceil(filteredUsers.length / pageSize);
-            var pagination = document.getElementById('pagination');
+            const totalPages = Math.ceil(filteredUsers.length / pageSize);
+            const pagination = document.getElementById('pagination');
 
             if (totalPages <= 1) {
                 pagination.innerHTML = '';
                 return;
             }
 
-            var html = '';
-            for (var i = 1; i <= totalPages; i++) {
+            let html = '';
+            for (let i = 1; i <= totalPages; i++) {
                 html += `
                         <button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>
                     `;
@@ -975,16 +763,18 @@
         // FILTRES
         // ============================================================
         function filterUsers() {
-            var search = document.getElementById('searchInput').value.toLowerCase().trim();
-            var filter = document.getElementById('filterSelect').value;
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filter = document.getElementById('filterSelect').value;
 
-            filteredUsers = allUsers.filter(function(user) {
-                var matchSearch = !search ||
+            filteredUsers = allUsers.filter(user => {
+                // Filtre de recherche
+                const matchSearch = !search ||
                     (user.name && user.name.toLowerCase().includes(search)) ||
                     (user.email && user.email.toLowerCase().includes(search)) ||
                     (user.phone && user.phone.toLowerCase().includes(search));
 
-                var matchFilter = true;
+                // Filtre de statut
+                let matchFilter = true;
                 if (filter === 'avec-commandes') {
                     matchFilter = user.orders && user.orders.length > 0;
                 } else if (filter === 'sans-commandes') {
@@ -1007,48 +797,45 @@
                 return;
             }
 
-            var headers = ['ID', 'Nom', 'Email', 'Téléphone', "Date d'inscription", 'Commandes', 'Favoris'];
-            var rows = allUsers.map(function(user) {
-                return [
-                    user.id,
-                    user.name || '',
-                    user.email || '',
-                    user.phone || '',
-                    user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate().toISOString() : user.createdAt) :
-                    '',
-                    user.orders ? user.orders.length : 0,
-                    user.favorites ? user.favorites.length : 0
-                ];
+            const headers = ['ID', 'Nom', 'Email', 'Téléphone', 'Date d\'inscription', 'Commandes', 'Favoris'];
+            const rows = allUsers.map(user => [
+                user.id,
+                user.name || '',
+                user.email || '',
+                user.phone || '',
+                user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate().toISOString() : user.createdAt) : '',
+                user.orders ? user.orders.length : 0,
+                user.favorites ? user.favorites.length : 0
+            ]);
+
+            let csv = headers.join(',') + '\n';
+            rows.forEach(row => {
+                csv += row.map(cell => `"${cell}"`).join(',') + '\n';
             });
 
-            var csv = headers.join(',') + '\n';
-            rows.forEach(function(row) {
-                csv += row.map(function(cell) { return '"' + cell + '"'; }).join(',') + '\n';
-            });
-
-            var blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
-            var link = document.createElement('a');
+            const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'utilisateurs_maurilivres_' + new Date().toISOString().split('T')[0] + '.csv';
+            link.download = `utilisateurs_maurilivres_${new Date().toISOString().split('T')[0]}.csv`;
             link.click();
             URL.revokeObjectURL(link.href);
 
-            showToast('✅ ' + allUsers.length + ' utilisateurs exportés !', 'success');
+            showToast(`✅ ${allUsers.length} utilisateurs exportés !`, 'success');
         }
 
         // ============================================================
         // VOIR UN UTILISATEUR
         // ============================================================
         function viewUser(uid) {
-            var user = allUsers.find(function(u) { return u.id === uid; });
+            const user = allUsers.find(u => u.id === uid);
             if (!user) {
                 showToast('Utilisateur non trouvé', 'error');
                 return;
             }
 
-            var date = user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate() : new Date(user.createdAt)) :
+            const date = user.createdAt ? (user.createdAt.toDate ? user.createdAt.toDate() : new Date(user.createdAt)) :
                 new Date();
-            var formattedDate = date.toLocaleDateString('fr-FR', {
+            const formattedDate = date.toLocaleDateString('fr-FR', {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric',
@@ -1056,34 +843,30 @@
                 minute: '2-digit'
             });
 
-            var ordersHtml = '';
+            let ordersHtml = '';
             if (user.orders && user.orders.length > 0) {
-                ordersHtml = user.orders.map(function(order, i) {
-                    return `
-                            <div style="padding:6px 10px; background:#f8f9fa; border-radius:6px; margin-bottom:4px; font-size:0.8rem;">
-                                <strong>Commande #${i+1}</strong> - ${order.date || 'Date non spécifiée'}
-                                ${order.total ? `<span style="float:right; font-weight:600; color:#145daa;">${order.total} MRU</span>` : ''}
-                            </div>
-                        `;
-                }).join('');
+                ordersHtml = user.orders.map((order, i) => `
+                        <div style="padding:6px 10px; background:#f8f9fa; border-radius:6px; margin-bottom:4px; font-size:0.8rem;">
+                            <strong>Commande #${i+1}</strong> - ${order.date || 'Date non spécifiée'}
+                            ${order.total ? `<span style="float:right; font-weight:600; color:#145daa;">${order.total} MRU</span>` : ''}
+                        </div>
+                    `).join('');
             } else {
                 ordersHtml = '<div style="color:#6c757d; font-size:0.85rem;">Aucune commande</div>';
             }
 
-            var favoritesHtml = '';
+            let favoritesHtml = '';
             if (user.favorites && user.favorites.length > 0) {
-                favoritesHtml = user.favorites.map(function(fav, i) {
-                    return `
-                            <span style="display:inline-block; background:#e8f0fe; color:#145daa; padding:2px 10px; border-radius:12px; font-size:0.75rem; margin:2px;">
-                                ${fav.title || fav || 'Livre #' + (i+1)}
-                            </span>
-                        `;
-                }).join('');
+                favoritesHtml = user.favorites.map((fav, i) => `
+                        <span style="display:inline-block; background:#e8f0fe; color:#145daa; padding:2px 10px; border-radius:12px; font-size:0.75rem; margin:2px;">
+                            ${fav.title || fav || `Livre #${i+1}`}
+                        </span>
+                    `).join('');
             } else {
                 favoritesHtml = '<div style="color:#6c757d; font-size:0.85rem;">Aucun favori</div>';
             }
 
-            var modal = document.createElement('div');
+            const modal = document.createElement('div');
             modal.style.cssText = `
                     position: fixed; inset: 0; background: rgba(0,0,0,0.5);
                     backdrop-filter: blur(4px); z-index: 999999;
@@ -1123,20 +906,19 @@
         // ============================================================
         // AFFICHER UN TOAST
         // ============================================================
-        function showToast(message, type) {
-            type = type || 'info';
-            var old = document.querySelector('.toast-admin');
+        function showToast(message, type = 'info') {
+            const old = document.querySelector('.toast-admin');
             if (old) old.remove();
 
-            var toast = document.createElement('div');
-            toast.className = 'toast-admin ' + type;
+            const toast = document.createElement('div');
+            toast.className = `toast-admin ${type}`;
             toast.textContent = message;
             document.body.appendChild(toast);
 
-            setTimeout(function() { toast.classList.add('show'); }, 10);
+            setTimeout(() => toast.classList.add('show'), 10);
             setTimeout(function() {
                 toast.classList.remove('show');
-                setTimeout(function() { toast.remove(); }, 400);
+                setTimeout(() => toast.remove(), 400);
             }, 3000);
         }
 
@@ -1145,6 +927,7 @@
         // ============================================================
         function refreshData() {
             showToast('🔄 Actualisation en cours...', 'info');
+                console.log("✅ Admin authentifié sur Firefox, chargement...");
             loadUsers();
         }
 
@@ -1153,17 +936,51 @@
         // ============================================================
         function logoutAdmin() {
             if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
-                firebase.auth().signOut()
-                    .then(function() {
-                        isAdmin = false;
-                        showAdminContent(false);
-                        showToast('👋 Déconnexion réussie', 'success');
-                    })
-                    .catch(function(error) {
-                        showToast('Erreur lors de la déconnexion', 'error');
-                    });
+                auth.signOut().then(() => {
+                    window.location.href = 'index.html';
+                }).catch((error) => {
+                    showToast('Erreur lors de la déconnexion', 'error');
+                });
             }
         }
+
+        // ============================================================
+        // SÉCURITÉ - VÉRIFICATION ADMIN
+        // ============================================================
+        auth.onAuthStateChanged(async (user) => {
+            if (!user) {
+                // Rediriger vers l'accueil si non connecté
+                showToast('🔐 Veuillez vous connecter', 'error');
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 2500);
+                return;
+            }
+
+            // Vérifier que l'utilisateur est admin
+            try {
+                const doc = await db.collection('users').doc(user.uid).get();
+                if (doc.exists && doc.data().role === 'admin') {
+                    // Charger les données
+                console.log("✅ Admin authentifié sur Firefox, chargement...");
+                    loadUsers();
+                    showToast('👋 Bienvenue administrateur !', 'success');
+                } else {
+                    // Pas admin
+                    showToast('⛔ Accès non autorisé', 'error');
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 2500);
+                }
+            } catch (error) {
+                console.error('Erreur vérification admin:', error);
+                // Si l'utilisateur n'a pas de document, on le redirige
+                showToast('⛔ Accès non autorisé', 'error');
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 2500);
+            }
+        });
 
         // ============================================================
         // EXPOSER LES FONCTIONS GLOBALEMENT
@@ -1176,24 +993,14 @@
         window.refreshData = refreshData;
         window.logoutAdmin = logoutAdmin;
         window.showToast = showToast;
-        window.adminLogin = adminLogin;
-
-        // ============================================================
-        // INITIALISATION
-        // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            // Vérifier l'état de connexion
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    checkAuthState();
-                } else {
-                    showAdminContent(false);
-                }
-            });
-
-            // Vérification immédiate
-            setTimeout(checkAuthState, 500);
-        });
     </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof updateAuthUI === "function") {
+            updateAuthUI();
+        }
+    });
+</script>
 </body>
 </html>
+salihina@maurilivres.com

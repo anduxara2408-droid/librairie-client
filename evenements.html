@@ -1104,7 +1104,7 @@
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-university" style="width:18px;"></i> Bankily : <strong>32202460</strong></p>
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-truck" style="width:18px;"></i> Livraison 72h – 150 MRU</p>
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-map-marker" style="width:18px;"></i> Nouakchott, Mauritanie</p>
-                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-envelope" style="width:18px;"></i> <a href="mailto:contact@rimbook.online" style="color:#aaa;">contact@rimbook.online</a></p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-envelope" style="width:18px;"></i> <a href="mailto:contact@maurilivres.com" style="color:#aaa;">contact@maurilivres.com</a></p>
             </div>
             <div class="footer-section">
                 <h4>À PROPOS</h4>
@@ -1318,5 +1318,22 @@
             initPhotoZoom();
         });
     </script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Configuration Firebase -->
+<script src="js/firebase-config.js"></script>
+
+<!-- Authentification -->
+<script src="js/auth.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof updateAuthUI === "function") {
+            updateAuthUI();
+        }
+    });
+</script>
 </body>
 </html>

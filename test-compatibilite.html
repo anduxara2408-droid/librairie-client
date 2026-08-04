@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Test de compatibilité - MAURILIVRES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+            color: #1a1a2e;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #145daa;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h1 i {
+            font-size: 2.5rem;
+        }
+        .summary {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .summary h2 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .summary-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        .summary-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #145daa;
+        }
+        .summary-item .label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+        .summary-item .status {
+            font-size: 1.5rem;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .test-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .test-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .test-card .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f3f5;
+        }
+        .test-card .header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .test-card .header .icon {
+            font-size: 2rem;
+        }
+        .test-card .result {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .test-card .result.pass {
+            background: #d4edda;
+            color: #155724;
+        }
+        .test-card .result.fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .test-card .result.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .test-card .result i {
+            font-size: 1.3rem;
+        }
+        .test-card .details {
+            margin-top: 12px;
+            padding: 12px 14px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+        .test-card .details code {
+            background: #e9ecef;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .badge.danger {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .badge.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .badge.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        .device-info {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-top: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .device-info h2 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .device-info .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .device-info .info-item {
+            padding: 10px 14px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .device-info .info-item .label {
+            font-size: 0.7rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .device-info .info-item .value {
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+        .btn-retour {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #145daa;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-retour:hover {
+            background: #0d4a8a;
+        }
+        @media (max-width: 600px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-mobile-alt"></i> 🔍 Test de compatibilité</h1>
+
+        <!-- Résumé -->
+        <div class="summary">
+            <h2>📊 Résumé des tests</h2>
+            <div class="summary-grid" id="summaryGrid">
+                <div class="summary-item">
+                    <div class="number" id="totalTests">0</div>
+                    <div class="label">Tests effectués</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" id="passedTests">0</div>
+                    <div class="label">✅ Réussis</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" id="failedTests">0</div>
+                    <div class="label">❌ Échecs</div>
+                </div>
+                <div class="summary-item">
+                    <div class="number" id="warningsTests">0</div>
+                    <div class="label">⚠️ Avertissements</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tests -->
+        <div class="test-grid" id="testGrid">
+            <!-- Les tests seront injectés par JS -->
+        </div>
+
+        <!-- Informations appareil -->
+        <div class="device-info">
+            <h2>📱 Informations sur votre appareil</h2>
+            <div class="info-grid" id="deviceInfo">
+                <div class="info-item">
+                    <div class="label">Appareil</div>
+                    <div class="value" id="deviceName">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Système d'exploitation</div>
+                    <div class="value" id="osName">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Navigateur</div>
+                    <div class="value" id="browserName">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Résolution</div>
+                    <div class="value" id="screenResolution">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Largeur d'écran</div>
+                    <div class="value" id="screenWidth">-</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Connexion Internet</div>
+                    <div class="value" id="connectionStatus">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="btn-retour"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+        </div>
+
+        <div class="footer">
+            <p>Test de compatibilité MAURILIVRES &copy; 2026</p>
+        </div>
+    </div>
+
+    <!-- ========================= SCRIPTS ========================= -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Configuration Firebase -->
+    <script src="js/firebase-config.js"></script>
+
+    <script>
+        // ============================================================
+        // CONFIGURATION DES TESTS
+        // ============================================================
+        const tests = [
+            {
+                id: 'viewport',
+                icon: '📱',
+                title: 'Viewport responsive',
+                description: 'Le site doit s\'adapter à toutes les tailles d\'écran',
+                run: () => {
+                    const width = window.innerWidth;
+                    return {
+                        passed: true,
+                        details: `Largeur : ${width}px - Le viewport est correctement configuré pour tous les appareils.`
+                    };
+                }
+            },
+            {
+                id: 'touch',
+                icon: '👆',
+                title: 'Compatibilité tactile',
+                description: 'Le site doit être utilisable avec les doigts',
+                run: () => {
+                    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                    return {
+                        passed: isTouch,
+                        details: isTouch ? '✅ Le site est compatible avec les écrans tactiles.' :
+                            'ℹ️ Appareil non tactile - test ignoré (ordinateur de bureau)'
+                    };
+                }
+            },
+            {
+                id: 'javascript',
+                icon: '⚡',
+                title: 'JavaScript activé',
+                description: 'Le JavaScript doit être activé pour le bon fonctionnement du site',
+                run: () => {
+                    return {
+                        passed: true,
+                        details: '✅ JavaScript est activé.'
+                    };
+                }
+            },
+            {
+                id: 'cookies',
+                icon: '🍪',
+                title: 'Cookies / LocalStorage',
+                description: 'Le LocalStorage doit être disponible pour sauvegarder le panier',
+                run: () => {
+                    try {
+                        localStorage.setItem('test', 'ok');
+                        localStorage.removeItem('test');
+                        return {
+                            passed: true,
+                            details: '✅ LocalStorage disponible pour sauvegarder les données.'
+                        };
+                    } catch (e) {
+                        return {
+                            passed: false,
+                            details: '❌ LocalStorage non disponible. Le panier ne pourra pas être sauvegardé.'
+                        };
+                    }
+                }
+            },
+            {
+                id: 'fontawesome',
+                icon: '🎨',
+                title: 'Font Awesome (icônes)',
+                description: 'Les icônes doivent s\'afficher correctement',
+                run: () => {
+                    const icons = document.querySelectorAll('.fa, .fas, .far, .fab, .fal');
+                    if (icons.length > 0) {
+                        return {
+                            passed: true,
+                            details: `✅ ${icons.length} icônes détectées sur la page.`
+                        };
+                    }
+                    return {
+                        passed: false,
+                        details: '❌ Aucune icône Font Awesome détectée. Vérifiez le CDN.'
+                    };
+                }
+            },
+            {
+                id: 'images',
+                icon: '🖼️',
+                title: 'Chargement des images',
+                description: 'Les images doivent se charger correctement',
+                run: () => {
+                    const images = document.querySelectorAll('img');
+                    let total = images.length;
+                    if (total === 0) {
+                        return {
+                            passed: true,
+                            details: 'ℹ️ Aucune image trouvée sur cette page (test ignoré).'
+                        };
+                    }
+                    return {
+                        passed: true,
+                        details: `✅ ${total} images trouvées. Vérifiez visuellement qu'elles s'affichent correctement.`
+                    };
+                }
+            },
+            {
+                id: 'css',
+                icon: '🎨',
+                title: 'Styles CSS',
+                description: 'Le CSS doit être chargé',
+                run: () => {
+                    const styles = document.querySelectorAll('link[rel="stylesheet"], style');
+                    return {
+                        passed: styles.length > 0,
+                        details: styles.length > 0 ? `✅ ${styles.length} fichiers de style chargés.` :
+                            '❌ Aucun style CSS détecté.'
+                    };
+                }
+            },
+            {
+                id: 'firebase',
+                icon: '🔥',
+                title: 'Firebase',
+                description: 'Firebase doit être disponible',
+                run: () => {
+                    if (typeof firebase !== 'undefined') {
+                        return {
+                            passed: true,
+                            details: `✅ Firebase ${firebase.SDK_VERSION || 'chargé'}.`
+                        };
+                    }
+                    return {
+                        passed: false,
+                        details: '❌ Firebase non chargé. Vérifiez vos scripts.'
+                    };
+                }
+            },
+            {
+                id: 'responsive',
+                icon: '📐',
+                title: 'Responsive design',
+                description: 'Le site doit être responsive',
+                run: () => {
+                    const width = window.innerWidth;
+                    const metaViewport = document.querySelector('meta[name="viewport"]');
+                    if (metaViewport) {
+                        return {
+                            passed: true,
+                            details: `✅ Viewport configuré. Écran : ${width}px.`
+                        };
+                    }
+                    return {
+                        passed: false,
+                        details: '❌ Meta viewport manquant. Ajoutez <meta name="viewport">.'
+                    };
+                }
+            },
+            {
+                id: 'fonts',
+                icon: '🔤',
+                title: 'Polices Google Fonts',
+                description: 'Les polices doivent se charger',
+                run: () => {
+                    const fontLinks = document.querySelectorAll('link[href*="fonts.googleapis.com"]');
+                    if (fontLinks.length > 0) {
+                        return {
+                            passed: true,
+                            details: `✅ ${fontLinks.length} polices Google chargées.`
+                        };
+                    }
+                    return {
+                        passed: false,
+                        details: '❌ Aucune Google Font détectée. Vérifiez vos imports.'
+                    };
+                }
+            },
+            {
+                id: 'console',
+                icon: '🐛',
+                title: 'Erreurs console',
+                description: 'Vérifier les erreurs dans la console',
+                run: () => {
+                    return {
+                        passed: true,
+                        details: 'ℹ️ Vérifiez manuellement la console (F12) pour les erreurs JavaScript.'
+                    };
+                }
+            },
+            {
+                id: 'https',
+                icon: '🔒',
+                title: 'HTTPS (sécurité)',
+                description: 'Le site doit être en HTTPS',
+                run: () => {
+                    const isHttps = window.location.protocol === 'https:';
+                    return {
+                        passed: isHttps,
+                        details: isHttps ? '✅ Le site est en HTTPS (sécurisé).' :
+                            '⚠️ Le site n\'est pas en HTTPS. Recommandé pour la sécurité.'
+                    };
+                }
+            }
+        ];
+
+        // ============================================================
+        // INFORMATION SUR L'APPAREIL
+        // ============================================================
+        function getDeviceInfo() {
+            const ua = navigator.userAgent;
+            let device = 'Appareil inconnu';
+            let os = 'OS inconnu';
+            let browser = 'Navigateur inconnu';
+
+            if (/iPhone/.test(ua)) device = '🍎 iPhone';
+            else if (/iPad/.test(ua)) device = '🍎 iPad';
+            else if (/Android/.test(ua)) device = '📱 Android';
+            else if (/Windows/.test(ua)) device = '💻 Windows PC';
+            else if (/Macintosh/.test(ua)) device = '💻 Mac';
+            else if (/Linux/.test(ua)) device = '🐧 Linux';
+
+            if (/iPhone|iPad/.test(ua)) os = '🍎 iOS';
+            else if (/Android/.test(ua)) os = '🤖 Android';
+            else if (/Windows NT 10/.test(ua)) os = '🪟 Windows 10/11';
+            else if (/Windows NT 6/.test(ua)) os = '🪟 Windows 7/8';
+            else if (/Mac OS X/.test(ua)) os = '🍎 macOS';
+            else if (/Linux/.test(ua)) os = '🐧 Linux';
+
+            if (/Chrome/.test(ua) && !/Edg/.test(ua)) browser = '🌐 Chrome';
+            else if (/Firefox/.test(ua)) browser = '🦊 Firefox';
+            else if (/Safari/.test(ua) && !/Chrome/.test(ua)) browser = '🧭 Safari';
+            else if (/Edg/.test(ua)) browser = '🌐 Edge';
+            else if (/Opera/.test(ua)) browser = '🅾️ Opera';
+
+            return { device, os, browser };
+        }
+
+        // ============================================================
+        // AFFICHAGE DES TESTS
+        // ============================================================
+        function runTests() {
+            const grid = document.getElementById('testGrid');
+            let total = 0,
+                passed = 0,
+                failed = 0,
+                warnings = 0;
+
+            tests.forEach(test => {
+                const result = test.run();
+                total++;
+                if (result.passed === true) passed++;
+                else if (result.passed === false) failed++;
+                else warnings++;
+
+                const statusClass = result.passed === true ? 'pass' : (result.passed === false ? 'fail' : 'warning');
+                const icon = result.passed === true ? '✅' : (result.passed === false ? '❌' : '⚠️');
+
+                const card = document.createElement('div');
+                card.className = 'test-card';
+                card.innerHTML = `
+                        <div class="header">
+                            <h3>${test.icon} ${test.title}</h3>
+                            <span class="badge ${statusClass}">${statusClass.toUpperCase()}</span>
+                        </div>
+                        <div class="result ${statusClass}">
+                            <i class="fas ${result.passed === true ? 'fa-check-circle' : (result.passed === false ? 'fa-times-circle' : 'fa-exclamation-triangle')}"></i>
+                            ${result.passed === true ? 'Fonctionnel' : (result.passed === false ? 'Problème détecté' : 'Attention')}
+                        </div>
+                        <div class="details">${result.details}</div>
+                    `;
+                grid.appendChild(card);
+            });
+
+            document.getElementById('totalTests').textContent = total;
+            document.getElementById('passedTests').textContent = passed;
+            document.getElementById('failedTests').textContent = failed;
+            document.getElementById('warningsTests').textContent = warnings;
+        }
+
+        // ============================================================
+        // INFORMATION APPAREIL
+        // ============================================================
+        function showDeviceInfo() {
+            const info = getDeviceInfo();
+            document.getElementById('deviceName').textContent = info.device;
+            document.getElementById('osName').textContent = info.os;
+            document.getElementById('browserName').textContent = info.browser;
+            document.getElementById('screenResolution').textContent = `${screen.width} x ${screen.height}`;
+            document.getElementById('screenWidth').textContent = `${window.innerWidth}px`;
+
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            if (connection) {
+                const speed = connection.downlink ? connection.downlink + ' Mbps' : 'Inconnue';
+                document.getElementById('connectionStatus').textContent = `${connection.effectiveType || 'Inconnue'} (${speed})`;
+            } else {
+                document.getElementById('connectionStatus').textContent = 'Connexion détectée';
+            }
+        }
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            runTests();
+            showDeviceInfo();
+
+            // Vérifier si Firebase est chargé
+            if (typeof firebase !== 'undefined') {
+                console.log('✅ Firebase chargé avec succès');
+            } else {
+                console.warn('⚠️ Firebase non chargé');
+            }
+        });
+
+        // ============================================================
+        // EXPOSER LES FONCTIONS
+        // ============================================================
+        window.runTests = runTests;
+        window.getDeviceInfo = getDeviceInfo;
+        window.showDeviceInfo = showDeviceInfo;
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof updateAuthUI === "function") {
+            updateAuthUI();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>MAURILIVRES – La librairie en ligne de Mauritanie</title>
+    <meta name="description" content="Fondée par le poète mauritanien Salihina Moussa Konaté. Livraison partout en Mauritanie sous 72h (150 MRU). Bankily : 32202460 | WhatsApp : 41291914" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+
+    <style>
+        /* ============================================================
+               CSS COMPLET
+               ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #1a1a2e;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            -webkit-font-smoothing: antialiased;
+            padding-top: 110px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER FIXE ===== */
+        .sticky-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99999;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .top-bar {
+            background: #145daa;
+            color: #fff;
+            padding: 6px 10px;
+            font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(5px, 1.5vw, 20px);
+            flex-wrap: wrap;
+            text-align: center;
+            width: 100%;
+        }
+        .top-bar .left {
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: clamp(0.55rem, 1vw, 0.75rem);
+        }
+        .top-bar .center,
+        .top-bar .right {
+            display: flex;
+            gap: clamp(8px, 1.5vw, 20px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .top-bar .center span,
+        .top-bar .right span {
+            cursor: pointer;
+            opacity: 0.9;
+            font-size: clamp(0.5rem, 0.9vw, 0.7rem);
+            white-space: nowrap;
+        }
+        .top-bar .center span:hover,
+        .top-bar .right span:hover {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .top-bar .center,
+            .top-bar .right {
+                display: none;
+            }
+            .top-bar {
+                padding: 4px 8px;
+            }
+            .top-bar .left {
+                font-size: 0.65rem;
+            }
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e9ecef;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px 0;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .logo img {
+            height: clamp(32px, 4vw, 45px);
+            width: auto;
+        }
+        .logo span {
+            font-size: clamp(0.9rem, 2vw, 1.3rem);
+            font-weight: 700;
+            color: #145daa;
+            letter-spacing: -0.5px;
+        }
+
+        .search-bar {
+            flex: 1 1 180px;
+            min-width: 120px;
+            max-width: 100%;
+        }
+        .search-bar form {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            width: 100%;
+        }
+        .search-bar form:focus-within {
+            border-color: #145daa;
+            box-shadow: 0 0 0 3px rgba(20,93,170,0.15);
+        }
+        .search-bar select {
+            padding: 6px 8px;
+            border: none;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+            color: #333;
+            max-width: 80px;
+            flex-shrink: 0;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 6px 10px;
+            border: none;
+            outline: none;
+            font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+            min-width: 60px;
+            width: 100%;
+        }
+        .search-bar button {
+            padding: 6px 12px;
+            background: #145daa;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+        .search-bar button:hover {
+            background: #0d4a8a;
+        }
+
+        .user-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 1.5vw, 15px);
+            flex-shrink: 0;
+        }
+        .user-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            font-size: clamp(0.5rem, 0.7vw, 0.7rem);
+            position: relative;
+            transition: color 0.3s;
+        }
+        .user-nav a:hover {
+            color: #145daa;
+        }
+        .user-nav a i {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+        }
+        .user-nav .badge {
+            background: #145daa;
+            color: #fff;
+            border-radius: 50%;
+            padding: 0 4px;
+            font-size: clamp(0.5rem, 0.6vw, 0.65rem);
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            min-width: 16px;
+            text-align: center;
+            line-height: 16px;
+        }
+        .connected-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: #28a745;
+            color: #fff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+        @media (max-width: 600px) {
+            .user-nav a span {
+                display: none;
+            }
+            .user-nav a i {
+                font-size: 1.1rem;
+            }
+        }
+
+        .main-nav {
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 0 10px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        .main-nav .nav-list {
+            display: flex;
+            flex-wrap: nowrap;
+            list-style: none;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            gap: 0;
+        }
+        .main-nav .nav-list > li {
+            position: relative;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: clamp(0.65rem, 0.9vw, 0.85rem);
+            color: #1a1a2e;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .main-nav .nav-list > li:hover {
+            background: #fff;
+            color: #145daa;
+            border-bottom-color: #145daa;
+        }
+        .main-nav .nav-list > li > a {
+            display: block;
+            color: inherit;
+        }
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 3px;
+            background: #145daa;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ===== SLIDER ===== */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 15px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .slider-slide {
+            min-width: 100%;
+            height: clamp(180px, 35vw, 350px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .slider-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.25));
+            border-radius: 12px;
+            z-index: 1;
+        }
+        .slider-slide .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 15px 20px;
+            max-width: 90%;
+        }
+        .slider-slide .slide-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 4vw, 2.8rem);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .slider-slide .slide-content p {
+            font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+            font-weight: 300;
+            opacity: 0.95;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+        }
+        .slider-slide .slide-content .btn-slide {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 20px;
+            background: #145daa;
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.7rem, 1vw, 0.9rem);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
+            transition: background 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(20,93,170,0.3);
+        }
+        .slider-slide .slide-content .btn-slide:hover {
+            background: #0d4a8a;
+            transform: scale(1.05);
+        }
+
+        .slider-slide:nth-child(1) {
+            background-image: url('https://picsum.photos/seed/events/1200/400');
+        }
+        .slider-slide:nth-child(2) {
+            background-image: url('https://picsum.photos/seed/books/1200/400');
+        }
+        .slider-slide:nth-child(3) {
+            background-image: url('https://picsum.photos/seed/reading/1200/400');
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .slider-controls button {
+            pointer-events: auto;
+            background: rgba(255,255,255,0.85);
+            border: none;
+            border-radius: 50%;
+            width: clamp(30px, 4vw, 40px);
+            height: clamp(30px, 4vw, 40px);
+            font-size: clamp(1rem, 1.5vw, 1.4rem);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            color: #1a1a2e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .slider-controls button:hover {
+            background: #fff;
+            transform: scale(1.08);
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .slider-dots span {
+            width: clamp(8px, 1.2vw, 12px);
+            height: clamp(8px, 1.2vw, 12px);
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            border: 2px solid transparent;
+        }
+        .slider-dots span.active {
+            background: #145daa;
+            transform: scale(1.1);
+            border-color: #145daa;
+        }
+
+        .section-title {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: clamp(30px, 5vw, 50px);
+            height: 3px;
+            background: #145daa;
+            border-radius: 2px;
+        }
+
+        .category-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .cat-item {
+            flex: 1 1 clamp(100px, 18%, 160px);
+            max-width: 160px;
+            text-align: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
+        }
+        .cat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .cat-item .cat-image {
+            width: clamp(50px, 10vw, 70px);
+            height: clamp(50px, 10vw, 70px);
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cat-item:hover .cat-image {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .cat-item h4 {
+            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            margin: 4px 0;
+            font-weight: 600;
+        }
+        .cat-item span {
+            font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+            color: #6c757d;
+        }
+
+        .product-carousel {
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .product-carousel .carousel-track {
+            display: flex;
+            gap: 12px;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+        .product-carousel .carousel-item {
+            flex: 0 0 clamp(130px, 22vw, 180px);
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .product-carousel .carousel-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .product-carousel .carousel-item img {
+            width: 100%;
+            height: clamp(120px, 22vw, 160px);
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 6px;
+        }
+        .product-carousel .carousel-item h4 {
+            font-size: clamp(0.7rem, 1vw, 0.85rem);
+            margin: 4px 0;
+        }
+        .product-carousel .carousel-item .price {
+            font-weight: 700;
+            color: #145daa;
+            font-size: clamp(0.7rem, 1vw, 0.85rem);
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 5;
+            padding: 0 5px;
+        }
+        .carousel-controls button {
+            pointer-events: auto;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: clamp(28px, 3.5vw, 36px);
+            height: clamp(28px, 3.5vw, 36px);
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: background 0.3s;
+        }
+        .carousel-controls button:hover {
+            background: #fff;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 200px), 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .book-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .book-card .book-image {
+            position: relative;
+        }
+        .book-card .book-image img {
+            width: 100%;
+            height: clamp(160px, 28vw, 220px);
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .book-card .book-image:hover img {
+            transform: scale(1.03);
+        }
+        .book-card .book-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #e74c3c;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .book-card .book-title {
+            font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+            margin: 4px 0;
+        }
+        .book-card .book-author {
+            font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+            color: #6c757d;
+        }
+        .book-card .book-price {
+            font-weight: 700;
+            color: #145daa;
+            margin: 4px 0;
+            font-size: clamp(0.7rem, 1vw, 0.85rem);
+        }
+        .book-card .book-actions {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        .book-card .book-actions button {
+            padding: 4px 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .book-card .book-actions .btn-add-cart {
+            background: #145daa;
+            color: #fff;
+        }
+        .book-card .book-actions .btn-add-cart:hover {
+            background: #0d4a8a;
+            transform: scale(1.04);
+        }
+        .book-card .book-actions .btn-favorite {
+            background: #f1f3f5;
+            color: #999;
+            padding: 4px 10px;
+        }
+        .book-card .book-actions .btn-favorite:hover {
+            background: #e9ecef;
+            color: #e74c3c;
+        }
+        .book-card .book-actions .btn-favorite.active {
+            color: #e74c3c;
+            background: #fde8e8;
+        }
+        .book-card .btn-summary {
+            margin-top: 6px;
+            padding: 4px 10px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            background: #fff;
+            font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+            cursor: pointer;
+            transition: background 0.3s;
+            color: #333;
+        }
+        .book-card .btn-summary:hover {
+            background: #f8f9fa;
+        }
+
+        .footer {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 30px 15px 15px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 20px;
+        }
+        .footer-section h4 {
+            color: #fff;
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            margin-bottom: 12px;
+            border-bottom: 2px solid #145daa;
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+            font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+        }
+        .footer-section ul li a {
+            color: #b0b0b0;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #fff;
+            padding-left: 4px;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+            padding: 12px 0 4px;
+            border-top: 1px solid #2a2a40;
+            color: #888;
+        }
+        .footer-social a {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            transition: color 0.3s, transform 0.3s;
+            margin-right: 12px;
+        }
+        .footer-social a:hover {
+            color: #145daa;
+            transform: translateY(-3px);
+        }
+
+        .author-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            margin: 20px 0;
+        }
+        .author-section .author-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            max-width: 200px;
+        }
+        .author-section .author-bio h2 {
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+        }
+        .author-section .author-bio h3 {
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            color: #145daa;
+            font-weight: 400;
+        }
+        .author-section .author-bio p {
+            font-size: clamp(0.8rem, 1vw, 0.95rem);
+            color: #555;
+            line-height: 1.6;
+        }
+        .author-contact {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #145daa;
+        }
+        .social-links a {
+            color: #145daa;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+            margin-right: 10px;
+        }
+        .social-links a:hover {
+            color: #0d4a8a;
+            transform: translateY(-3px);
+        }
+
+        .newsletter-section {
+            background: #f1f3f5;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 30px 0;
+        }
+        .newsletter-section h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+        }
+        .newsletter-section p {
+            font-size: clamp(0.8rem, 1vw, 0.95rem);
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .newsletter-section form {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-section input {
+            flex: 1;
+            min-width: 150px;
+            padding: 8px 14px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: clamp(0.8rem, 1vw, 1rem);
+        }
+        .newsletter-section input:focus {
+            border-color: #145daa;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(20,93,170,0.15);
+        }
+        .newsletter-section button {
+            padding: 8px 20px;
+            background: #145daa;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 1vw, 1rem);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .newsletter-section button:hover {
+            background: #0d4a8a;
+            transform: translateY(-2px);
+        }
+        #newsletterMessage {
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: clamp(0.85rem, 1vw, 1rem);
+        }
+
+        .presentation-text {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            margin: 30px 0;
+            line-height: 1.6;
+            color: #444;
+            font-size: clamp(0.8rem, 1vw, 0.95rem);
+        }
+
+        /* ===== SIDE MENU ===== */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+            z-index: 100000;
+            transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+        .side-menu.open {
+            left: 0;
+        }
+        .side-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+        }
+        .side-menu .menu-header {
+            padding: 0 20px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .side-menu ul li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .side-menu ul li a {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            cursor: pointer;
+        }
+        .side-menu ul li a:hover {
+            color: #145daa;
+        }
+        .side-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .side-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== PAGE PANIER ===== */
+        .cart-page {
+            display: none;
+            padding: 30px 0;
+            animation: fadeIn 0.3s ease;
+        }
+        .cart-page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .cart-page h1 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #145daa;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cart-page h1 i {
+            color: #145daa;
+        }
+
+        .back-to-shop {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #145daa;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .back-to-shop:hover {
+            color: #0d4a8a;
+            text-decoration: underline;
+        }
+
+        .cart-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.3s;
+        }
+
+        .cart-item-row:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .cart-item-row img {
+            width: 70px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .cart-item-row .item-info {
+            flex: 1;
+        }
+
+        .cart-item-row .item-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .cart-item-row .item-info p {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .cart-item-row .item-info .item-price {
+            font-weight: 700;
+            color: #145daa;
+            font-size: 1rem;
+            margin-top: 4px;
+        }
+
+        .cart-item-row .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .cart-item-row .qty-controls button {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #ced4da;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-item-row .qty-controls button:hover {
+            background: #145daa;
+            color: #fff;
+            border-color: #145daa;
+        }
+
+        .cart-item-row .qty-controls span {
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .cart-item-row .remove-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 8px;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .cart-item-row .remove-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .checkout-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            margin-top: 20px;
+        }
+
+        .checkout-section h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .checkout-section .form-group {
+            margin-bottom: 16px;
+        }
+
+        .checkout-section .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+
+        .checkout-section .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .checkout-section .form-group input,
+        .checkout-section .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            transition: border 0.2s;
+        }
+
+        .checkout-section .form-group input:focus,
+        .checkout-section .form-group select:focus {
+            outline: 2px solid #145daa;
+            border-color: transparent;
+        }
+
+        .checkout-section .phone-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .checkout-section .phone-group select {
+            flex: 0 0 130px;
+            max-width: 150px;
+        }
+
+        .checkout-section .phone-group input {
+            flex: 1;
+        }
+
+        .checkout-section .payment-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .checkout-section .payment-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            margin: 0;
+            flex: 1;
+            min-width: 130px;
+        }
+
+        .checkout-section .payment-options label:hover {
+            border-color: #145daa;
+            background: #f8f9fa;
+        }
+
+        .checkout-section .payment-options label.selected {
+            border-color: #145daa;
+            background: #e8f0fe;
+        }
+
+        .checkout-section .payment-options input[type="radio"] {
+            accent-color: #145daa;
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .checkout-section .payment-options .payment-icon {
+            font-size: 1.2rem;
+        }
+
+        .cart-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 18px 20px;
+            border: 1px solid #e9ecef;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-summary .total {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .cart-summary .total span {
+            color: #145daa;
+            font-size: 1.4rem;
+        }
+
+        .cart-summary .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cart-summary .actions button {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cart-summary .actions .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+
+        .cart-summary .actions .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+        }
+
+        .cart-summary .actions .btn-continue {
+            background: #f1f3f5;
+            color: #1a1a2e;
+        }
+
+        .cart-summary .actions .btn-continue:hover {
+            background: #e9ecef;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+
+        .cart-empty i {
+            font-size: 4rem;
+            color: #ced4da;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .cart-empty h3 {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .cart-empty .btn-continue {
+            margin-top: 15px;
+            padding: 10px 30px;
+            background: #145daa;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cart-empty .btn-continue:hover {
+            background: #0d4a8a;
+        }
+
+        /* ===== TOAST ===== */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            z-index: 999999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+        }
+        .toast-notification.visible {
+            opacity: 1;
+        }
+
+        /* ============================================================
+               STYLES AUTH
+               ============================================================ */
+        .auth-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: authFadeIn 0.3s ease;
+        }
+        
+        @keyframes authFadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes authSlideUp {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .auth-modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 420px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: authSlideUp 0.3s ease;
+            position: relative;
+        }
+        
+        .auth-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6c757d;
+            transition: color 0.2s;
+            padding: 4px 8px;
+        }
+        
+        .auth-close:hover {
+            color: #1a1a2e;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            color: #145daa;
+            border-bottom-color: #145daa;
+        }
+        
+        .auth-tab:hover {
+            color: #145daa;
+        }
+        
+        .auth-form-group {
+            margin-bottom: 16px;
+        }
+        
+        .auth-form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        
+        .auth-form-group label .required {
+            color: #dc3545;
+        }
+        
+        .auth-form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            transition: border 0.2s;
+        }
+        
+        .auth-form-group input:focus {
+            outline: 2px solid #145daa;
+            border-color: transparent;
+        }
+        
+        .auth-submit {
+            width: 100%;
+            padding: 12px;
+            background: #145daa;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+        
+        .auth-submit:hover {
+            background: #0d4a8a;
+            transform: translateY(-2px);
+        }
+        
+        .auth-submit:active {
+            transform: scale(0.98);
+        }
+        
+        .auth-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 9999999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        .auth-toast.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .auth-modal {
+                padding: 20px 16px;
+                margin: 10px;
+                max-height: 95vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 95px;
+            }
+            .cart-item-row {
+                flex-wrap: wrap;
+            }
+            .cart-item-row img {
+                width: 60px;
+                height: 80px;
+            }
+            .checkout-section .phone-group {
+                flex-direction: column;
+            }
+            .checkout-section .phone-group select {
+                flex: 1;
+                max-width: 100%;
+            }
+            .cart-summary {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cart-summary .actions {
+                width: 100%;
+                justify-content: center;
+            }
+            .cart-summary .actions button {
+                flex: 1;
+                min-width: 120px;
+            }
+            .checkout-section .payment-options label {
+                min-width: 100px;
+            }
+        }
+
+        /* ===== ADMIN LINK STYLE ===== */
+        .admin-link {
+            color: #e74c3c !important;
+            font-weight: 600;
+        }
+        .admin-link i {
+            color: #e74c3c !important;
+        }
+        .admin-link:hover {
+            color: #c0392b !important;
+        }
+
+/* ===== ADMIN LINK STYLE ===== */
+/* ===== BADGE ADMIN ===== */
+.connected-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    z-index: 5;
+}
+.admin-indicator {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    font-size: 10px;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+    z-index: 5;
+}
+#adminLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e74c3c !important;
+    font-weight: 600;
+}
+#adminLink i {
+    color: #e74c3c !important;
+}
+#adminLink:hover {
+    color: #c0392b !important;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- ========================= HEADER FIXE ========================= -->
+    <div class="sticky-wrapper">
+
+        <div class="top-bar">
+            <div class="left">📚 La lecture à portée de clic en Mauritanie</div>
+            <div class="center">
+                <span>📦 Livraison offerte dès 150 MRU</span>
+                <span>🔒 Paiement sécurisé</span>
+                <span>📞 Service client 41291914</span>
+            </div>
+            <div class="right">
+                <span>⭐ Avantages fidélité (bientôt)</span>
+                <span><a href="aide.html" style="color:#fff;">❓ Besoin d'aide</a></span>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="container header-top">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="logo">
+                    <a href="/" style="display:flex; align-items:center; gap:6px;">
+                        <img src="images/maurilivres.jpeg" alt="MAURILIVRES" />
+                        <span>MAURILIVRES</span>
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form id="searchForm" onsubmit="event.preventDefault(); searchBooks();">
+                        <select id="searchCategory">
+                            <option value="all">Tous</option>
+                            <option value="roman">Romans</option>
+                            <option value="developpement">Développement</option>
+                            <option value="scolaire">Scolaire</option>
+                            <option value="poesie">Poésie</option>
+                            <option value="histoire">Histoire</option>
+                            <option value="manga">Mangas</option>
+                            <option value="jeunesse">Jeunesse</option>
+                            <option value="bd">BD</option>
+                        </select>
+                        <input type="text" id="searchInput" placeholder="Rechercher…" />
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="user-nav">
+                    <!-- FAVORIS -->
+                    <a href="#" onclick="showFavorites()">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoris</span>
+                        <span class="badge" id="favoriteCount">0</span>
+                    </a>
+                    <!-- COMPTE -->
+                    <a href="#" id="compteLink" onclick="setTimeout(showAuthModal, 500)">
+                        <i class="fas fa-user"></i>
+                        <span>Compte</span>
+                    </a>
+                    <!-- PANIER -->
+                    <a href="#" onclick="showCartPage()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Panier</span>
+                        <span class="badge" id="cartCount">0</span>
+                    </a>
+                    <!-- ADMIN (caché par défaut, affiché si role=admin) -->
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#booksSection">Livres</a></li>
+                    <li><a href="evenements.html" style="color:#145daa; border-bottom-color:#145daa;">Événements</a></li>
+                    <li><a href="index.html#authorSection">Le fondateur</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- ========================= MAIN ========================= -->
+    <main class="container">
+
+        <!-- ===== PAGE D'ACCUEIL ===== -->
+        <div id="homePage">
+
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <h2>📅 Découvrez nos événements</h2>
+                            <p>Rencontres littéraires, dédicaces et moments de partage</p>
+                            <a href="evenements.html" class="btn-slide">Voir les événements</a>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <h2>Promotion sur les romans</h2>
+                            <p>Profitez de nos offres exceptionnelles</p>
+                            <a href="#booksSection" class="btn-slide">Voir les offres</a>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <div class="slide-content">
+                            <h2>Rencontre avec l'auteur</h2>
+                            <p>Salihina Moussa Konaté le 15 Mars</p>
+                            <a href="#authorSection" class="btn-slide">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button onclick="prevSlide()">‹</button>
+                    <button onclick="nextSlide()">›</button>
+                </div>
+                <div class="slider-dots" id="sliderDots">
+                    <span class="active" onclick="goToSlide(0)"></span>
+                    <span onclick="goToSlide(1)"></span>
+                    <span onclick="goToSlide(2)"></span>
+                </div>
+            </div>
+
+            <section style="margin:30px 0;">
+                <h2 class="section-title">Choisissez ce qui vous plaît</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.8rem,1vw,0.95rem);">Nos catégories les plus vues !</p>
+                <div class="category-block" id="categoryBlock"></div>
+            </section>
+
+            <section style="margin:30px 0;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2 class="section-title">Livres immanquables</h2>
+                    <a href="#" style="color:#145daa; font-weight:600; font-size:clamp(0.7rem,1vw,0.9rem);" onclick="showBestsellers()">Voir tout →</a>
+                </div>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Les incontournables de la rentrée littéraire.</p>
+                <div class="product-carousel" id="carousel1">
+                    <div class="carousel-track" id="carouselTrack1"></div>
+                    <div class="carousel-controls">
+                        <button onclick="moveCarousel('carouselTrack1', -1)">‹</button>
+                        <button onclick="moveCarousel('carouselTrack1', 1)">›</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin:30px 0; background:#f1f3f5; padding:20px 15px; border-radius:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h2 class="section-title">L'occasion ? L'occasion !</h2>
+                    <a href="#" style="color:#145daa; font-weight:600; font-size:clamp(0.7rem,1vw,0.9rem);" onclick="showBooks()">Voir tout →</a>
+                </div>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Vive la seconde main !</p>
+                <div class="product-carousel" id="carousel2">
+                    <div class="carousel-track" id="carouselTrack2"></div>
+                    <div class="carousel-controls">
+                        <button onclick="moveCarousel('carouselTrack2', -1)">‹</button>
+                        <button onclick="moveCarousel('carouselTrack2', 1)">›</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin:30px 0;">
+                <h2 class="section-title">En ce moment</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">L'actu Livres !</p>
+                <div class="product-carousel" id="carousel3">
+                    <div class="carousel-track" id="carouselTrack3"></div>
+                    <div class="carousel-controls">
+                        <button onclick="moveCarousel('carouselTrack3', -1)">‹</button>
+                        <button onclick="moveCarousel('carouselTrack3', 1)">›</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin:30px 0; background:#f1f3f5; padding:20px 15px; border-radius:12px;">
+                <h2 class="section-title">À petits prix</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Des livres pour toutes les bourses.</p>
+                <div class="product-carousel" id="carousel4">
+                    <div class="carousel-track" id="carouselTrack4"></div>
+                    <div class="carousel-controls">
+                        <button onclick="moveCarousel('carouselTrack4', -1)">‹</button>
+                        <button onclick="moveCarousel('carouselTrack4', 1)">›</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin:30px 0;">
+                <h2 class="section-title">Bonnes affaires</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Les promos du moment.</p>
+                <div class="product-carousel" id="carousel5">
+                    <div class="carousel-track" id="carouselTrack5"></div>
+                    <div class="carousel-controls">
+                        <button onclick="moveCarousel('carouselTrack5', -1)">‹</button>
+                        <button onclick="moveCarousel('carouselTrack5', 1)">›</button>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin:30px 0;" id="booksSection">
+                <h2 class="section-title">Tous nos livres</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Parcourez notre catalogue complet.</p>
+                <div class="books-grid" id="booksContainer"></div>
+            </section>
+
+            <section style="margin:30px 0; background:#f1f3f5; padding:20px 15px; border-radius:12px;">
+                <h2 class="section-title">Pour vous</h2>
+                <p style="color:#6c757d; margin-bottom:15px; font-size:clamp(0.75rem,0.9vw,0.9rem);">Avantages, événements gratuits, jeux concours.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
+                    <div style="flex:1; min-width:150px; background:#fff; border-radius:12px; padding:15px; text-align:center; border:1px solid #e9ecef;">
+                        <i class="fas fa-gift" style="font-size:2rem; color:#145daa;"></i>
+                        <h4 style="font-size:clamp(0.8rem,1vw,0.95rem);">Programme de fidélité</h4>
+                        <p style="color:#6c757d; font-size:clamp(0.65rem,0.8vw,0.8rem);">Des réductions sur le neuf et l'occasion</p>
+                    </div>
+                    <div style="flex:1; min-width:150px; background:#fff; border-radius:12px; padding:15px; text-align:center; border:1px solid #e9ecef;">
+                        <i class="fas fa-calendar-alt" style="font-size:2rem; color:#145daa;"></i>
+                        <h4 style="font-size:clamp(0.8rem,1vw,0.95rem);">Événements</h4>
+                        <p style="color:#6c757d; font-size:clamp(0.65rem,0.8vw,0.8rem);">Séances de dédicaces, rencontres</p>
+                    </div>
+                    <div style="flex:1; min-width:150px; background:#fff; border-radius:12px; padding:15px; text-align:center; border:1px solid #e9ecef;">
+                        <i class="fas fa-trophy" style="font-size:2rem; color:#145daa;"></i>
+                        <h4 style="font-size:clamp(0.8rem,1vw,0.95rem);">Jeux concours</h4>
+                        <p style="color:#6c757d; font-size:clamp(0.65rem,0.8vw,0.8rem);">Gagnez des livres et des bons d'achat</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="presentation-text">
+                <p><strong>MAURILIVRES</strong> est la librairie en ligne de référence en Mauritanie. Que vous cherchiez un roman captivant, un essai de développement personnel, un thriller haletant, un recueil de poésie ou un manga, notre catalogue regorge de trésors pour tous les goûts.</p>
+                <p style="margin-top:12px;">Notre mission est de rendre la culture et le savoir accessibles à tous, en facilitant l'accès aux livres partout en Mauritanie.</p>
+                <p style="margin-top:12px;"><strong>Faites le choix de la lecture et du savoir avec MAURILIVRES.</strong></p>
+            </div>
+
+            <section class="author-section" id="authorSection">
+                <div class="author-image">
+                    <img src="images/salihina.jpeg" alt="Salihina Moussa Konaté" onerror="this.src='https://placehold.co/300x300/145daa/fff?text=Salihina'" />
+                </div>
+                <div class="author-bio">
+                    <h2>Salihina Moussa Konaté</h2>
+                    <h3>Poète mauritanien, Fondateur de MAURILIVRES</h3>
+                    <p>À l'initiative de Salihina Moussa Konaté, MAURILIVRES promeut la lecture et la culture en Mauritanie. Cette librairie en ligne améliore l'accès aux ressources bibliographiques et encourage durablement la lecture sur tout le territoire.</p>
+                    <p><strong>Avec MAURILIVRES, le livre devient accessible à tous.</strong></p>
+                    <div class="author-contact">
+                        <h4 style="margin-bottom:8px;">Coordonnées</h4>
+                        <p><i class="fas fa-phone"></i> WhatsApp : <strong>41291914</strong></p>
+                        <p><i class="fas fa-university"></i> Bankily : <strong>32202460</strong></p>
+                        <p><i class="fas fa-truck"></i> Livraison 72h – <strong>150 MRU</strong></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://facebook.com/maurilivres" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/maurilivres" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/22241291914" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter-section">
+                <h2>Restez informé</h2>
+                <p>Recevez nos dernières actualités et offres exclusives</p>
+                <form id="newsletterForm" action="https://formspree.io/f/xvzjpenz" method="POST">
+                    <input type="email" name="email" id="newsletterEmail" placeholder="Votre email" required />
+                    <input type="hidden" name="_subject" value="Nouvel inscrit newsletter MAURILIVRES" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://maurilivres.com/?success=true" />
+                    <button type="submit">S'abonner</button>
+                </form>
+                <div id="newsletterMessage"></div>
+            </section>
+
+        </div>
+
+        <!-- ===== PAGE PANIER ===== -->
+        <div class="cart-page" id="cartPage">
+            <div class="back-to-shop" onclick="showHomePage()">
+                <i class="fas fa-arrow-left"></i> Continuer vos achats
+            </div>
+            <h1><i class="fas fa-shopping-cart"></i> Finaliser votre commande</h1>
+            <div id="cartContent"></div>
+        </div>
+
+    </main>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>MAURILIVRES</h4>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-phone" style="width:18px;"></i> <strong>41291914</strong> (WhatsApp)</p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-university" style="width:18px;"></i> Bankily : <strong>32202460</strong></p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-truck" style="width:18px;"></i> Livraison 72h – 150 MRU</p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-map-marker" style="width:18px;"></i> Nouakchott, Mauritanie</p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-envelope" style="width:18px;"></i> <a href="mailto:contact@maurilivres.com" style="color:#aaa;">contact@maurilivres.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>À PROPOS</h4>
+                <ul style="list-style:none; padding:0;">
+                    <li><a href="index.html#authorSection">Le fondateur</a></li>
+                    <li><a href="evenements.html">Nos événements</a></li>
+                    <li><a href="engagements.html">Nos engagements</a></li>
+                    <li><a href="charte-qualite.html">Notre charte qualité</a></li>
+                    <li><a href="alerte-disponibilite.html">L'alerte disponibilité</a></li>
+                    <li><a href="histoire.html">Notre histoire</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul style="list-style:none; padding:0;">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="guide-achat.html">Je commande</a></li>
+                    <li><a href="retours.html">Service retours</a></li>
+                    <li><a href="contact.html">Nous contacter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONDITIONS</h4>
+                <ul style="list-style:none; padding:0;">
+                    <li><a href="conditions-livraison.html">Conditions de livraison</a></li>
+                    <li><a href="moyens-paiement.html">Moyens de paiement</a></li>
+                    <li><a href="cgu.html">Conditions générales</a></li>
+                    <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SUIVEZ-NOUS</h4>
+                <div class="footer-social">
+                    <a href="https://facebook.com/maurilivres" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/maurilivres" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/22241291914" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MAURILIVRES – Fondée par Salihina Moussa Konaté.</p>
+        </div>
+    </footer>
+
+    <!-- ========================= SCRIPTS ========================= -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Configuration Firebase -->
+    <script src="js/firebase-config.js"></script>
+
+    <!-- Données -->
+    <script src="js/books-data.js"></script>
+
+    <!-- Authentification -->
+    <script src="js/auth.js"></script>
+
+    <!-- Code principal -->
+    <script>
+        // ============================================================
+        // DONNÉES DES PAYS
+        // ============================================================
+        const countries = [
+            { code: '+222', name: 'Mauritanie', flag: '🇲🇷' },
+            { code: '+221', name: 'Sénégal', flag: '🇸🇳' },
+            { code: '+223', name: 'Mali', flag: '🇲🇱' },
+            { code: '+224', name: 'Guinée', flag: '🇬🇳' },
+            { code: '+225', name: "Côte d'Ivoire", flag: '🇨🇮' },
+            { code: '+226', name: 'Burkina Faso', flag: '🇧🇫' },
+            { code: '+227', name: 'Niger', flag: '🇳🇪' },
+            { code: '+228', name: 'Togo', flag: '🇹🇬' },
+            { code: '+229', name: 'Bénin', flag: '🇧🇯' },
+            { code: '+231', name: 'Liberia', flag: '🇱🇷' },
+            { code: '+232', name: 'Sierra Leone', flag: '🇸🇱' },
+            { code: '+233', name: 'Ghana', flag: '🇬🇭' },
+            { code: '+234', name: 'Nigeria', flag: '🇳🇬' },
+            { code: '+235', name: 'Tchad', flag: '🇹🇩' },
+            { code: '+236', name: 'République Centrafricaine', flag: '🇨🇫' },
+            { code: '+237', name: 'Cameroun', flag: '🇨🇲' },
+            { code: '+238', name: 'Cap-Vert', flag: '🇨🇻' },
+            { code: '+239', name: 'Sao Tomé-et-Principe', flag: '🇸🇹' },
+            { code: '+240', name: 'Guinée Équatoriale', flag: '🇬🇶' },
+            { code: '+241', name: 'Gabon', flag: '🇬🇦' },
+            { code: '+242', name: 'République du Congo', flag: '🇨🇬' },
+            { code: '+243', name: 'République Démocratique du Congo', flag: '🇨🇩' },
+            { code: '+244', name: 'Angola', flag: '🇦🇴' },
+            { code: '+245', name: 'Guinée-Bissau', flag: '🇬🇼' },
+            { code: '+248', name: 'Seychelles', flag: '🇸🇨' },
+            { code: '+249', name: 'Soudan', flag: '🇸🇩' },
+            { code: '+250', name: 'Rwanda', flag: '🇷🇼' },
+            { code: '+251', name: 'Éthiopie', flag: '🇪🇹' },
+            { code: '+252', name: 'Somalie', flag: '🇸🇴' },
+            { code: '+253', name: 'Djibouti', flag: '🇩🇯' },
+            { code: '+254', name: 'Kenya', flag: '🇰🇪' },
+            { code: '+255', name: 'Tanzanie', flag: '🇹🇿' },
+            { code: '+256', name: 'Ouganda', flag: '🇺🇬' },
+            { code: '+257', name: 'Burundi', flag: '🇧🇮' },
+            { code: '+258', name: 'Mozambique', flag: '🇲🇿' },
+            { code: '+260', name: 'Zambie', flag: '🇿🇲' },
+            { code: '+261', name: 'Madagascar', flag: '🇲🇬' },
+            { code: '+262', name: 'La Réunion', flag: '🇷🇪' },
+            { code: '+263', name: 'Zimbabwe', flag: '🇿🇼' },
+            { code: '+264', name: 'Namibie', flag: '🇳🇦' },
+            { code: '+265', name: 'Malawi', flag: '🇲🇼' },
+            { code: '+266', name: 'Lesotho', flag: '🇱🇸' },
+            { code: '+267', name: 'Botswana', flag: '🇧🇼' },
+            { code: '+268', name: 'Eswatini', flag: '🇸🇿' },
+            { code: '+269', name: 'Comores', flag: '🇰🇲' },
+            { code: '+290', name: 'Sainte-Hélène', flag: '🇸🇭' },
+            { code: '+291', name: 'Érythrée', flag: '🇪🇷' },
+            { code: '+297', name: 'Aruba', flag: '🇦🇼' },
+            { code: '+298', name: 'Îles Féroé', flag: '🇫🇴' },
+            { code: '+299', name: 'Groenland', flag: '🇬🇱' },
+            { code: '+30', name: 'Grèce', flag: '🇬🇷' },
+            { code: '+31', name: 'Pays-Bas', flag: '🇳🇱' },
+            { code: '+32', name: 'Belgique', flag: '🇧🇪' },
+            { code: '+33', name: 'France', flag: '🇫🇷' },
+            { code: '+34', name: 'Espagne', flag: '🇪🇸' },
+            { code: '+36', name: 'Hongrie', flag: '🇭🇺' },
+            { code: '+39', name: 'Italie', flag: '🇮🇹' },
+            { code: '+40', name: 'Roumanie', flag: '🇷🇴' },
+            { code: '+41', name: 'Suisse', flag: '🇨🇭' },
+            { code: '+44', name: 'Royaume-Uni', flag: '🇬🇧' },
+            { code: '+45', name: 'Danemark', flag: '🇩🇰' },
+            { code: '+46', name: 'Suède', flag: '🇸🇪' },
+            { code: '+47', name: 'Norvège', flag: '🇳🇴' },
+            { code: '+48', name: 'Pologne', flag: '🇵🇱' },
+            { code: '+49', name: 'Allemagne', flag: '🇩🇪' },
+            { code: '+51', name: 'Pérou', flag: '🇵🇪' },
+            { code: '+52', name: 'Mexique', flag: '🇲🇽' },
+            { code: '+53', name: 'Cuba', flag: '🇨🇺' },
+            { code: '+54', name: 'Argentine', flag: '🇦🇷' },
+            { code: '+55', name: 'Brésil', flag: '🇧🇷' },
+            { code: '+56', name: 'Chili', flag: '🇨🇱' },
+            { code: '+57', name: 'Colombie', flag: '🇨🇴' },
+            { code: '+58', name: 'Venezuela', flag: '🇻🇪' },
+            { code: '+60', name: 'Malaisie', flag: '🇲🇾' },
+            { code: '+61', name: 'Australie', flag: '🇦🇺' },
+            { code: '+62', name: 'Indonésie', flag: '🇮🇩' },
+            { code: '+63', name: 'Philippines', flag: '🇵🇭' },
+            { code: '+64', name: 'Nouvelle-Zélande', flag: '🇳🇿' },
+            { code: '+65', name: 'Singapour', flag: '🇸🇬' },
+            { code: '+66', name: 'Thaïlande', flag: '🇹🇭' },
+            { code: '+81', name: 'Japon', flag: '🇯🇵' },
+            { code: '+82', name: 'Corée du Sud', flag: '🇰🇷' },
+            { code: '+84', name: 'Vietnam', flag: '🇻🇳' },
+            { code: '+86', name: 'Chine', flag: '🇨🇳' },
+            { code: '+90', name: 'Turquie', flag: '🇹🇷' },
+            { code: '+91', name: 'Inde', flag: '🇮🇳' },
+            { code: '+92', name: 'Pakistan', flag: '🇵🇰' },
+            { code: '+93', name: 'Afghanistan', flag: '🇦🇫' },
+            { code: '+94', name: 'Sri Lanka', flag: '🇱🇰' },
+            { code: '+95', name: 'Myanmar', flag: '🇲🇲' },
+            { code: '+98', name: 'Iran', flag: '🇮🇷' },
+            { code: '+211', name: 'Soudan du Sud', flag: '🇸🇸' },
+            { code: '+212', name: 'Maroc', flag: '🇲🇦' },
+            { code: '+213', name: 'Algérie', flag: '🇩🇿' },
+            { code: '+216', name: 'Tunisie', flag: '🇹🇳' },
+            { code: '+218', name: 'Libye', flag: '🇱🇾' },
+            { code: '+220', name: 'Gambie', flag: '🇬🇲' },
+            { code: '+230', name: 'Maurice', flag: '🇲🇺' },
+            { code: '+350', name: 'Gibraltar', flag: '🇬🇮' },
+            { code: '+351', name: 'Portugal', flag: '🇵🇹' },
+            { code: '+352', name: 'Luxembourg', flag: '🇱🇺' },
+            { code: '+353', name: 'Irlande', flag: '🇮🇪' },
+            { code: '+354', name: 'Islande', flag: '🇮🇸' },
+            { code: '+355', name: 'Albanie', flag: '🇦🇱' },
+            { code: '+356', name: 'Malte', flag: '🇲🇹' },
+            { code: '+357', name: 'Chypre', flag: '🇨🇾' },
+            { code: '+358', name: 'Finlande', flag: '🇫🇮' },
+            { code: '+359', name: 'Bulgarie', flag: '🇧🇬' },
+            { code: '+370', name: 'Lituanie', flag: '🇱🇹' },
+            { code: '+371', name: 'Lettonie', flag: '🇱🇻' },
+            { code: '+372', name: 'Estonie', flag: '🇪🇪' },
+            { code: '+373', name: 'Moldavie', flag: '🇲🇩' },
+            { code: '+374', name: 'Arménie', flag: '🇦🇲' },
+            { code: '+375', name: 'Biélorussie', flag: '🇧🇾' },
+            { code: '+376', name: 'Andorre', flag: '🇦🇩' },
+            { code: '+377', name: 'Monaco', flag: '🇲🇨' },
+            { code: '+378', name: 'Saint-Marin', flag: '🇸🇲' },
+            { code: '+380', name: 'Ukraine', flag: '🇺🇦' },
+            { code: '+381', name: 'Serbie', flag: '🇷🇸' },
+            { code: '+382', name: 'Monténégro', flag: '🇲🇪' },
+            { code: '+383', name: 'Kosovo', flag: '🇽🇰' },
+            { code: '+385', name: 'Croatie', flag: '🇭🇷' },
+            { code: '+386', name: 'Slovénie', flag: '🇸🇮' },
+            { code: '+387', name: 'Bosnie-Herzégovine', flag: '🇧🇦' },
+            { code: '+389', name: 'Macédoine du Nord', flag: '🇲🇰' },
+            { code: '+420', name: 'République Tchèque', flag: '🇨🇿' },
+            { code: '+421', name: 'Slovaquie', flag: '🇸🇰' },
+            { code: '+423', name: 'Liechtenstein', flag: '🇱🇮' },
+            { code: '+500', name: 'Îles Malouines', flag: '🇫🇰' }
+        ];
+
+        // ============================================================
+        // ÉTAT
+        // ============================================================
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        // ============================================================
+        // NAVIGATION ENTRE PAGES
+        // ============================================================
+        function showHomePage() {
+            document.getElementById('homePage').style.display = 'block';
+            document.getElementById('cartPage').classList.remove('active');
+            document.getElementById('cartPage').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showCartPage() {
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('cartPage').style.display = 'block';
+            document.getElementById('cartPage').classList.add('active');
+            renderCartPage();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        // PANIER
+        // ============================================================
+        function addToCart(bookId) {
+            const book = booksData.find(b => b.id === bookId);
+            if (!book) return;
+            const existing = cart.find(i => i.id === bookId);
+            if (existing) existing.quantity++;
+            else cart.push({ ...book, quantity: 1 });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showToast('📚 ' + book.title + ' ajouté au panier');
+        }
+
+        function updateCartCount() {
+            const el = document.getElementById('cartCount');
+            if (el) {
+                const total = cart.reduce((s, i) => s + i.quantity, 0);
+                el.textContent = total;
+            }
+        }
+
+        function changeQty(bookId, delta) {
+            const item = cart.find(i => i.id === bookId);
+            if (!item) return;
+            item.quantity += delta;
+            if (item.quantity <= 0) cart = cart.filter(i => i.id !== bookId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartPage();
+        }
+
+        function removeFromCart(bookId) {
+            const book = cart.find(i => i.id === bookId);
+            cart = cart.filter(i => i.id !== bookId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartPage();
+            if (book) showToast('🗑️ ' + book.title + ' retiré du panier');
+        }
+
+        function getCartTotal() {
+            return cart.reduce((s, i) => s + i.quantity * i.price, 0);
+        }
+
+        function getCartCount() {
+            return cart.reduce((s, i) => s + i.quantity, 0);
+        }
+
+        // ============================================================
+        // AFFICHAGE PAGE PANIER
+        // ============================================================
+        function renderCartPage() {
+            const container = document.getElementById('cartContent');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Votre panier est vide</h3>
+                            <button class="btn-continue" onclick="showHomePage()">Continuer vos achats</button>
+                        </div>
+                    `;
+                return;
+            }
+
+            const countryOptions = countries.map(c =>
+                `<option value="${c.code}">${c.flag} ${c.code} ${c.name}</option>`
+            ).join('');
+
+            let itemsHTML = cart.map(item => `
+                    <div class="cart-item-row">
+                        <img src="${item.image}" alt="${item.title}" onerror="this.src='https://placehold.co/70x95/145daa/fff?text=Livre'">
+                        <div class="item-info">
+                            <h4>${item.title}</h4>
+                            <p>${item.author}</p>
+                            <p class="item-price">${item.price * item.quantity} MRU</p>
+                        </div>
+                        <div class="qty-controls">
+                            <button onclick="changeQty(${item.id}, -1)">−</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></button>
+                    </div>
+                `).join('');
+
+            const total = getCartTotal();
+
+            container.innerHTML = `
+                    <div class="cart-items-list">${itemsHTML}</div>
+
+                    <div class="checkout-section">
+                        <h2><i class="fas fa-user" style="color:#145daa; margin-right:8px;"></i> Vos coordonnées</h2>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label>Nom complet <span class="required">*</span></label>
+                                <input type="text" id="customerName" placeholder="Votre nom et prénom" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Pays <span class="required">*</span></label>
+                                <select id="customerCountry" required>
+                                    <option value="">Sélectionnez votre pays</option>
+                                    ${countryOptions}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Téléphone <span class="required">*</span></label>
+                                <div class="phone-group">
+                                    <select id="customerPhoneCode">
+                                        ${countries.filter(c => ['+222', '+221', '+223', '+224', '+225', '+226', '+227', '+228', '+229', '+33', '+34', '+44', '+49', '+32', '+41', '+31', '+39', '+90', '+91', '+81', '+86', '+52', '+55', '+57', '+61', '+65', '+351', '+352', '+353'].includes(c.code)).map(c =>
+                                            `<option value="${c.code}" ${c.code === '+222' ? 'selected' : ''}>${c.flag} ${c.code}</option>`
+                                        ).join('')}
+                                        <option value="other">Autre...</option>
+                                    </select>
+                                    <input type="tel" id="customerPhone" placeholder="Numéro de téléphone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mode de paiement <span class="required">*</span></label>
+                                <div class="payment-options" id="paymentOptions">
+                                    <label class="selected">
+                                        <input type="radio" name="payment" value="livraison" checked>
+                                        <span class="payment-icon">🚚</span> À la livraison
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="payment" value="bankily">
+                                        <span class="payment-icon">🏦</span> Bankily
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="total">Total : <span>${total} MRU</span></div>
+                        <div class="actions">
+                            <button class="btn-continue" onclick="showHomePage()">Continuer les achats</button>
+                            <button class="btn-whatsapp" onclick="submitOrder()"><i class="fab fa-whatsapp"></i> Commander via WhatsApp</button>
+                        </div>
+                    </div>
+                `;
+
+            document.querySelectorAll('.payment-options label').forEach(label => {
+                label.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-options label').forEach(l => l.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+        }
+
+        // ============================================================
+        // SOUMISSION COMMANDE
+        // ============================================================
+        function submitOrder() {
+            const name = document.getElementById('customerName')?.value.trim();
+            const country = document.getElementById('customerCountry')?.value;
+            const phoneCode = document.getElementById('customerPhoneCode')?.value;
+            const phone = document.getElementById('customerPhone')?.value.trim();
+            const paymentMethod = document.querySelector('input[name="payment"]:checked');
+
+            if (!name) { showToast('Veuillez entrer votre nom complet'); document.getElementById('customerName')?.focus(); return; }
+            if (!country) { showToast('Veuillez sélectionner votre pays'); document.getElementById('customerCountry')?.focus(); return; }
+            if (!phone) { showToast('Veuillez entrer votre numéro de téléphone'); document.getElementById('customerPhone')?.focus(); return; }
+            if (!paymentMethod) { showToast('Veuillez choisir un mode de paiement'); return; }
+
+            const selectedCountry = countries.find(c => c.code === country);
+            const total = getCartTotal();
+
+            let itemsList = cart.map(item =>
+                `📚 ${item.title} – ${item.author} ×${item.quantity} = ${item.price * item.quantity} MRU`
+            ).join('\n');
+
+            const paymentLabel = paymentMethod.value === 'livraison' ? 'À la livraison (paiement en espèces)' : 'Bankily (Mobile Money)';
+            const countryName = selectedCountry ? selectedCountry.name : country;
+
+            const message = `📖 *NOUVELLE COMMANDE MAURILIVRES*\n\n` +
+                `👤 *Client :* ${name}\n` +
+                `🌍 *Pays :* ${countryName}\n` +
+                `📞 *Téléphone :* ${phoneCode} ${phone}\n` +
+                `💳 *Paiement :* ${paymentLabel}\n\n` +
+                `📦 *Détail de la commande :*\n${itemsList}\n\n` +
+                `💰 *Total : ${total} MRU*\n\n` +
+                `Merci de confirmer cette commande. 🙏`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/22241291914?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartPage();
+            showToast('✅ Commande envoyée sur WhatsApp !');
+        }
+
+        // ============================================================
+        // FAVORIS
+        // ============================================================
+        function isFavorite(bookId) {
+            return favorites.some(f => f.id === bookId);
+        }
+
+        function toggleFavorite(bookId) {
+            const book = booksData.find(b => b.id === bookId);
+            if (!book) return;
+            const idx = favorites.findIndex(f => f.id === bookId);
+            if (idx === -1) {
+                favorites.push(book);
+                showToast('❤️ ' + book.title + ' ajouté aux favoris');
+            } else {
+                favorites.splice(idx, 1);
+                showToast('💔 ' + book.title + ' retiré des favoris');
+            }
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            updateFavoriteCount();
+            displayBooks(booksData);
+        }
+
+        function updateFavoriteCount() {
+            const el = document.getElementById('favoriteCount');
+            if (el) el.textContent = favorites.length;
+        }
+
+        function showFavorites() {
+            if (favorites.length === 0) {
+                showToast('❤️ Aucun favori pour l\'instant');
+                return;
+            }
+            const list = favorites.map(b => '📚 ' + b.title + ' – ' + b.author).join('\n');
+            alert('Vos favoris :\n\n' + list);
+        }
+
+        // ============================================================
+        // TOAST
+        // ============================================================
+        function showToast(message) {
+            const old = document.querySelector('.toast-notification');
+            if (old) old.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            void toast.offsetWidth;
+            toast.classList.add('visible');
+
+            setTimeout(() => {
+                toast.classList.remove('visible');
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // ============================================================
+        // AFFICHAGE GRILLE
+        // ============================================================
+        function displayBooks(books) {
+            const container = document.getElementById('booksContainer');
+            if (!container) return;
+
+            container.innerHTML = books.map(book => `
+                    <div class="book-card" data-id="${book.id}">
+                        <div class="book-image">
+                            <img src="${book.image}" alt="${book.title}" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/200x280/145daa/fff?text=${encodeURIComponent(book.title)}'">
+                            ${book.isNew ? '<span class="book-badge">Nouveau</span>' : ''}
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">${book.title}</h3>
+                            <p class="book-author">${book.author}</p>
+                            <p class="book-price">${book.price} MRU</p>
+                            <div class="book-actions">
+                                <button class="btn-add-cart" onclick="addToCart(${book.id})"><i class="fas fa-shopping-cart"></i> Ajouter</button>
+                                <button class="btn-favorite ${isFavorite(book.id) ? 'active' : ''}" onclick="toggleFavorite(${book.id})"><i class="fas fa-heart"></i></button>
+                            </div>
+                            <button class="btn-summary" onclick="location.href='book.html?id=${book.id}'"><i class="fas fa-arrow-right"></i> Voir détails</button>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        // ============================================================
+        // CARROUSELS
+        // ============================================================
+        function initCarousel(trackId, books) {
+            const track = document.getElementById(trackId);
+            if (!track) return;
+            track.innerHTML = books.map(book => `
+                    <div class="carousel-item">
+                        <img src="${book.image}" alt="${book.title}" onerror="this.src='https://placehold.co/200x280/145daa/fff?text=Livre'">
+                        <h4>${book.title}</h4>
+                        <p style="font-size:0.8rem; color:#6c757d;">${book.author}</p>
+                        <div class="price">${book.price} MRU</div>
+                    </div>
+                `).join('');
+            track.dataset.scroll = 0;
+            track.style.transform = 'translateX(0px)';
+        }
+
+        function moveCarousel(trackId, direction) {
+            const track = document.getElementById(trackId);
+            if (!track) return;
+            const items = track.querySelectorAll('.carousel-item');
+            if (items.length === 0) return;
+            const itemWidth = items[0].offsetWidth + 20;
+            const maxScroll = Math.max(0, (items.length - 1) * itemWidth);
+            let currentScroll = parseFloat(track.dataset.scroll || 0);
+            currentScroll += direction * itemWidth;
+            if (currentScroll < 0) currentScroll = 0;
+            if (currentScroll > maxScroll) currentScroll = maxScroll;
+            track.style.transform = 'translateX(-' + currentScroll + 'px)';
+            track.dataset.scroll = currentScroll;
+        }
+
+        // ============================================================
+        // FILTRES
+        // ============================================================
+        function filterCategory(category) {
+            showHomePage();
+            if (category === 'all') displayBooks(booksData);
+            else {
+                const filtered = booksData.filter(b => b.category === category);
+                displayBooks(filtered);
+            }
+            document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchBooks() {
+            const query = document.getElementById('searchInput')?.value.toLowerCase().trim();
+            const category = document.getElementById('searchCategory')?.value || 'all';
+            showHomePage();
+            if (!query) { displayBooks(booksData); return; }
+            const filtered = booksData.filter(b => {
+                const matchTitle = b.title.toLowerCase().includes(query);
+                const matchAuthor = b.author.toLowerCase().includes(query);
+                const matchCategory = category === 'all' || b.category === category;
+                return (matchTitle || matchAuthor) && matchCategory;
+            });
+            displayBooks(filtered);
+            document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showNewReleases() {
+            showHomePage();
+            displayBooks(booksData.filter(b => b.isNew));
+            document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showBestsellers() {
+            showHomePage();
+            displayBooks(booksData.filter(b => b.isBestseller));
+            document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showBooks() {
+            showHomePage();
+            displayBooks(booksData);
+            document.getElementById('booksSection')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ============================================================
+        // SLIDER
+        // ============================================================
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.slider-dots span');
+        const sliderTrack = document.getElementById('sliderTrack');
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            if (!sliderTrack) return;
+            sliderTrack.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        let autoSlide = setInterval(nextSlide, 5000);
+        const sliderContainer = document.querySelector('.slider-container');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            sliderContainer.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+        }
+
+        // ============================================================
+        // MENU LATÉRAL MOBILE
+        // ============================================================
+        function initSideMenu() {
+            if (document.getElementById('sideMenu')) return;
+
+            const sideMenu = document.createElement('div');
+            sideMenu.id = 'sideMenu';
+            sideMenu.className = 'side-menu';
+            sideMenu.innerHTML = `
+                    <button class="close-btn" id="closeSideMenu">&times;</button>
+                    <div class="menu-header">
+                        <img src="images/maurilivres.jpeg" alt="MAURILIVRES" style="height:40px;" />
+                        <h3>MAURILIVRES</h3>
+                    </div>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="evenements.html"><i class="fas fa-calendar-alt"></i> Événements</a></li>
+                        <li><a href="#" data-action="roman"><i class="fas fa-book"></i> Romans</a></li>
+                        <li><a href="#" data-action="developpement"><i class="fas fa-brain"></i> Développement</a></li>
+                        <li><a href="#" data-action="scolaire"><i class="fas fa-school"></i> Scolaire</a></li>
+                        <li><a href="#" data-action="poesie"><i class="fas fa-feather-alt"></i> Poésie</a></li>
+                        <li><a href="#" data-action="manga"><i class="fas fa-japanese-otaku"></i> Mangas</a></li>
+                        <li><a href="#" data-action="jeunesse"><i class="fas fa-child"></i> Jeunesse</a></li>
+                        <li><a href="#" data-action="bd"><i class="fas fa-comic"></i> BD</a></li>
+                        <li><a href="#" data-action="cart"><i class="fas fa-shopping-cart"></i> Panier</a></li>
+                        <li><a href="#" data-action="favorites"><i class="fas fa-heart"></i> Favoris</a></li>
+                        <li><a href="#" data-action="author"><i class="fas fa-user"></i> Le fondateur</a></li>
+                    </ul>
+                `;
+            document.body.appendChild(sideMenu);
+
+            const overlay = document.createElement('div');
+            overlay.id = 'sideOverlay';
+            overlay.className = 'side-overlay';
+            document.body.appendChild(overlay);
+
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const closeBtn = document.getElementById('closeSideMenu');
+
+            window.openSideMenu = function() {
+                sideMenu.classList.add('open');
+                overlay.classList.add('active');
+                if (hamburgerBtn) hamburgerBtn.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeSideMenu = function() {
+                sideMenu.classList.remove('open');
+                overlay.classList.remove('active');
+                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            sideMenu.querySelectorAll('ul li a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const action = this.dataset.action;
+                    window.closeSideMenu();
+
+                    setTimeout(() => {
+                        switch (action) {
+                            case 'home':
+                                showHomePage();
+                                break;
+                            case 'roman':
+                                filterCategory('roman');
+                                break;
+                            case 'developpement':
+                                filterCategory('developpement');
+                                break;
+                            case 'scolaire':
+                                filterCategory('scolaire');
+                                break;
+                            case 'poesie':
+                                filterCategory('poesie');
+                                break;
+                            case 'manga':
+                                filterCategory('manga');
+                                break;
+                            case 'jeunesse':
+                                filterCategory('jeunesse');
+                                break;
+                            case 'bd':
+                                filterCategory('bd');
+                                break;
+                            case 'cart':
+                                showCartPage();
+                                break;
+                            case 'favorites':
+                                showFavorites();
+                                break;
+                            case 'author':
+                                showHomePage();
+                                setTimeout(() => {
+                                    document.getElementById('authorSection')?.scrollIntoView({ behavior: 'smooth' });
+                                }, 100);
+                                break;
+                            default:
+                                break;
+                        }
+                    }, 100);
+                });
+            });
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', window.openSideMenu);
+            if (closeBtn) closeBtn.addEventListener('click', window.closeSideMenu);
+            if (overlay) overlay.addEventListener('click', window.closeSideMenu);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') window.closeSideMenu();
+            });
+        }
+
+        // ============================================================
+        // CATÉGORIES
+        // ============================================================
+        function generateCategories() {
+            const container = document.getElementById('categoryBlock');
+            if (!container) return;
+            const categories = [
+                { key: 'roman', label: 'Romans', image: 'images/categories/roman.jpg' },
+                { key: 'developpement', label: 'Développement', image: 'images/categories/developpement.jpg' },
+                { key: 'scolaire', label: 'Scolaire', image: 'images/categories/scolaire.jpg' },
+                { key: 'poesie', label: 'Poésie', image: 'images/categories/poesie.jpg' },
+                { key: 'histoire', label: 'Histoire', image: 'images/categories/histoire.jpg' },
+                { key: 'manga', label: 'Mangas', image: 'images/categories/mangas.jpg' },
+                { key: 'jeunesse', label: 'Jeunesse', image: 'images/categories/jeunesse.jpg' },
+                { key: 'bd', label: 'BD', image: 'images/categories/bd.png' }
+            ];
+            container.innerHTML = categories.map(cat => {
+                const count = booksData ? booksData.filter(b => b.category === cat.key).length : 0;
+                return `
+                        <a href="#" class="cat-item" onclick="filterCategory('${cat.key}')">
+                            <img src="${cat.image}" alt="${cat.label}" class="cat-image" onerror="this.src='https://placehold.co/100x100/145daa/fff?text=${cat.label}'" />
+                            <h4>${cat.label}</h4>
+                            <span>${count} titres</span>
+                        </a>
+                    `;
+            }).join('');
+        }
+
+        // ============================================================
+        // NEWSLETTER
+        // ============================================================
+        function handleNewsletter() {
+            const messageDiv = document.getElementById('newsletterMessage');
+            if (window.location.search.includes('success=true')) {
+                messageDiv.style.display = 'block';
+                messageDiv.style.color = 'green';
+                messageDiv.textContent = '✅ Inscription réussie ! Vous recevrez bientôt nos actualités.';
+            }
+        }
+
+        // ============================================================

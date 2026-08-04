@@ -79,7 +79,7 @@
                     <span>Favoris</span>
                     <span class="badge" id="favoriteCount">0</span>
                 </a>
-                <a href="#" onclick="toggleLogin()">
+                <a href="#" onclick="showAuthModal()">
                     <i class="fas fa-user"></i>
                     <span>Compte</span>
                 </a>
@@ -121,11 +121,27 @@
     <script>
         function showFavorites() { if (typeof window.showFavorites === 'function') window.showFavorites(); else alert('Vos favoris (connexion requise)'); }
         function showCart() { if (typeof window.showCart === 'function') window.showCart(); else alert('Votre panier est vide.'); }
-        function toggleLogin() { alert('Connexion / inscription (simulation)'); }
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof updateCartCount === 'function') updateCartCount();
             if (typeof updateFavoriteCount === 'function') updateFavoriteCount();
         });
     </script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Configuration Firebase -->
+<script src="js/firebase-config.js"></script>
+
+<!-- Authentification -->
+<script src="js/auth.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof updateAuthUI === "function") {
+            updateAuthUI();
+        }
+    });
+</script>
 </body>
 </html>
