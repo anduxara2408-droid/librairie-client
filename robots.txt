@@ -1,0 +1,11 @@
+cat > robots.txt << 'EOF'
+# robots.txt pour MAURILIVRES
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /test-compatibilite.html
+Disallow: /js/
+Disallow: /images/
+
+Sitemap: https://maurilivres.com/sitemap.xml
+EOF

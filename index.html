@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Salihina Moussa Konaté" />
+<meta name="keywords" content="librairie en ligne Mauritanie, livres Nouakchott, MAURILIVRES, livres Mauritanie, librairie" />
+<link rel="canonical" href="https://maurilivres.com/" />
+<!-- Open Graph / Réseaux sociaux -->
+<meta property="og:title" content="MAURILIVRES - La librairie en ligne de Mauritanie" />
+<meta property="og:description" content="Fondée par le poète mauritanien Salihina Moussa Konaté. Livraison partout en Mauritanie sous 72h." />
+<meta property="og:image" content="https://maurilivres.com/images/maurilivres-logo.png" />
+<meta property="og:url" content="https://maurilivres.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MAURILIVRES - La librairie en ligne de Mauritanie" />
+<meta name="twitter:description" content="Fondée par le poète mauritanien Salihina Moussa Konaté." />
+<meta name="twitter:image" content="https://maurilivres.com/images/maurilivres-logo.png" />
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>MAURILIVRES – La librairie en ligne de Mauritanie</title>
@@ -1523,6 +1542,54 @@
         .admin-link:hover {
             color: #c0392b !important;
         }
+
+/* ===== ADMIN LINK STYLE ===== */
+/* ===== BADGE ADMIN ===== */
+.connected-badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    z-index: 5;
+}
+.admin-indicator {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    font-size: 10px;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+    z-index: 5;
+}
+#adminLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e74c3c !important;
+    font-weight: 600;
+}
+#adminLink i {
+    color: #e74c3c !important;
+}
+#adminLink:hover {
+    color: #c0392b !important;
+}
+
     </style>
 </head>
 <body>
@@ -1579,7 +1646,7 @@
                         <span class="badge" id="favoriteCount">0</span>
                     </a>
                     <!-- COMPTE -->
-                    <a href="#" onclick="showAuthModal()">
+                    <a href="#" id="compteLink" onclick="setTimeout(showAuthModal, 500)">
                         <i class="fas fa-user"></i>
                         <span>Compte</span>
                     </a>
@@ -1590,10 +1657,6 @@
                         <span class="badge" id="cartCount">0</span>
                     </a>
                     <!-- ADMIN (caché par défaut, affiché si role=admin) -->
-                    <a href="#" id="adminLink" style="display:none;" class="admin-link" onclick="window.location.href='admin.html'">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Admin</span>
-                    </a>
                 </div>
             </div>
             <nav class="main-nav">
@@ -1784,7 +1847,7 @@
                     <input type="email" name="email" id="newsletterEmail" placeholder="Votre email" required />
                     <input type="hidden" name="_subject" value="Nouvel inscrit newsletter MAURILIVRES" />
                     <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_next" value="https://rimbook.online/?success=true" />
+                    <input type="hidden" name="_next" value="https://maurilivres.com/?success=true" />
                     <button type="submit">S'abonner</button>
                 </form>
                 <div id="newsletterMessage"></div>
@@ -1812,7 +1875,7 @@
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-university" style="width:18px;"></i> Bankily : <strong>32202460</strong></p>
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-truck" style="width:18px;"></i> Livraison 72h – 150 MRU</p>
                 <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-map-marker" style="width:18px;"></i> Nouakchott, Mauritanie</p>
-                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-envelope" style="width:18px;"></i> <a href="mailto:contact@rimbook.online" style="color:#aaa;">contact@rimbook.online</a></p>
+                <p style="font-size:clamp(0.7rem,0.9vw,0.85rem);"><i class="fas fa-envelope" style="width:18px;"></i> <a href="mailto:contact@maurilivres.com" style="color:#aaa;">contact@maurilivres.com</a></p>
             </div>
             <div class="footer-section">
                 <h4>À PROPOS</h4>
@@ -2593,40 +2656,6 @@
         }
 
         // ============================================================
-        // VÉRIFICATION ADMIN - AFFICHER LE LIEN
-        // ============================================================
-        function checkAndShowAdminLink() {
-            const user = firebase.auth().currentUser;
-            if (!user) {
-                document.getElementById('adminLink').style.display = 'none';
-                return;
-            }
-            
-            firebase.firestore().collection('users').doc(user.uid).get()
-                .then(doc => {
-                    if (doc.exists && doc.data().role === 'admin') {
-                        document.getElementById('adminLink').style.display = 'flex';
-                        console.log('👑 Mode Admin activé');
-                    } else {
-                        document.getElementById('adminLink').style.display = 'none';
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur vérification admin:', error);
-                    document.getElementById('adminLink').style.display = 'none';
-                });
-        }
-
-        // Observer les changements d'authentification
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                checkAndShowAdminLink();
-            } else {
-                document.getElementById('adminLink').style.display = 'none';
-            }
-        });
-
-        // ============================================================
         // INITIALISATION
         // ============================================================
         function getSample(books, n, filterFn) {
@@ -2680,12 +2709,9 @@
             
             // Mettre à jour l'interface utilisateur si auth.js est chargé
             if (typeof updateAuthUI === 'function') {
-                updateAuthUI();
-            }
-            
-            // Vérifier le statut admin au chargement
-            if (firebase.auth().currentUser) {
-                checkAndShowAdminLink();
+                setTimeout(function() {
+                    updateAuthUI();
+                }, 300);
             }
         });
 
@@ -2723,7 +2749,28 @@
         window.getCartTotal = getCartTotal;
         window.getCartCount = getCartCount;
         window.showAuthModal = showAuthModal;
-        window.checkAndShowAdminLink = checkAndShowAdminLink;
+        window.updateAuthUI = updateAuthUI;
+
+        // Observer les changements d'authentification
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // Vérifier si admin
+                firebase.firestore().collection("users").doc(user.uid).get()
+                    .then(function(doc) {
+                        if (doc.exists && doc.data().role === "admin") {
+                            console.log("👑 Mode Admin activé");
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error("Erreur vérification admin:", error);
+                    });
+            }
+            if (typeof updateAuthUI === "function") {
+                setTimeout(function() {
+                    updateAuthUI();
+                }, 300);
+            }
+        });
+
+        console.log("✅ MAURILIVRES chargé avec succès");
     </script>
-</body>
-</html>
